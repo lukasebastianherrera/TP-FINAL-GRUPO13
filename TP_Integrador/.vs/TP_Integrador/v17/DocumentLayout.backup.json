@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP_Integrador\\TP-FINAL-GRUPO13\\TP_Integrador\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp_integrador\\tp-final-grupo13\\tp_integrador\\vistas\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Inicio.aspx",
+              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP_Integrador\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\Inicio.aspx",
+              "RelativeDocumentMoniker": "Vistas\\Inicio.aspx",
+              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP_Integrador\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\Inicio.aspx",
+              "RelativeToolTip": "Vistas\\Inicio.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-13T03:36:17.864Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
