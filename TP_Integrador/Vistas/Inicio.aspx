@@ -9,105 +9,143 @@
     <style type="text/css">
         .auto-style1 {
             width: 100%;
+            height: 352px;
+            margin-bottom: 41px;
         }
         .auto-style4 {
             height: 50px;
         }
         .auto-style5 {
-            width: 328px;
+            width: 175px;
             height: 50px;
         }
         .auto-style6 {
-            width: 422px;
+            width: 284px;
             height: 50px;
         }
         .auto-style10 {
             height: 70px;
         }
         .auto-style11 {
-            width: 328px;
+            width: 175px;
             height: 70px;
         }
         .auto-style12 {
-            width: 422px;
+            width: 284px;
             height: 70px;
+            font-weight: bold;
+            font-size: 35pt;
         }
         .auto-style13 {
             height: 20px;
         }
         .auto-style14 {
-            width: 328px;
+            width: 175px;
             height: 20px;
         }
         .auto-style15 {
-            width: 422px;
+            width: 284px;
             height: 20px;
         }
         .auto-style16 {
             height: 30px;
         }
         .auto-style17 {
-            width: 328px;
+            width: 175px;
             height: 30px;
         }
         .auto-style18 {
-            width: 422px;
+            width: 284px;
             height: 30px;
+        }
+        .auto-style19 {
+            height: 30px;
+            width: 447px;
+        }
+        .auto-style20 {
+            height: 70px;
+            width: 447px;
+        }
+        .auto-style21 {
+            height: 20px;
+            width: 447px;
+        }
+        .auto-style22 {
+            height: 50px;
+            width: 447px;
+        }
+        .auto-style23 {
+            height: 381px;
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="auto-style23">
         <div>
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style16"></td>
                         <td class="auto-style17"></td>
                         <td class="auto-style18"></td>
-                        <td class="auto-style16"></td>
+                        <td class="auto-style19"></td>
                         <td class="auto-style16"></td>
                     </tr>
                     <tr>
                         <td class="auto-style10"></td>
                         <td class="auto-style11"></td>
                         <td class="auto-style12">
-                            <asp:Label ID="lbl_Inicio" runat="server" Font-Bold="True" Font-Size="35pt" Text="Inicio"></asp:Label>
-                        </td>
-                        <td class="auto-style10"></td>
+                            Bienvenido</td>
+                        <td class="auto-style20"></td>
                         <td class="auto-style10"></td>
                     </tr>
                     <tr>
                         <td class="auto-style13"></td>
                         <td class="auto-style14"></td>
-                        <td class="auto-style15"></td>
+                        <td class="auto-style15">Por favor, inicie sesión:</td>
+                        <td class="auto-style21"></td>
                         <td class="auto-style13"></td>
-                        <td class="auto-style13"></td>
                     </tr>
                     <tr>
                         <td class="auto-style4"></td>
-                        <td class="auto-style5"></td>
+                        <td class="auto-style5">Usuario:</td>
                         <td class="auto-style6">
-                            <asp:Button ID="btn_Administrador" runat="server" Font-Bold="False" Text="Administrador" />
+                            <asp:TextBox ID="txtb_usuario" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style4"></td>
+                        <td class="auto-style22">&nbsp;</td>
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
                         <td class="auto-style4"></td>
-                        <td class="auto-style5"></td>
+                        <td class="auto-style5">Contraseña:</td>
                         <td class="auto-style6">
-                            <asp:Button ID="btn_Medico" runat="server" Font-Bold="False" Text="Médico/a" />
+                            <asp:TextBox ID="txtb_contrasenia" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style4"></td>
+                        <td class="auto-style22"></td>
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
                         <td class="auto-style4"></td>
-                        <td class="auto-style5"></td>
-                        <td class="auto-style6"></td>
-                        <td class="auto-style4"></td>
+                        <td class="auto-style5">&nbsp;</td>
+                        <td class="auto-style6">
+                            <asp:DropDownList ID="DropDownList1" runat="server">
+                                <asp:ListItem Value="0">Seleccione tipo de usuario</asp:ListItem>
+                                <asp:ListItem Value="1">Medico/a</asp:ListItem>
+                                <asp:ListItem Value="2">Administrador/a</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                        <td class="auto-style22">
+                            &nbsp;</td>
                         <td class="auto-style4"></td>
                     </tr>
+                     <tr>
+     <td class="auto-style16"></td>
+     <td class="auto-style17"></td>
+     <td class="auto-style18">
+                            <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" />
+                         </td>
+     <td class="auto-style19"></td>
+     <td class="auto-style16"></td>
+ </tr>
                 </table>
         </div>
     </form>
