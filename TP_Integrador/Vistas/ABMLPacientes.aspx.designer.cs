@@ -24,6 +24,24 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control lblAdministrador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdministrador;
+
+        /// <summary>
+        /// Control lblPacientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPacientes;
+
+        /// <summary>
         /// Control hlAñadirPaciente.
         /// </summary>
         /// <remarks>
@@ -51,12 +69,12 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlModificarPaciente;
 
         /// <summary>
-        /// Control hlListarPaciente.
+        /// Control hlListarPacientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlListarPaciente;
+        protected global::System.Web.UI.WebControls.HyperLink hlListarPacientes;
     }
 }

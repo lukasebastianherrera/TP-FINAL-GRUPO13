@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABMLPacientes.aspx.cs" Inherits="Vistas.ABMLPacientes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABLMedicos.aspx.cs" Inherits="Vistas.ABLMedicos" %>
 
 <!DOCTYPE html>
 
@@ -83,7 +83,7 @@
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
-                        <asp:Label ID="lblPacientes" runat="server" Font-Bold="True" Text="ABML Pacientes" Font-Size="XX-Large"></asp:Label>
+                        <asp:Label ID="lblMedicos" runat="server" Font-Bold="True" Text="ABLM Médicos" Font-Size="XX-Large"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -100,7 +100,7 @@
                     <td class="auto-style15"></td>
                     <td class="auto-style7">
 
-            <asp:HyperLink ID="hlAñadirPaciente" runat="server" NavigateUrl="~/AltaPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Añadir nuevo paciente</asp:HyperLink>
+            <asp:HyperLink ID="hlAñadirMedico" runat="server" NavigateUrl="~/AltaMedico.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Añadir nuevo médico</asp:HyperLink>
 
                     </td>
                     <td class="auto-style3"></td>
@@ -118,7 +118,7 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
 
-            <asp:HyperLink ID="hlBajaPaciente" runat="server" NavigateUrl="~/BajaPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Eliminar paciente</asp:HyperLink>
+            <asp:HyperLink ID="hlBajaMedico" runat="server" Font-Bold="False" Font-Size="Medium" ForeColor="Blue" NavigateUrl="~/BajaMedico.aspx">Eliminar médico</asp:HyperLink>
 
                     </td>
                     <td>&nbsp;</td>
@@ -136,7 +136,7 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
 
-            <asp:HyperLink ID="hlModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Modificar Paciente</asp:HyperLink>
+            <asp:HyperLink ID="hlModificarMedico" runat="server" Font-Bold="False" Font-Size="Medium" ForeColor="Blue" NavigateUrl="~/ModificarMedico.aspx">Modificar médico</asp:HyperLink>
 
                     </td>
                     <td>&nbsp;</td>
@@ -154,12 +154,28 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
 
-            <asp:HyperLink ID="hlListarPacientes" runat="server" NavigateUrl="~/ListarPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Listar pacientes</asp:HyperLink>
+            <asp:HyperLink ID="hlListarMedicos" runat="server" Font-Bold="False" Font-Size="Medium" ForeColor="Blue" NavigateUrl="~/ListarMedicos.aspx">Listar médicos</asp:HyperLink>
 
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                 <tr>
+                     <td class="auto-style9">&nbsp;</td>
+                     <td class="auto-style13">&nbsp;</td>
+                     <td class="auto-style5">&nbsp;</td>
+                     <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                 </tr>
+                 <tr>
+                     <td class="auto-style9">&nbsp;</td>
+                     <td class="auto-style13">&nbsp;</td>
+                     <td class="auto-style5">
+                         <asp:HyperLink ID="hlCrearUsuarioMedico" runat="server" ForeColor="Blue" NavigateUrl="~/CrearUsuarioMedico.aspx">Crear usuario médico</asp:HyperLink>
+                     </td>
+                     <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                 </tr>
             </table>
             <br />
 

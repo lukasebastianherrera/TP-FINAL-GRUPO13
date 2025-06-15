@@ -20,7 +20,7 @@
             height: 50px;
         }
         .auto-style6 {
-            width: 284px;
+            width: 318px;
             height: 50px;
         }
         .auto-style10 {
@@ -31,7 +31,7 @@
             height: 70px;
         }
         .auto-style12 {
-            width: 284px;
+            width: 318px;
             height: 70px;
             font-weight: bold;
             font-size: 35pt;
@@ -44,7 +44,7 @@
             height: 20px;
         }
         .auto-style15 {
-            width: 284px;
+            width: 318px;
             height: 20px;
         }
         .auto-style16 {
@@ -55,7 +55,7 @@
             height: 30px;
         }
         .auto-style18 {
-            width: 284px;
+            width: 318px;
             height: 30px;
         }
         .auto-style19 {
@@ -77,6 +77,22 @@
         .auto-style23 {
             height: 381px;
         }
+        .auto-style24 {
+            height: 30px;
+            width: 400px;
+        }
+        .auto-style25 {
+            height: 70px;
+            width: 400px;
+        }
+        .auto-style26 {
+            height: 20px;
+            width: 400px;
+        }
+        .auto-style27 {
+            height: 50px;
+            width: 400px;
+        }
     </style>
 </head>
 <body>
@@ -84,29 +100,30 @@
         <div>
                 <table class="auto-style1">
                     <tr>
-                        <td class="auto-style16"></td>
+                        <td class="auto-style24"></td>
                         <td class="auto-style17"></td>
                         <td class="auto-style18"></td>
                         <td class="auto-style19"></td>
                         <td class="auto-style16"></td>
                     </tr>
                     <tr>
-                        <td class="auto-style10"></td>
+                        <td class="auto-style25"></td>
                         <td class="auto-style11"></td>
                         <td class="auto-style12">
-                            Bienvenido</td>
+                            <asp:Label ID="lblBienvenido" runat="server" Font-Size="XX-Large" Text="Bienvenido"></asp:Label>
+                        </td>
                         <td class="auto-style20"></td>
                         <td class="auto-style10"></td>
                     </tr>
                     <tr>
-                        <td class="auto-style13"></td>
+                        <td class="auto-style26"></td>
                         <td class="auto-style14"></td>
                         <td class="auto-style15">Por favor, inicie sesión:</td>
                         <td class="auto-style21"></td>
                         <td class="auto-style13"></td>
                     </tr>
                     <tr>
-                        <td class="auto-style4"></td>
+                        <td class="auto-style27"></td>
                         <td class="auto-style5">Usuario:</td>
                         <td class="auto-style6">
                             <asp:TextBox ID="txtb_usuario" runat="server"></asp:TextBox>
@@ -115,7 +132,7 @@
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
-                        <td class="auto-style4"></td>
+                        <td class="auto-style27"></td>
                         <td class="auto-style5">Contraseña:</td>
                         <td class="auto-style6">
                             <asp:TextBox ID="txtb_contrasenia" runat="server"></asp:TextBox>
@@ -124,7 +141,7 @@
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
-                        <td class="auto-style4"></td>
+                        <td class="auto-style27"></td>
                         <td class="auto-style5">&nbsp;</td>
                         <td class="auto-style6">
                             <asp:DropDownList ID="DropDownList1" runat="server">
@@ -138,7 +155,7 @@
                         <td class="auto-style4"></td>
                     </tr>
                      <tr>
-     <td class="auto-style16"></td>
+     <td class="auto-style24"></td>
      <td class="auto-style17"></td>
      <td class="auto-style18">
                             <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" />

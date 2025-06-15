@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificarPaciente.aspx.cs" Inherits="Vistas.ModificarPaciente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListarMedicos.aspx.cs" Inherits="Vistas.ListarMedicos" %>
 
 <!DOCTYPE html>
 
@@ -36,7 +36,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>
-                        <asp:Label ID="lblModificar" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Modificar Paciente"></asp:Label>
+                        <asp:Label ID="lblListarMedicos" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Listar Médicos"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

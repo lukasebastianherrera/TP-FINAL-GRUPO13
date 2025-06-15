@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class ABMLmedicos
+    public partial class ABLMedicos
     {
 
         /// <summary>
@@ -24,75 +24,66 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control TxtLegajo.
+        /// Control lblAdministrador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtLegajo;
+        protected global::System.Web.UI.WebControls.Label lblAdministrador;
 
         /// <summary>
-        /// Control TxtDNI.
+        /// Control lblMedicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtDNI;
+        protected global::System.Web.UI.WebControls.Label lblMedicos;
 
         /// <summary>
-        /// Control DropDownList3.
+        /// Control hlAñadirMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.HyperLink hlAñadirMedico;
 
         /// <summary>
-        /// Control TxtNombre.
+        /// Control hlBajaMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
+        protected global::System.Web.UI.WebControls.HyperLink hlBajaMedico;
 
         /// <summary>
-        /// Control TxtApellido.
+        /// Control hlModificarMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtApellido;
+        protected global::System.Web.UI.WebControls.HyperLink hlModificarMedico;
 
         /// <summary>
-        /// Control DdlNacionalidad.
+        /// Control hlListarMedicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlNacionalidad;
+        protected global::System.Web.UI.WebControls.HyperLink hlListarMedicos;
 
         /// <summary>
-        /// Control DdlEspecialidad.
+        /// Control hlCrearUsuarioMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlEspecialidad;
-
-        /// <summary>
-        /// Control btnGuardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.HyperLink hlCrearUsuarioMedico;
     }
 }

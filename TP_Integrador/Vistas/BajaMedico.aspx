@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BajaPaciente.aspx.cs" Inherits="Vistas.BajaPaciente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BajaMedico.aspx.cs" Inherits="Vistas.BajaMedico" %>
 
 <!DOCTYPE html>
 
@@ -17,10 +17,10 @@
             width: 152px;
         }
         .auto-style4 {
-            width: 411px;
+            width: 399px;
         }
         .auto-style5 {
-            width: 538px;
+            width: 520px;
         }
     </style>
 </head>
@@ -43,7 +43,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:Label ID="lblEliminarPaciente" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Paciente"></asp:Label>
+                        <asp:Label ID="lblEliminarMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Médico"></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -60,7 +60,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:Label ID="lblDNI" runat="server" Text="DNI del Paciente:"></asp:Label>
+                        <asp:Label ID="lblIdMedico" runat="server" Text="Id del Médico:"></asp:Label>
                     </td>
                     <td class="auto-style4"> 
             <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
@@ -84,14 +84,14 @@
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
                     </td>
                     <td class="auto-style5">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                        <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnAtras" runat="server" PostBackUrl="~/ABMLPacientes.aspx" Text="Atrás" />
+                        <asp:Button ID="btnAtras" runat="server" PostBackUrl="~/ABLMedicos.aspx" Text="Atrás" />
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
