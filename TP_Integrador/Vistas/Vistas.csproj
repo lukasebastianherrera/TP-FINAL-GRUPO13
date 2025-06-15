@@ -68,9 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ABMLmedicos.aspx" />
+    <Content Include="ABMLPacientes.aspx" />
+    <Content Include="AltaPaciente.aspx" />
     <Content Include="AsignacionTurnos.aspx" />
+    <Content Include="BajaPaciente.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="ListarPaciente.aspx" />
     <Content Include="Login Medico.aspx" />
+    <Content Include="ModificarPaciente.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,12 +86,33 @@
     <Compile Include="ABMLmedicos.aspx.designer.cs">
       <DependentUpon>ABMLmedicos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ABMLPacientes.aspx.cs">
+      <DependentUpon>ABMLPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMLPacientes.aspx.designer.cs">
+      <DependentUpon>ABMLPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaPaciente.aspx.cs">
+      <DependentUpon>AltaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaPaciente.aspx.designer.cs">
+      <DependentUpon>AltaPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AsignacionTurnos.aspx.cs">
       <DependentUpon>AsignacionTurnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AsignacionTurnos.aspx.designer.cs">
       <DependentUpon>AsignacionTurnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BajaPaciente.aspx.cs">
+      <DependentUpon>BajaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BajaPaciente.aspx.designer.cs">
+      <DependentUpon>BajaPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -95,12 +121,26 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListarPaciente.aspx.cs">
+      <DependentUpon>ListarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPaciente.aspx.designer.cs">
+      <DependentUpon>ListarPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login Medico.aspx.cs">
       <DependentUpon>Login Medico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login Medico.aspx.designer.cs">
       <DependentUpon>Login Medico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarPaciente.aspx.cs">
+      <DependentUpon>ModificarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarPaciente.aspx.designer.cs">
+      <DependentUpon>ModificarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
