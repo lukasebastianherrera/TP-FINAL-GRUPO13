@@ -81,8 +81,7 @@
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style27">&nbsp;</td>
                                 <td>
-                                    <asp:Label ID="lblAdministrador" runat="server" Font-Size="Medium"></asp:Label>
-                                </td>
+                                    &nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
@@ -91,7 +90,9 @@
                                 <td class="auto-style27">
                                     <asp:Label ID="lblAnadirPaciente" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Añadir Paciente"></asp:Label>
                                 </td>
-                                <td>&nbsp;</td>
+                                <td>
+                                    <asp:Label ID="lblAdministrador" runat="server" Font-Size="Medium">NombreAdmin</asp:Label>
+                                </td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>

@@ -35,18 +35,21 @@
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>
-                        <asp:Label ID="lblAdministrador" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/ABLMedicos.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:Label ID="lblEliminarMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Médico"></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblAdministrador" runat="server">NombreAdmin</asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>

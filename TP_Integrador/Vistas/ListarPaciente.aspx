@@ -35,11 +35,11 @@
             width: 130px;
         }
         .auto-style9 {
-            width: 51px;
+            width: 445px;
         }
         .auto-style10 {
             height: 23px;
-            width: 51px;
+            width: 445px;
         }
     </style>
 </head>
@@ -49,23 +49,25 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="hlAtras" runat="server" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td>
-                        <asp:Label ID="lblAdministrador" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:HyperLink ID="hlAtras" runat="server" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
+                    </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">
                         <asp:Label ID="lblListarPacientes" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Listar Pacientes"></asp:Label>
                     </td>
                     <td class="auto-style9">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblAdministrador" runat="server">NombreAdmin</asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>

@@ -75,17 +75,20 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>
-                        <asp:Label ID="lblAdministrador" runat="server" Font-Bold="False" Font-Size="Medium"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">&nbsp;</td>
+                    <td class="auto-style9">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/AdminMenu.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
-                        <asp:Label ID="lblMedicos" runat="server" Font-Bold="True" Text="ABLM Médicos" Font-Size="XX-Large"></asp:Label>
+                        <asp:Label ID="lblMedicos" runat="server" Font-Bold="True" Text="ABML Médicos" Font-Size="XX-Large"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblAdministrador" runat="server" Font-Bold="False" Font-Size="Medium">NombreAdmin</asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

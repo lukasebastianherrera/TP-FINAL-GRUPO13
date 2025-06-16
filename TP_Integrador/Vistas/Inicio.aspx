@@ -158,7 +158,7 @@
      <td class="auto-style24"></td>
      <td class="auto-style17"></td>
      <td class="auto-style18">
-                            <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" />
+                            <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" OnClick="btn_iniciar_Click" />
                          </td>
      <td class="auto-style19"></td>
      <td class="auto-style16"></td>

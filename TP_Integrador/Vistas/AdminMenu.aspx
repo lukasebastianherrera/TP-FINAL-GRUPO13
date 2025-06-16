@@ -76,12 +76,13 @@
          <td class="auto-style9">&nbsp;</td>
          <td class="auto-style5">&nbsp;</td>
          <td class="auto-style16">
-             <asp:Label ID="lblAdministrador" runat="server" Font-Bold="False" Font-Size="Medium"></asp:Label>
-         </td>
+             &nbsp;</td>
          <td class="auto-style10">&nbsp;</td>
      </tr>
      <tr>
-         <td class="auto-style15">&nbsp;</td>
+         <td class="auto-style15">
+             <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Inicio.aspx">Volver al Inicio</asp:HyperLink>
+         </td>
          <td class="auto-style9">&nbsp;
              <br />
              <br />
@@ -92,7 +93,9 @@
              <asp:Label ID="lblPacientes" runat="server" Font-Bold="True" Text="Menú Adminstradores" Font-Size="XX-Large"></asp:Label>
          </td>
          <td class="auto-style16">&nbsp;</td>
-         <td class="auto-style10">&nbsp;</td>
+         <td class="auto-style10">
+             <asp:Label ID="lblAdministrador" runat="server" Font-Bold="False" Font-Size="Medium">AdminNombre</asp:Label>
+         </td>
      </tr>
      <tr>
          <td class="auto-style12"></td>
@@ -124,7 +127,7 @@
          <td class="auto-style19"></td>
          <td class="auto-style20">
 
- <asp:HyperLink ID="hlABMLMedicos" runat="server" NavigateUrl="~/ABMLMedicos.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">ABML Médicos</asp:HyperLink>
+ <asp:HyperLink ID="hlABMLMedicos" runat="server" NavigateUrl="~/ABLMedicos.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">ABML Médicos</asp:HyperLink>
 
          </td>
          <td class="auto-style21"></td>

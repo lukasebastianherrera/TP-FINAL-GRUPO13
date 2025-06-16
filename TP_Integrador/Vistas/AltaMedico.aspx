@@ -96,17 +96,20 @@
                                 <td class="auto-style24">&nbsp;</td>
                                 <td class="auto-style25">&nbsp;</td>
                                 <td>
-                                    <asp:Label ID="lblAdministrador" runat="server" Font-Size="Medium"></asp:Label>
-                                </td>
+                                    &nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style23">&nbsp;</td>
+                                <td class="auto-style23">
+                                    <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/ABLMedicos.aspx">Volver</asp:HyperLink>
+                                </td>
                                 <td class="auto-style24">&nbsp;</td>
                                 <td class="auto-style25">
                                     <asp:Label ID="lblAltaMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Añadir Médico"></asp:Label>
                                 </td>
-                                <td>&nbsp;</td>
+                                <td>
+                                    <asp:Label ID="lblAdministrador" runat="server" Font-Size="Medium">NombreAdmin</asp:Label>
+                                </td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>

@@ -31,17 +31,20 @@
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>
-                        <asp:Label ID="lblAdministrador" runat="server"></asp:Label>
-                        </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/AdminMenu.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style5">
                         <asp:Label ID="lblAsignacionTurnos" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Asignación de Turnos"></asp:Label>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblAdministrador" runat="server">NombreAdmin</asp:Label>
+                        </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
