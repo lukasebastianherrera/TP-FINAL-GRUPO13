@@ -27,7 +27,7 @@
             width: 309px;
         }
         .auto-style27 {
-            width: 850px;
+            width: 921px;
         }
         .auto-style28 {
             width: 50px;
@@ -76,7 +76,7 @@
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style25">
-                                    <asp:HyperLink ID="hlAtras" runat="server" Font-Size="Medium" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
+                                    <asp:HyperLink ID="hlVolver" runat="server" Font-Size="Medium" NavigateUrl="~/ABMLPacientes.aspx" ForeColor="Blue">Volver</asp:HyperLink>
                                 </td>
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style27">&nbsp;</td>

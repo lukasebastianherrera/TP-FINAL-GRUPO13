@@ -34,14 +34,11 @@
             width: 121px;
             height: 29px;
         }
-        .auto-style23 {
-            width: 222px;
-        }
         .auto-style24 {
             width: 309px;
         }
         .auto-style25 {
-            width: 850px;
+            width: 774px;
         }
         .auto-style26 {
             width: 100px;
@@ -82,6 +79,9 @@
         .auto-style43 {
             width: 400px;
         }
+        .auto-style44 {
+            width: 313px;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +92,9 @@
                     <td >
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style23">&nbsp;</td>
+                                <td class="auto-style44">
+                                    <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/ABLMedicos.aspx" ForeColor="Blue">Volver</asp:HyperLink>
+                                </td>
                                 <td class="auto-style24">&nbsp;</td>
                                 <td class="auto-style25">&nbsp;</td>
                                 <td>
@@ -100,9 +102,8 @@
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style23">
-                                    <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/ABLMedicos.aspx">Volver</asp:HyperLink>
-                                </td>
+                                <td class="auto-style44">
+                                    &nbsp;</td>
                                 <td class="auto-style24">&nbsp;</td>
                                 <td class="auto-style25">
                                     <asp:Label ID="lblAltaMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Añadir Médico"></asp:Label>
@@ -113,7 +114,7 @@
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style23">&nbsp;</td>
+                                <td class="auto-style44">&nbsp;</td>
                                 <td class="auto-style24">&nbsp;</td>
                                 <td class="auto-style25">&nbsp;</td>
                                 <td>&nbsp;</td>
@@ -374,8 +375,7 @@
                             <tr>
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style42">
-                        <asp:Button ID="btnAtras0" runat="server" PostBackUrl="~/ABLMedicos.aspx" Text="Atrás" />
-                                </td>
+                                    &nbsp;</td>
                                 <td class="auto-style43">&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>

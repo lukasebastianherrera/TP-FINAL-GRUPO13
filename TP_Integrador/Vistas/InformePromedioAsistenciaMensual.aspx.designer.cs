@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class ListarPaciente
+    public partial class PromedioAsistenciaMensual
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlVolver;
 
         /// <summary>
-        /// Control lblListarPacientes.
+        /// Control lblPromedioMensual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListarPacientes;
+        protected global::System.Web.UI.WebControls.Label lblPromedioMensual;
 
         /// <summary>
         /// Control lblAdministrador.
@@ -51,48 +51,39 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblAdministrador;
 
         /// <summary>
-        /// Control lblDniPaciente.
+        /// Control lblMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDniPaciente;
+        protected global::System.Web.UI.WebControls.Label lblMes;
 
         /// <summary>
-        /// Control txtDni.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDni;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
-        /// Control btnFiltrar.
+        /// Control btnGenerarInforme.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltrar;
+        protected global::System.Web.UI.WebControls.Button btnGenerarInforme;
 
         /// <summary>
-        /// Control btnMostrarTodos.
+        /// Control lblInforme.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
-
-        /// <summary>
-        /// Control gvPacientes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPacientes;
+        protected global::System.Web.UI.WebControls.Label lblInforme;
     }
 }

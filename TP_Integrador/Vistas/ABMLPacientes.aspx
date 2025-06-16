@@ -20,59 +20,45 @@
             height: 21px;
         }
         .auto-style5 {
-            width: 1169px;
+            width: 765px;
         }
         .auto-style6 {
             height: 22px;
-            width: 1169px;
+            width: 765px;
         }
         .auto-style7 {
             height: 29px;
-            width: 1169px;
+            width: 765px;
         }
         .auto-style8 {
             height: 21px;
-            width: 1169px;
+            width: 765px;
         }
         .auto-style9 {
-            width: 300px;
+            width: 400px;
         }
         .auto-style10 {
             height: 22px;
-            width: 300px;
+            width: 400px;
         }
         .auto-style11 {
             height: 29px;
-            width: 300px;
+            width: 400px;
         }
         .auto-style12 {
             height: 21px;
-            width: 300px;
+            width: 400px;
         }
-        .auto-style13 {
-            width: 100px;
-        }
-        .auto-style14 {
-            height: 22px;
-            width: 100px;
-        }
-        .auto-style15 {
-            height: 29px;
-            width: 100px;
-        }
-        .auto-style16 {
-            height: 21px;
-            width: 100px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style9">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/AdminMenu.aspx" ForeColor="Blue">Volver</asp:HyperLink>
+                    </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>
                         &nbsp;</td>
@@ -80,9 +66,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/AdminMenu.aspx">Volver</asp:HyperLink>
-                    </td>
-                    <td class="auto-style13">&nbsp;</td>
+                        &nbsp;</td>
                     <td class="auto-style5">
                         <asp:Label ID="lblPacientes" runat="server" Font-Bold="True" Text="ABML Pacientes" Font-Size="XX-Large"></asp:Label>
                     </td>
@@ -93,15 +77,15 @@
                 </tr>
                 <tr>
                     <td class="auto-style10"></td>
-                    <td class="auto-style14"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td class="auto-style15"></td>
                     <td class="auto-style7">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <asp:HyperLink ID="hlAñadirPaciente" runat="server" NavigateUrl="~/AltaPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Añadir nuevo paciente</asp:HyperLink>
 
@@ -111,15 +95,15 @@
                 </tr>
                 <tr>
                     <td class="auto-style12"></td>
-                    <td class="auto-style16"></td>
                     <td class="auto-style8"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <asp:HyperLink ID="hlBajaPaciente" runat="server" NavigateUrl="~/BajaPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Eliminar paciente</asp:HyperLink>
 
@@ -129,15 +113,15 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <asp:HyperLink ID="hlModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Modificar Paciente</asp:HyperLink>
 
@@ -147,15 +131,15 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style5">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <asp:HyperLink ID="hlListarPacientes" runat="server" NavigateUrl="~/ListarPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Listar pacientes</asp:HyperLink>
 

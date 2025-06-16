@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Vistas
 {
-    public partial class AdminMenu : System.Web.UI.Page
+    public partial class InformeTurnosEspecialidad : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

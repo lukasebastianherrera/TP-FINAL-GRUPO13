@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class ListarPaciente
+    public partial class InformeAsistenciaGeneral
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlVolver;
 
         /// <summary>
-        /// Control lblListarPacientes.
+        /// Control lblAsistencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListarPacientes;
+        protected global::System.Web.UI.WebControls.Label lblAsistencia;
 
         /// <summary>
         /// Control lblAdministrador.
@@ -51,48 +51,75 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblAdministrador;
 
         /// <summary>
-        /// Control lblDniPaciente.
+        /// Control lblDesde.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDniPaciente;
+        protected global::System.Web.UI.WebControls.Label lblDesde;
 
         /// <summary>
-        /// Control txtDni.
+        /// Control ddlMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDni;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMes;
 
         /// <summary>
-        /// Control btnFiltrar.
+        /// Control ddlAño.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltrar;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAño;
 
         /// <summary>
-        /// Control btnMostrarTodos.
+        /// Control lblHasta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
+        protected global::System.Web.UI.WebControls.Label lblHasta;
 
         /// <summary>
-        /// Control gvPacientes.
+        /// Control ddlMes0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPacientes;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMes0;
+
+        /// <summary>
+        /// Control ddlAño0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAño0;
+
+        /// <summary>
+        /// Control btnGenerarInforme.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGenerarInforme;
+
+        /// <summary>
+        /// Control lblInforme.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInforme;
     }
 }

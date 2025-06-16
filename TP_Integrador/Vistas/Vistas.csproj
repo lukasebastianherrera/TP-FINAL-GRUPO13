@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ABLMedicos.aspx" />
+    <Content Include="AdminMenu.aspx" />
     <Content Include="AltaMedico.aspx" />
     <Content Include="ABMLPacientes.aspx" />
     <Content Include="AltaPaciente.aspx" />
@@ -75,16 +76,16 @@
     <Content Include="BajaMedico.aspx" />
     <Content Include="BajaPaciente.aspx" />
     <Content Include="CrearUsuarioMedico.aspx" />
+    <Content Include="InformeAsistenciaGeneral.aspx" />
+    <Content Include="InformeTurnosEspecialidad.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="ListarMedicos.aspx" />
     <Content Include="ListarPaciente.aspx" />
     <Content Include="ModificarMedico.aspx" />
     <Content Include="ModificarPaciente.aspx" />
+    <Content Include="InformePromedioAsistenciaMensual.aspx" />
     <Content Include="VistaMedico.aspx" />
     <Content Include="Web.config" />
-    <Content Include="AdminMenu.aspx">
-      <BrowseToURL>~/AdminMenu.aspx</BrowseToURL>
-    </Content>
     <Content Include="Informes.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="ABLMedicos.aspx.designer.cs">
       <DependentUpon>ABLMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu.aspx.cs">
+      <DependentUpon>AdminMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMenu.aspx.designer.cs">
+      <DependentUpon>AdminMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="AltaMedico.aspx.cs">
       <DependentUpon>AltaMedico.aspx</DependentUpon>
@@ -144,6 +152,20 @@
     <Compile Include="CrearUsuarioMedico.aspx.designer.cs">
       <DependentUpon>CrearUsuarioMedico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InformeAsistenciaGeneral.aspx.cs">
+      <DependentUpon>InformeAsistenciaGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformeAsistenciaGeneral.aspx.designer.cs">
+      <DependentUpon>InformeAsistenciaGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InformeTurnosEspecialidad.aspx.cs">
+      <DependentUpon>InformeTurnosEspecialidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformeTurnosEspecialidad.aspx.designer.cs">
+      <DependentUpon>InformeTurnosEspecialidad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -179,14 +201,14 @@
     <Compile Include="ModificarPaciente.aspx.designer.cs">
       <DependentUpon>ModificarPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AdminMenu.aspx.cs">
-      <DependentUpon>AdminMenu.aspx</DependentUpon>
+    <Compile Include="InformePromedioAsistenciaMensual.aspx.cs">
+      <DependentUpon>InformePromedioAsistenciaMensual.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminMenu.aspx.designer.cs">
-      <DependentUpon>AdminMenu.aspx</DependentUpon>
+    <Compile Include="InformePromedioAsistenciaMensual.aspx.designer.cs">
+      <DependentUpon>InformePromedioAsistenciaMensual.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Informes.aspx.cs">
       <DependentUpon>Informes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

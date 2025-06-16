@@ -11,19 +11,16 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 200px;
+            width: 400px;
         }
         .auto-style3 {
             width: 152px;
         }
         .auto-style4 {
-            width: 411px;
-        }
-        .auto-style5 {
-            width: 538px;
+            width: 333px;
         }
         .auto-style6 {
-            width: 200px;
+            width: 400px;
             height: 42px;
         }
         .auto-style7 {
@@ -34,11 +31,14 @@
             height: 42px;
         }
         .auto-style9 {
-            width: 411px;
+            width: 333px;
             height: 42px;
         }
-        .auto-style10 {
-            width: 538px;
+        .auto-style13 {
+            width: 348px;
+        }
+        .auto-style14 {
+            width: 348px;
             height: 42px;
         }
     </style>
@@ -49,77 +49,93 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="hlAtras" runat="server" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
+            <asp:HyperLink ID="hlVolver" runat="server" Font-Size="Medium" NavigateUrl="~/ABMLPacientes.aspx" ForeColor="Blue">Volver</asp:HyperLink>
                     </td>
-                    <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:Label ID="lblEliminarPaciente" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Paciente"></asp:Label>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>
                         <asp:Label ID="lblAdministrador" runat="server">NombreAdmin</asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6"></td>
-                    <td class="auto-style7"></td>
                     <td class="auto-style8">
                         <asp:Label ID="lblDNI" runat="server" Text="DNI del Paciente:"></asp:Label>
                     </td>
                     <td class="auto-style9"> 
             <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
                     </td>
-                    <td class="auto-style10"></td>
+                    <td class="auto-style14">
+             <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar" />  
+                    </td>
                     <td class="auto-style7"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:GridView ID="GridView1" runat="server">
                         </asp:GridView>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
                     </td>
-                    <td class="auto-style5">
+                    <td class="auto-style13">
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
