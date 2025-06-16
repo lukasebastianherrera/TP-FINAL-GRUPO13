@@ -6,75 +6,46 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 200px;
-        }
-        .auto-style3 {
-            width: 248px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
-        <div >
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>
-                        <asp:Label ID="lblAdministrador" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>
-                        <asp:Label ID="lblModificar" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Modificar Paciente"></asp:Label>
-                    </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
+        <div style="font-weight: bold; font-size: xx-large" >
+           
+            &nbsp;
+            <asp:HyperLink ID="hlAtras" runat="server" Font-Size="Medium" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+           
+            Modificar Paciente</div> <br />
+        <div>
+
+        </div> <br />
+         <div>
+
+        </div> <br />
+         <div>
+        <div>
+
+        </div> 
+        </div> 
+         <div>
+
+             Buscar paciente:&nbsp;&nbsp;&nbsp;
+             <asp:TextBox ID="txtPaciente" runat="server" placeholder = " Ingrese DNI"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+             <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />  <br />
+
+        </div>
+         <div>
+
+        </div>
+         <div>
+
+        </div>
+         <div>
+
+             <asp:GridView ID="gvPacientes" runat="server">
+             </asp:GridView>
+
         </div>
     </form>
 </body>

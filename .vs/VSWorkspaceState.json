@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TP_Integrador",
+    "\\TP_Integrador\\Vistas"
   ],
+  "SelectedNode": "\\TP_Integrador\\Vistas\\ModificarPaciente.aspx",
   "PreviewInSolutionExplorer": false
 }

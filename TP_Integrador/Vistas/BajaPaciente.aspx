@@ -22,6 +22,25 @@
         .auto-style5 {
             width: 538px;
         }
+        .auto-style6 {
+            width: 200px;
+            height: 42px;
+        }
+        .auto-style7 {
+            height: 42px;
+        }
+        .auto-style8 {
+            width: 152px;
+            height: 42px;
+        }
+        .auto-style9 {
+            width: 411px;
+            height: 42px;
+        }
+        .auto-style10 {
+            width: 538px;
+            height: 42px;
+        }
     </style>
 </head>
 <body>
@@ -29,7 +48,9 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:HyperLink ID="hlAtras" runat="server" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
@@ -57,22 +78,25 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style6"></td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8">
                         <asp:Label ID="lblDNI" runat="server" Text="DNI del Paciente:"></asp:Label>
                     </td>
-                    <td class="auto-style4"> 
+                    <td class="auto-style9"> 
             <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style7"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:GridView ID="GridView1" runat="server">
+                        </asp:GridView>
+                    </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -91,8 +115,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnAtras" runat="server" PostBackUrl="~/ABMLPacientes.aspx" Text="Atrás" />
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>

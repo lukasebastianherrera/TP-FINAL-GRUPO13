@@ -75,7 +75,9 @@
                     <td style="font-size: x-large">
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style25">&nbsp;</td>
+                                <td class="auto-style25">
+                                    <asp:HyperLink ID="hlAtras" runat="server" Font-Size="Medium" NavigateUrl="~/ABMLPacientes.aspx">Atrás</asp:HyperLink>
+                                </td>
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style27">&nbsp;</td>
                                 <td>
@@ -284,9 +286,7 @@
                                  <td class="auto-style29">&nbsp;</td>
                                  <td class="auto-style11">
 
-            <asp:Button ID="btnAtras" runat="server" PostBackUrl="~/ABMLPacientes.aspx" Text="Atrás" />
-
-                                 </td>
+                                     &nbsp;</td>
                                  <td class="auto-style12">
                                      &nbsp;</td>
                                  <td class="auto-style28">&nbsp;</td>
@@ -308,6 +308,4 @@
         </div>
     </form>
 </body>
-</html>
-
 </html>
