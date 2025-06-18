@@ -8,31 +8,29 @@ namespace Entidades
 {
     public class Persona
     {
-        public string DNI;
-        private string Nombre;
-        private string Apellido;
-        private char Sexo;
-        private string Nacionalidad;
-        private string FechaDeNacimiento;
-        private string CorreoElectronico;
-        private string Telefono;
-        private string Direccion;
-        private int Id_Localidad;
+        private string dni;
+        private string nombre;
+        private string apellido;
+        private char sexo;
+        private string nacionalidad;
+        private string fechaDeNacimiento;
+        private string correoElectronico;
+        private string telefono;
+        private string direccion;
+        private int idLocalidad;
 
         public Persona() { }
 
-
-
-        public string DNI1 { get => DNI; set => DNI = value; }
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public string Apellido1 { get => Apellido; set => Apellido = value; }
-        public char Sexo1 { get => Sexo; set => Sexo = value; }
-        public string Nacionalidad1 { get => Nacionalidad; set => Nacionalidad = value; }
-        public string FechaDeNacimiento1 { get => FechaDeNacimiento; set => FechaDeNacimiento = value; }
-        public string CorreoElectronico1 { get => CorreoElectronico; set => CorreoElectronico = value; }
-        public string Telefono1 { get => Telefono; set => Telefono = value; }
-        public string Direccion1 { get => Direccion; set => Direccion = value; }
-        public int IdLocalidad { get => Id_Localidad; set => Id_Localidad = value; }
+        public string Dni { get => dni; set => dni = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public char Sexo { get => sexo; set => sexo = value; }
+        public string Nacionalidad { get => nacionalidad; set => nacionalidad = value; }
+        public string FechaDeNacimiento { get => fechaDeNacimiento; set => fechaDeNacimiento = value; }
+        public string CorreoElectronico { get => correoElectronico; set => correoElectronico = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public int IdLocalidad { get => idLocalidad; set => idLocalidad = value; }
     }
 
 }
