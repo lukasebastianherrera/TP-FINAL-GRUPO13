@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Administrador : Persona
+    internal class Paciente : Persona
     {
-        private int id_administrador;
+        private int id_paciente;
         private bool estado;
 
-        public Administrador() { }
+        public Paciente() { }
 
-        public int Id_administrador { get => id_administrador; set => id_administrador = value; }
+        public int Id_paciente { get => id_paciente; set => id_paciente = value; }
         public bool Estado { get => estado; set => estado = value; }
     }
 }
