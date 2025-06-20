@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Medico : Persona
+    public class Medico : Persona
     {
         private int id_medico;
         private int id_especialidad;

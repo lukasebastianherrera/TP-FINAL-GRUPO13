@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class HorarioMedico
+    public class HorarioMedico
     {
         private int id_horario;
         private int id_medico;

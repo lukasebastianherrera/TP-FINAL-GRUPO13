@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Provincia
+    public class Provincia
     {
         private int id_provincia;
         private string nombre_provincia;

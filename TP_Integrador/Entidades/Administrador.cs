@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Administrador : Persona
+    public class Administrador : Persona
     {
         private int id_administrador;
         private bool estado;

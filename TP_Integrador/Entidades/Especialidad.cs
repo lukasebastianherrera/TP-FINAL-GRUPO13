@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Especialidad
+    public class Especialidad
     {
         private int id_especialidad;
         private string nombre_especialidad;

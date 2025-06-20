@@ -1,0 +1,6 @@
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Entidades\bin\Debug\Entidades.dll
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Entidades\bin\Debug\Entidades.pdb
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.dll
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.pdb

@@ -1,0 +1,9 @@
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\bin\Debug\Datos.dll
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\bin\Debug\Datos.pdb
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\bin\Debug\Entidades.dll
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\bin\Debug\Entidades.pdb
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.csproj.Up2Date
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.dll
+D:\Documentos\Escritorio\UTN\4to Cuatrimestre\Programación III\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.pdb

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Paciente : Persona
+    public class Paciente : Persona
     {
         private int id_paciente;
         private bool estado;
