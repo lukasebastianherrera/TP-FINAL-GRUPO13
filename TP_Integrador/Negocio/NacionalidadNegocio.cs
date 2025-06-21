@@ -15,7 +15,7 @@ namespace Negocio
         private DatosNacionalidad datos = new DatosNacionalidad();
 
         public NacionalidadNegocio() { }
-
+        z
         public Nacionalidad[] ObtenerNacionalidades()
         {
             DataTable tabla = datos.ObtenerNacionalidades();

@@ -46,7 +46,6 @@
     <Compile Include="HorarioMedico.cs" />
     <Compile Include="Localidad.cs" />
     <Compile Include="Medico.cs" />
-    <Compile Include="Nacionalidad.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
