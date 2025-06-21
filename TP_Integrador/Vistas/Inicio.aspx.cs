@@ -11,16 +11,16 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void btn_iniciar_Click(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedIndex == 1)
+            if (DDLTipoUsuario.SelectedIndex == 1)
             {
                 Response.Redirect("VistaMedico.aspx");
             }
-            else if (DropDownList1.SelectedIndex == 2)
+            else if (DDLTipoUsuario.SelectedIndex == 2)
             {
                 Response.Redirect("AdminMenu.aspx");
             }

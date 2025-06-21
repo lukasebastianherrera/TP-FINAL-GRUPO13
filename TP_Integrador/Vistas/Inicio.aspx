@@ -128,7 +128,9 @@
                         <td class="auto-style6">
                             <asp:TextBox ID="txtb_usuario" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style22">&nbsp;</td>
+                        <td class="auto-style22">
+                            <asp:RequiredFieldValidator ID="RFVUsuario" runat="server" ControlToValidate="txtb_usuario" ErrorMessage="* Ingresar un Usuario" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        </td>
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
@@ -137,28 +139,31 @@
                         <td class="auto-style6">
                             <asp:TextBox ID="txtb_contrasenia" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style22"></td>
+                        <td class="auto-style22">
+                            <asp:RequiredFieldValidator ID="RFVContraseña" runat="server" ControlToValidate="txtb_contrasenia" ErrorMessage="* Ingresar una contraseña" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        </td>
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
                         <td class="auto-style27"></td>
                         <td class="auto-style5">&nbsp;</td>
                         <td class="auto-style6">
-                            <asp:DropDownList ID="DropDownList1" runat="server">
-                                <asp:ListItem Value="0">Seleccione tipo de usuario</asp:ListItem>
+                            <asp:DropDownList ID="DDLTipoUsuario" runat="server">
+                                <asp:ListItem Value="">Seleccione tipo de usuario</asp:ListItem>
                                 <asp:ListItem Value="1">Medico/a</asp:ListItem>
                                 <asp:ListItem Value="2">Administrador/a</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td class="auto-style22">
-                            &nbsp;</td>
+                            <asp:RequiredFieldValidator ID="RFVTipoUsuario" runat="server" ErrorMessage="* Seleccione un tipo de Usuario" ValidationGroup="Grupo1" ControlToValidate="DDLTipoUsuario"></asp:RequiredFieldValidator>
+                        </td>
                         <td class="auto-style4"></td>
                     </tr>
                      <tr>
      <td class="auto-style24"></td>
      <td class="auto-style17"></td>
      <td class="auto-style18">
-                            <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" OnClick="btn_iniciar_Click" />
+                            <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" OnClick="btn_iniciar_Click" ValidationGroup="Grupo1" />
                          </td>
      <td class="auto-style19"></td>
      <td class="auto-style16"></td>
