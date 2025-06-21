@@ -10,3 +10,9 @@ E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Entidades\ob
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.dll
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Entidades\bin\Debug\Entidades.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Entidades\bin\Debug\Entidades.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Entidades\obj\Debug\Entidades.pdb

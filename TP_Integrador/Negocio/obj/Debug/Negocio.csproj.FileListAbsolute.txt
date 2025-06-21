@@ -31,3 +31,7 @@ E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Datos.pdb
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Entidades.pdb
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.pdb

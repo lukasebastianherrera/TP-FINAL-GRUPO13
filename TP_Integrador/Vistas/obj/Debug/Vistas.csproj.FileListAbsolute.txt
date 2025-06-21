@@ -547,3 +547,7 @@ E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Vistas\bin\N
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Vistas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Vistas\bin\Datos.pdb
 E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Vistas\obj\Debug\Vistas.csproj.CopyComplete
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Vistas\obj\Debug\Vistas.csproj.AssemblyReference.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Vistas\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Vistas\obj\Debug\Vistas.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL_GRUPO 13\TP_Integrador\Vistas\obj\Debug\Vistas.pdb
