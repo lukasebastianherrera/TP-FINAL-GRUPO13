@@ -553,3 +553,9 @@ C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13\TP_Integrador\Vistas\b
 C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.pdb
 C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.pdb
 C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.pdb
+C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.dll
+C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.dll
+C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.dll
+C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.pdb
+C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.pdb
+C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.pdb

@@ -18,7 +18,7 @@ namespace Vistas
             if (!IsPostBack)
             {
                 CargarProvincias();
-               
+                CargarLocalidades();
             }
         }
 
@@ -34,6 +34,18 @@ namespace Vistas
             ddlProvincia.DataBind();
 
             ddlProvincia.Items.Insert(0, new ListItem("Seleccionar Provincia", "0"));
+        }
+        private void CargarLocalidades()
+        {
+            LocalidadNegocio locNeg = new LocalidadNegocio();
+            Localidad[] lista = locNeg.ObtenerLocalidades();
+
+            ddlLocalidad.DataSource = lista;
+            ddlLocalidad.DataTextField = "Nombre_localidad";
+            ddlLocalidad.DataValueField = "Id_localidad";
+            ddlLocalidad.DataBind();
+            // Insertar un elemento por defecto
+            ddlLocalidad.Items.Insert(0, new ListItem("Seleccionar Localidad", "0"));
         }
 
 
