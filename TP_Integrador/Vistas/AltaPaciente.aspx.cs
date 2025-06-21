@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,6 +17,7 @@ namespace Vistas
             if (!IsPostBack)
             {
                 CargarProvincias();
+                CargarNacionalidades();
             }
         }
 
@@ -32,7 +34,27 @@ namespace Vistas
 
             ddlProvincia.Items.Insert(0, new ListItem("Seleccionar Provincia", "0"));
         }
-       
+
+
+        private void CargarNacionalidades()
+        {
+            NacionalidadNegocio nacionalidadNegocio = new NacionalidadNegocio();
+
+            List<Nacionalidad> lista = nacionalidadNegocio.ObtenerNacionalidades();
+
+            DdlNacionalidad.DataSource = lista;
+            DdlNacionalidad.DataTextField = "NombreNacionalidad";
+            DdlNacionalidad.DataValueField = "IdNacionalidad";
+            DdlNacionalidad.DataBind();
+
+            DdlNacionalidad.Items.Insert(0, new ListItem("Seleccionar Nacionalidad", "0"));
+        }
+
+
+
+
+
+
 
         protected void ddlSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
