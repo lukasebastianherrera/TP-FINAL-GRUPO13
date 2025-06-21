@@ -18,7 +18,7 @@ namespace Vistas
             if (!IsPostBack)
             {
                 CargarProvincias();
-                CargarNacionalidades();
+               
             }
         }
 
@@ -37,28 +37,10 @@ namespace Vistas
         }
 
 
-        private void CargarNacionalidades()
-        {
-            NacionalidadNegocio nacionalidadNegocio = new NacionalidadNegocio();
-
-            Nacionalidad[] lista = nacionalidadNegocio.ObtenerNacionalidades();
-
-            DdlNacionalidad.DataSource = lista;
-            DdlNacionalidad.DataTextField = "NombreNacionalidad";
-            DdlNacionalidad.DataValueField = "IdNacionalidad";
-            DdlNacionalidad.DataBind();
-
-            DdlNacionalidad.Items.Insert(0, new ListItem("Seleccionar Nacionalidad", "0"));
-        }
-
-
-
-
-
-
 
         protected void ddlSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
+
 
         }
     }

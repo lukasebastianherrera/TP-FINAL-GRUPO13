@@ -65,6 +65,36 @@
         .auto-style37 {
             height: 38px;
         }
+        .auto-style38 {
+            height: 522px;
+        }
+        .auto-style39 {
+            width: 75px;
+            height: 31px;
+        }
+        .auto-style40 {
+            width: 118px;
+            height: 31px;
+        }
+        .auto-style41 {
+            width: 240px;
+            height: 31px;
+        }
+        .auto-style42 {
+            width: 50px;
+            height: 31px;
+        }
+        .auto-style43 {
+            width: 104px;
+            height: 31px;
+        }
+        .auto-style44 {
+            width: 192px;
+            height: 31px;
+        }
+        .auto-style45 {
+            height: 31px;
+        }
     </style>
 </head>
 <body>
@@ -72,7 +102,7 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td style="font-size: x-large">
+                    <td style="font-size: x-large" class="auto-style38">
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style25">
@@ -194,25 +224,25 @@
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style29">&nbsp;</td>
-                                <td class="auto-style11">
+                                <td class="auto-style39"></td>
+                                <td class="auto-style40">
         <asp:Label ID="lblEmail" runat="server" Text="E-mail:" Font-Bold="False" Font-Size="Medium"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style41">
         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Ingresar Correo"></asp:TextBox>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style19">
+                                <td class="auto-style42"></td>
+                                <td class="auto-style43">
         <asp:Label ID="lblCelular" runat="server" Text="Tel/Celular:" Font-Size="Medium"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style41">
         <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control" placeholder="Ingresar Celular"></asp:TextBox>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style30">
+                                <td class="auto-style42"></td>
+                                <td class="auto-style44">
         <asp:Label ID="lblDireccion" runat="server" Text="Dirección:" Font-Size="Medium"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style45">
         <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" placeholder="Ingresar Direccion"></asp:TextBox>
                                 </td>
                             </tr>
