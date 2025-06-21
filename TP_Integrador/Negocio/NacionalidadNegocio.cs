@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,12 +16,12 @@ namespace Negocio
 
         public NacionalidadNegocio() { }
 
-        public List<Nacionalidad> ObtenerNacionalidades()
+        public Nacionalidad[] ObtenerNacionalidades()
         {
             DataTable tabla = datos.ObtenerNacionalidades();
+            Nacionalidad[] lista = new Nacionalidad[tabla.Rows.Count];
 
-            List<Nacionalidad> lista = new List<Nacionalidad>();
-
+            int i = 0;
             foreach (DataRow fila in tabla.Rows)
             {
                 Nacionalidad n = new Nacionalidad
@@ -28,7 +29,8 @@ namespace Negocio
                     IdNacionalidad = Convert.ToInt32(fila["id_nacionalidad"]),
                     NombreNacionalidad = fila["nombre_nacionalidad"].ToString()
                 };
-                lista.Add(n);
+                lista[i] = n;
+                i++;
             }
 
             return lista;

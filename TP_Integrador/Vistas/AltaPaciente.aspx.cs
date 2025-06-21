@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Entidades;
 using Negocio;
 
+
 namespace Vistas
 {
     public partial class AltaPaciente : System.Web.UI.Page
@@ -25,7 +26,7 @@ namespace Vistas
         {
             ProvinciaNegocio provNeg = new ProvinciaNegocio();
 
-            List<Provincia> lista = provNeg.ObtenerProvincias();
+            Provincia[] lista = provNeg.ObtenerProvincias();
 
             ddlProvincia.DataSource = lista;
             ddlProvincia.DataTextField = "Nombre_provincia";
@@ -40,7 +41,7 @@ namespace Vistas
         {
             NacionalidadNegocio nacionalidadNegocio = new NacionalidadNegocio();
 
-            List<Nacionalidad> lista = nacionalidadNegocio.ObtenerNacionalidades();
+            Nacionalidad[] lista = nacionalidadNegocio.ObtenerNacionalidades();
 
             DdlNacionalidad.DataSource = lista;
             DdlNacionalidad.DataTextField = "NombreNacionalidad";

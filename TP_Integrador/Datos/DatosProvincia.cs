@@ -10,21 +10,34 @@ namespace Datos
         AccesoDatos accesoDatos = new AccesoDatos();
         public DatosProvincia() { }
 
-        public List<Provincia> ObtenerProvincias()
+        public Provincia[] ObtenerProvincias()
         {
-            List<Provincia> lista = new List<Provincia>();
-            string consulta = "SELECT * FROM Provincias";
-
+            string consulta = "SELECT * FROM dbo.Provincias";
             SqlDataReader sqlDataReader = accesoDatos.ObtenerReader(consulta);
+
+            int cantidad = 0;
             while (sqlDataReader.Read())
             {
-                lista.Add(new Provincia
+                cantidad++;
+            }
+            sqlDataReader.Close();
+
+            Provincia[] provincias = new Provincia[cantidad];
+
+            sqlDataReader = accesoDatos.ObtenerReader(consulta);
+            int i = 0;
+            while (sqlDataReader.Read())
+            {
+                provincias[i] = new Provincia
                 {
                     Id_provincia = Convert.ToInt32(sqlDataReader["id_provincia"]),
                     Nombre_provincia = sqlDataReader["nombre_provincia"].ToString()
-                });
+                };
+                i++;
             }
-            return lista;
+
+            sqlDataReader.Close();
+            return provincias;
         }
 
     }

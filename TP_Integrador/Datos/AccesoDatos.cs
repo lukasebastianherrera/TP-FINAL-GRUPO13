@@ -11,8 +11,9 @@ namespace Datos
     class AccesoDatos
     {
 
-      //  private const string Conexion = "Data Source=DESKTOP-IN37CD7\\SQLEXPRESS;Initial Catalog=clinica;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-        private const string Conexion = "Data Source=GERSONGUTIERREZ\\SQLEXPRESS;Initial Catalog=clinica;Integrated Security=True;Encrypt=False";  
+        //  private const string Conexion = "Data Source=DESKTOP-IN37CD7\\SQLEXPRESS;Initial Catalog=clinica;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        //private const string Conexion = "Data Source=GERSONGUTIERREZ\\SQLEXPRESS;Initial Catalog=clinica;Integrated Security=True;Encrypt=False";  
+        private const string Conexion = "Data Source=KALU\\SQLEXPRESS;Initial Catalog=clinica;Integrated Security=True;Encrypt=False";
         public AccesoDatos() { }
 
         public SqlConnection ObtenerConexion()

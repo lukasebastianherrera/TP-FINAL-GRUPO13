@@ -20,3 +20,14 @@ C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.Cor
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.Up2Date
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.dll
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Negocio.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Negocio.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Datos.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Entidades.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Datos.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\bin\Debug\Entidades.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.CopyComplete

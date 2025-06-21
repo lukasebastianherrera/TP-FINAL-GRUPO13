@@ -16,3 +16,12 @@ C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.csproj.CoreCom
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.csproj.Up2Date
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.dll
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Datos\obj\Debug\Datos.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\obj\Debug\Datos.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\obj\Debug\Datos.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\bin\Debug\Datos.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\bin\Debug\Datos.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\bin\Debug\Entidades.dll
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\bin\Debug\Entidades.pdb
+E:\UTN\Pacheco\Programacion III\TPS\TP_FINAL GRUPO 13\TP_Integrador\Datos\obj\Debug\Datos.csproj.CopyComplete
