@@ -13,16 +13,16 @@ namespace Vistas
     {
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
 
-        // Acá reemplazás o completás el método Page_Load
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                CargarTodosLosPacientes(); // NUEVO
+                CargarTodosLosPacientes();
+                Session["DniConfirmado"] = null;
+                lblMensaje.Text = "";
             }
         }
 
-        // NUEVO MÉTODO para cargar todos los pacientes al inicio
         private void CargarTodosLosPacientes()
         {
             GridView1.DataSource = pacienteNegocio.ObtenerTodosLosPacientes();
@@ -32,25 +32,68 @@ namespace Vistas
         protected void btnBuscarPaciente_Click(object sender, EventArgs e)
         {
             string dni = txtDni.Text.Trim();
-            GridView1.DataSource = pacienteNegocio.BuscarPacientePorDNI(dni);
-            GridView1.DataBind();
+
+            if (string.IsNullOrEmpty(dni))
+            {
+                lblMensaje.Text = "Ingrese un DNI para buscar.";
+                return;
+            }
+
+            var tabla = pacienteNegocio.BuscarPacientePorDNI(dni);
+            if (tabla.Rows.Count > 0)
+            {
+                GridView1.DataSource = tabla;
+                GridView1.DataBind();
+                lblMensaje.Text = "";
+            }
+            else
+            {
+                GridView1.DataSource = null;
+                GridView1.DataBind();
+                lblMensaje.Text = "No se encontró un paciente activo con ese DNI.";
+            }
         }
+
+
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             string dni = txtDni.Text.Trim();
 
-            bool resultado = pacienteNegocio.BajaLogicaPaciente(dni);
-
-            if (resultado)
+            if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dni)
             {
-                lblMensaje.Text = "Paciente dado de baja correctamente.";
-                CargarTodosLosPacientes(); // se refresca el listado
+                Session["DniConfirmado"] = dni;
+                lblMensaje.Text = "¿Está seguro de eliminar al paciente con DNI " + dni + "? Haga clic nuevamente para confirmar.";
+                return;
+            }
+
+            bool eliminado = pacienteNegocio.BajaLogicaPacientePorDni(dni);
+
+            if (eliminado)
+            {
+                lblMensaje.Text = "El paciente fue eliminado correctamente.";
+                txtDni.Text = "";
+                CargarTodosLosPacientes();
             }
             else
             {
-                lblMensaje.Text = "No se pudo dar de baja al paciente.";
+                lblMensaje.Text = "No se encontró un paciente activo con ese DNI.";
             }
+
+            Session["DniConfirmado"] = null;
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtDni.Text = "";
+            lblMensaje.Text = "";
+            Session["DniConfirmado"] = null;
+
+            
+            CargarTodosLosPacientes();
+        }
+
+
     }
 }
+

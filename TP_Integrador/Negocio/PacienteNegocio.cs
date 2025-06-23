@@ -13,8 +13,6 @@ namespace Negocio
     {
         private DatosPaciente datosPaciente = new DatosPaciente();
 
-        public PacienteNegocio() { }
-
         public bool AltaPaciente(Paciente paciente)
         {
             return datosPaciente.AltaPaciente(paciente);
@@ -30,9 +28,10 @@ namespace Negocio
             return datosPaciente.BuscarPacientePorDNI(dni);
         }
 
-        public bool BajaLogicaPaciente(string dni)
+        public bool BajaLogicaPacientePorDni(string dni)
         {
             return datosPaciente.BajaLogicaPaciente(dni);
         }
     }
 }
+

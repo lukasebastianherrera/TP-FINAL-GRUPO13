@@ -13,20 +13,17 @@ namespace Datos
     {
         private AccesoDatos accesoDatos = new AccesoDatos();
 
-        public DatosPaciente() { }
-
         public bool ExistePaciente(string dni)
         {
-            const string consulta = @"SELECT COUNT(*) FROM Pacientes paciente JOIN
-                Persona persona ON paciente.id_persona = persona.id_persona
-                WHERE persona.dni = @dni";
+            const string consulta = @"SELECT COUNT(*) FROM Pacientes paciente
+                                       JOIN Persona persona ON paciente.id_persona = persona.id_persona
+                                       WHERE persona.dni = @dni AND paciente.Estado = 1";
 
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(consulta, conexion))
             {
                 cmd.Parameters.AddWithValue("@dni", dni);
                 int contador = Convert.ToInt32(cmd.ExecuteScalar());
-
                 return contador > 0;
             }
         }
@@ -40,7 +37,6 @@ namespace Datos
             using (SqlCommand cmd = new SqlCommand("sp_AltaPaciente", conexion))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.AddWithValue("@dni", persona.Dni);
                 cmd.Parameters.AddWithValue("@nombre", persona.Nombre);
                 cmd.Parameters.AddWithValue("@apellido", persona.Apellido);
@@ -55,16 +51,16 @@ namespace Datos
                 int filas = cmd.ExecuteNonQuery();
                 return filas > 0;
             }
-
         }
 
         public DataTable ObtenerTodosLosPacientes()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT p.ID_Paciente, per.Nombre, per.Apellido, per.DNI, p.Estado
-                            FROM Pacientes p
-                            JOIN Persona per ON p.ID_Persona = per.ID_Persona";
+                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                                     FROM Pacientes p
+                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona
+                                     WHERE p.Estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -78,8 +74,10 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT p.ID_Paciente, per.Nombre, per.Apellido, per.DNI, p.Estado FROM Pacientes p
-                                    JOIN Persona per ON p.ID_Persona = per.ID_Persona WHERE per.DNI = @dni";
+                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                                     FROM Pacientes p
+                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona
+                                     WHERE per.DNI = @dni AND p.Estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 cmd.Parameters.AddWithValue("@dni", dni);
@@ -87,7 +85,6 @@ namespace Datos
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
-
                 return tabla;
             }
         }
@@ -97,8 +94,8 @@ namespace Datos
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
                 string consulta = @"UPDATE Pacientes
-                                    SET Estado = 0
-                                    WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE DNI = @dni)";
+                                     SET Estado = 0
+                                     WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE DNI = @dni)";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 cmd.Parameters.AddWithValue("@dni", dni);
@@ -108,7 +105,5 @@ namespace Datos
             }
         }
     }
-
-
-
 }
+

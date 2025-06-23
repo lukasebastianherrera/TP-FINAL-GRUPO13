@@ -41,8 +41,47 @@
             width: 348px;
             height: 42px;
         }
+        .auto-style15 {
+            width: 400px;
+            height: 23px;
+        }
+        .auto-style16 {
+            width: 152px;
+            height: 23px;
+        }
+        .auto-style17 {
+            width: 333px;
+            height: 23px;
+        }
+        .auto-style18 {
+            width: 348px;
+            height: 23px;
+        }
+        .auto-style19 {
+            height: 23px;
+        }
+        .auto-style20 {
+            width: 400px;
+            height: 76px;
+        }
+        .auto-style21 {
+            width: 152px;
+            height: 76px;
+        }
+        .auto-style22 {
+            width: 333px;
+            height: 76px;
+        }
+        .auto-style23 {
+            width: 348px;
+            height: 76px;
+        }
+        .auto-style24 {
+            height: 76px;
+        }
     </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
         <div>
@@ -58,13 +97,13 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
+                    <td class="auto-style20"></td>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style22">
                         <asp:Label ID="lblEliminarPaciente" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Eliminar Paciente"></asp:Label>
                     </td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>
+                    <td class="auto-style23"></td>
+                    <td class="auto-style24">
                         <asp:Label ID="lblAdministrador" runat="server">NombreAdmin</asp:Label>
                     </td>
                 </tr>
@@ -82,6 +121,26 @@
                     </td>
                     <td class="auto-style9"> 
             <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
+                        <asp:RequiredFieldValidator 
+                        ID="rfvDni" 
+                        runat="server" 
+                        ControlToValidate="txtDni" 
+                        ErrorMessage="El DNI es obligatorio." 
+                        ForeColor="Red" 
+                        Display="Dynamic" 
+                        SetFocusOnError="True" />
+                    
+                    
+                    <asp:RegularExpressionValidator 
+                        ID="revDni" 
+                        runat="server" 
+                        ControlToValidate="txtDni" 
+                        ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
+                        ValidationExpression="^\d{1,8}$" 
+                        ForeColor="Red" 
+                        Display="Dynamic" 
+                        SetFocusOnError="True" />
+                   
                     </td>
                     <td class="auto-style14">
              <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar"  OnClick="btnBuscarPaciente_Click"/>  
@@ -117,7 +176,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" Width="72px" OnClick="btnCancelar_Click" />
                     </td>
                     <td class="auto-style13">
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
@@ -125,11 +186,11 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style19"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
