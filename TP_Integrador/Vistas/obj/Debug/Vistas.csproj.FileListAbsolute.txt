@@ -559,3 +559,9 @@ C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.
 C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.pdb
 C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.pdb
 C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.pdb

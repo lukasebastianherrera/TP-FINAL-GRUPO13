@@ -129,7 +129,7 @@
                             <asp:TextBox ID="txtb_usuario" runat="server"></asp:TextBox>
                         </td>
                         <td class="auto-style22">
-                            <asp:RequiredFieldValidator ID="RFVUsuario" runat="server" ControlToValidate="txtb_usuario" ErrorMessage="* Ingresar un Usuario" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RFVUsuario" runat="server" ControlToValidate="txtb_usuario" ErrorMessage="* Ingresar un Usuario" ValidationGroup="Grupo1" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4"></td>
                     </tr>
@@ -137,10 +137,10 @@
                         <td class="auto-style27"></td>
                         <td class="auto-style5">Contraseña:</td>
                         <td class="auto-style6">
-                            <asp:TextBox ID="txtb_contrasenia" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtb_contrasenia" runat="server" TextMode="Password"></asp:TextBox>
                         </td>
                         <td class="auto-style22">
-                            <asp:RequiredFieldValidator ID="RFVContraseña" runat="server" ControlToValidate="txtb_contrasenia" ErrorMessage="* Ingresar una contraseña" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RFVContraseña" runat="server" ControlToValidate="txtb_contrasenia" ErrorMessage="* Ingresar una contraseña" ValidationGroup="Grupo1" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4"></td>
                     </tr>
@@ -155,7 +155,7 @@
                             </asp:DropDownList>
                         </td>
                         <td class="auto-style22">
-                            <asp:RequiredFieldValidator ID="RFVTipoUsuario" runat="server" ErrorMessage="* Seleccione un tipo de Usuario" ValidationGroup="Grupo1" ControlToValidate="DDLTipoUsuario"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RFVTipoUsuario" runat="server" ErrorMessage="* Seleccione un tipo de Usuario" ValidationGroup="Grupo1" ControlToValidate="DDLTipoUsuario" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4"></td>
                     </tr>

@@ -53,3 +53,14 @@ C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug
 C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.Up2Date
 C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.dll
 C:\Users\sonva\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Negocio.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Negocio.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Datos.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Entidades.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Datos.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Entidades.pdb
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.dll
+C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.pdb
