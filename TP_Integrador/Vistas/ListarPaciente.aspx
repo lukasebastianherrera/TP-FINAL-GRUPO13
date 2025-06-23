@@ -64,7 +64,7 @@
                         <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style12">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" />
                     </td>
