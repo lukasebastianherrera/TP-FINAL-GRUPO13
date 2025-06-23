@@ -61,9 +61,9 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT m.ID_Medico, per.Nombre, per.Apellido, per.DNI, m.Estado
-                            FROM Medicos m
-                            JOIN Persona per ON m.ID_Persona = per.ID_Persona";
+                string consulta = @"SELECT m.ID_Medico, per.Nombre, per.Apellido, per.DNI,  m.Estado, m.id_especialidad, esp.nombre_especialidad, m.legajo  FROM Medicos m
+                                    JOIN Persona per ON m.id_persona = per.id_persona
+                                    JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -104,6 +104,42 @@ namespace Datos
 
                 int filasAfectadas = cmd.ExecuteNonQuery();
                 return filasAfectadas > 0;
+            }
+        }
+        public bool ModificarMedico(string nombre, string apellido, string dni, string legajo, string IdEspecialidad, bool estado)
+        {
+            SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
+            string consulta = @"UPDATE Persona 
+                                SET nombre = @nombre, apellido = @apellido 
+                                WHERE dni = @dni";
+            SqlCommand sqlCommandPersona = new SqlCommand(consulta, sqlConnection);
+            sqlCommandPersona.Parameters.AddWithValue("@nombre", nombre);
+            sqlCommandPersona.Parameters.AddWithValue("@apellido", apellido);
+            sqlCommandPersona.Parameters.AddWithValue("@dni", dni);
+
+            int filasafectadasPersona = sqlCommandPersona.ExecuteNonQuery();
+
+            string consultaMedico = @"UPDATE Medicos 
+                                      SET legajo = @legajo, ID_Especialidad = @idEspecialidad, estado = @estado 
+                                      WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE dni = @dni)";
+
+            SqlCommand sqlCommandMedicos = new SqlCommand(consultaMedico, sqlConnection);
+
+
+            sqlCommandMedicos.Parameters.AddWithValue("@legajo", legajo);
+            sqlCommandMedicos.Parameters.AddWithValue("@idEspecialidad", IdEspecialidad);
+            sqlCommandMedicos.Parameters.AddWithValue("@estado", estado);
+            sqlCommandMedicos.Parameters.AddWithValue("@dni", dni);
+
+            int filasafectadasMedicos = sqlCommandMedicos.ExecuteNonQuery();
+
+            if (filasafectadasMedicos > 0 && filasafectadasPersona > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

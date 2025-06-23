@@ -34,5 +34,9 @@ namespace Negocio
         {
             return datosMedico.BajaLogicaMedico(dni);
         }
+        public bool ModificarMedico(string nombre, string apellido, string dni, string legajo, string IdEspecialidad, bool estado)
+        {
+            return datosMedico.ModificarMedico(nombre, apellido, dni, legajo, IdEspecialidad, estado);
+        }
     }
 }

@@ -75,3 +75,14 @@ D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debu
 D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Datos.pdb
 D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Negocio\bin\Debug\Entidades.pdb
 D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\bin\Debug\Negocio.dll
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\bin\Debug\Negocio.pdb
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\bin\Debug\Datos.dll
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\bin\Debug\Entidades.dll
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\bin\Debug\Datos.pdb
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\bin\Debug\Entidades.pdb
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\obj\Debug\Negocio.dll
+C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Negocio\obj\Debug\Negocio.pdb
