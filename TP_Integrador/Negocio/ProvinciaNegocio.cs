@@ -8,14 +8,15 @@ using Datos;
 
 namespace Negocio
 {
-     public class ProvinciaNegocio
-     {
+    public class ProvinciaNegocio
+    {
         private DatosProvincia datos = new DatosProvincia();
 
         public ProvinciaNegocio() { }
-        public Provincia[] ObtenerProvincias()
+        public List<Provincia> ObtenerProvincias()
         {
-            return datos.ObtenerProvincias(); 
+            return datos.ObtenerProvincias();
         }
-     }
+    }
 }
+

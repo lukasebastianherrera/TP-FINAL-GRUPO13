@@ -15,8 +15,38 @@ namespace Datos
     {
         public DatosUsuario() { }
 
-        private AccesoDatos acceso = new AccesoDatos();
-        public int TipoUsuario(string user, string pass) {
+        private AccesoDatos accesoDatos = new AccesoDatos();
+
+        public Usuario ObtenerCredenciales(string nombreUsuario, string contrasenia)
+        {
+            string consulta = @"SELECT * FROM Usuarios WHERE nombre_usuario = @usuario AND contrasenia = @contrasenia";
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@usuario", nombreUsuario);
+                    cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            return new Usuario
+                            {
+                                Id_usuario = Convert.ToInt32(dr["id_usuario"]),
+                                Id_persona = Convert.ToInt32(dr["id_persona"]),
+                                Nombre_usuario = dr["nombre_usuario"].ToString(),
+                                Contrasenia = dr["contrasenia"].ToString(),
+                                Tipo_usuario = dr["tipo_usuario"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+        /*public int TipoUsuario(string user, string pass) {
             //busca en la base de datos si existe y trae el codigo tipo de usuario
             int tipo;
             using (SqlConnection conexion = acceso.ObtenerConexion())
@@ -40,9 +70,9 @@ namespace Datos
         }
 
         public string UsuarioLogueado(string user, string password) { 
-        //busca en la base de datos y trae el nombre que lo guarda en la sesion
+        busca en la base de datos y trae el nombre que lo guarda en la sesion
         string nombre = "";
-            /*
+            
            using (SqlConnection conexion = acceso.ObtenerConexion())
             {
                 string consulta = @"SELECT id_persona FROM Usuarios WHERE " + user + " = nombre_usuario AND " + pass + " = contrasenia";
@@ -55,9 +85,9 @@ namespace Datos
 
                
             }
-            */
+            
             return nombre;
-        }
+        }*/
 
 
     }

@@ -13,13 +13,17 @@ namespace Negocio
     {
         private DatosPaciente datosPaciente = new DatosPaciente();
 
+        public PacienteNegocio() { }
+
+        public bool AltaPaciente(Paciente paciente)
+        {
+            return datosPaciente.AltaPaciente(paciente);
+        }
+
         public DataTable ObtenerTodosLosPacientes()
         {
             return datosPaciente.ObtenerTodosLosPacientes();
         }
-
-
-
 
         public DataTable BuscarPacientePorDNI(string dni)
         {

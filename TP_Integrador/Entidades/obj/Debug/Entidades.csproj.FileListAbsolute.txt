@@ -22,3 +22,9 @@ C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.dll
 C:\Workspace\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.pdb
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Entidades\bin\Debug\Entidades.dll
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Entidades\bin\Debug\Entidades.pdb
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.dll
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Entidades\obj\Debug\Entidades.pdb

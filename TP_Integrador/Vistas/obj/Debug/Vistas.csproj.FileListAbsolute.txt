@@ -565,3 +565,9 @@ C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos
 C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.pdb
 C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.pdb
 C:\Users\marina\Documents\GitHub\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.pdb
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.dll
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.dll
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.dll
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Entidades.pdb
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Negocio.pdb
+D:\Documentos\Descargas\proyecto\TP-FINAL-GRUPO13\TP_Integrador\Vistas\bin\Datos.pdb

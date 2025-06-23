@@ -17,7 +17,7 @@ namespace Entidades
         public Usuario() { }
 
         public int Id_usuario { get => id_usuario; set => id_usuario = value; }
-        public int Id_persona1 { get => id_persona; set => id_persona = value; }
+        public int Id_persona { get => id_persona; set => id_persona = value; }
         public string Nombre_usuario { get => nombre_usuario; set => nombre_usuario = value; }
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public string Tipo_usuario { get => tipo_usuario; set => tipo_usuario = value; }

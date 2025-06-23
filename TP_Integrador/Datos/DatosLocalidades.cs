@@ -10,7 +10,56 @@ namespace Datos
         AccesoDatos accesoDatos = new AccesoDatos();
         public DatosLocalidades() { }
 
-        public Localidad[] ObtenerLocalidades()
+        public List<Localidad> ObtenerLocalidades()
+        {
+            List<Localidad> lista = new List<Localidad>();
+            string consulta = @"SELECT * FROM Localidades";
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    lista.Add(new Localidad
+                    {
+                        Id_localidad = Convert.ToInt32(dr["id_localidad"]),
+                        Nombre_localidad = dr["nombre_localidad"].ToString(),
+                        Id_provincia = Convert.ToInt32(dr["id_provincia"])
+                    });
+                }
+            }
+            return lista;
+        }
+
+        public List<Localidad> ObtenerLocalidadesPorProvincia(int idProvincia)
+        {
+            List<Localidad> lista = new List<Localidad>();
+            string consulta = @"SELECT * FROM Localidades WHERE id_provincia = @prov";
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+            {
+                cmd.Parameters.AddWithValue("@prov", idProvincia);
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Localidad
+                        {
+                            Id_localidad = Convert.ToInt32(dr["id_localidad"]),
+                            Nombre_localidad = dr["nombre_localidad"].ToString(),
+                            Id_provincia = Convert.ToInt32(dr["id_provincia"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        /*public Localidad[] ObtenerLocalidades()
         {
             string consulta = "SELECT * FROM dbo.Localidades";
             SqlDataReader sqlDataReader = accesoDatos.ObtenerReader(consulta);
@@ -37,7 +86,7 @@ namespace Datos
             }
             sqlDataReader.Close();
             return localidades;
-        }
+        }*/
 
     }
 }

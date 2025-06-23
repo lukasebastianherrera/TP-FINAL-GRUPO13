@@ -11,11 +11,56 @@ namespace Datos
 {
     public class DatosPaciente
     {
-        private AccesoDatos acceso = new AccesoDatos();
+        private AccesoDatos accesoDatos = new AccesoDatos();
+
+        public DatosPaciente() { }
+
+        public bool ExistePaciente(string dni)
+        {
+            const string consulta = @"SELECT COUNT(*) FROM Pacientes paciente JOIN
+                Persona persona ON paciente.id_persona = persona.id_persona
+                WHERE persona.dni = @dni";
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+            {
+                cmd.Parameters.AddWithValue("@dni", dni);
+                int contador = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return contador > 0;
+            }
+        }
+
+        public bool AltaPaciente(Persona persona)
+        {
+            if (ExistePaciente(persona.Dni))
+                return false;
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand("sp_AltaPaciente", conexion))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@dni", persona.Dni);
+                cmd.Parameters.AddWithValue("@nombre", persona.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", persona.Apellido);
+                cmd.Parameters.AddWithValue("@sexo", persona.Sexo);
+                cmd.Parameters.AddWithValue("@nacionalidad", persona.Nacionalidad);
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", persona.Fecha_nacimiento);
+                cmd.Parameters.AddWithValue("@correo_electronico", persona.Correo_electronico);
+                cmd.Parameters.AddWithValue("@telefono", persona.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", persona.Direccion);
+                cmd.Parameters.AddWithValue("@id_localidad", persona.Id_localidad);
+
+                int filas = cmd.ExecuteNonQuery();
+                return filas > 0;
+            }
+
+        }
 
         public DataTable ObtenerTodosLosPacientes()
         {
-            using (SqlConnection conexion = acceso.ObtenerConexion())
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
                 string consulta = @"SELECT p.ID_Paciente, per.Nombre, per.Apellido, per.DNI, p.Estado
                             FROM Pacientes p
@@ -29,14 +74,9 @@ namespace Datos
             }
         }
 
-
-
-
-
-
         public DataTable BuscarPacientePorDNI(string dni)
         {
-            using (SqlConnection conexion = acceso.ObtenerConexion())
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
                 string consulta = @"SELECT p.ID_Paciente, per.Nombre, per.Apellido, per.DNI, p.Estado FROM Pacientes p
                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona WHERE per.DNI = @dni";
@@ -54,7 +94,7 @@ namespace Datos
 
         public bool BajaLogicaPaciente(string dni)
         {
-            using (SqlConnection conexion = acceso.ObtenerConexion())
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
                 string consulta = @"UPDATE Pacientes
                                     SET Estado = 0

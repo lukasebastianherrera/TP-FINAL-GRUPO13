@@ -12,14 +12,27 @@ namespace Vistas
 {
     public partial class Inicio : System.Web.UI.Page
     {
-        private NegocioUsuario negociousuario = new NegocioUsuario();
+        private NegocioUsuario negocioUsuario = new NegocioUsuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+           // ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void btn_iniciar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+
+            if (!Page.IsValid)
+                return;
+
+            Session["UsuarioLogueado"] = negocioUsuario.ValidarLogin(
+                txtb_usuario.Text.Trim(),
+                txtb_contrasenia1.Text);
+
+            if (ddlUsuario.SelectedValue == "1")
+                Response.Redirect("VistaMedico.aspx");
+            else
+                Response.Redirect("AdminMenu.aspx");
             /*
             string usuario = txtb_usuario.Text.Trim();
             string contrasenia =txtb_contrasenia.Text.Trim();
@@ -35,7 +48,7 @@ namespace Vistas
             }
             else {
                 RFVTipoUsuario.Text = "Usuario invalido o inexistente. Por favor reintente";
-            }*/
+            }
 
             if (DDLTipoUsuario.SelectedIndex == 1 )
             {
@@ -44,6 +57,33 @@ namespace Vistas
             else if (DDLTipoUsuario.SelectedIndex == 2 )
             {
                 Response.Redirect("AdminMenu.aspx");
+            }*/
+        }
+
+        protected void cvUsuario_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (!rfvTipoUsuario.IsValid)
+            {
+                args.IsValid = true;
+                return;
+            }
+
+            string nombreUsuario = txtb_usuario.Text.Trim();
+            string contrasenia = txtb_contrasenia1.Text;
+
+            Usuario usuario = negocioUsuario.ValidarLogin(nombreUsuario, contrasenia);
+
+            if (usuario == null)
+            {
+                args.IsValid = false;
+                cvUsuario.ErrorMessage = "Usuario o contraseña incorrecto";
+                return;
+            }
+
+            args.IsValid = (ddlUsuario.SelectedValue == usuario.Tipo_usuario);
+            if (!args.IsValid)
+            {
+                cvUsuario.ErrorMessage = "El tipo de usuario no coincide";
             }
         }
     }

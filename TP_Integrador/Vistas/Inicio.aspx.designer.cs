@@ -42,49 +42,85 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtb_usuario;
 
         /// <summary>
-        /// Control RFVUsuario.
+        /// Control rfvUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVUsuario;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUsuario;
 
         /// <summary>
-        /// Control txtb_contrasenia.
+        /// Control txtb_contrasenia1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtb_contrasenia;
+        protected global::System.Web.UI.WebControls.TextBox txtb_contrasenia1;
 
         /// <summary>
-        /// Control RFVContraseña.
+        /// Control rfvContrasenia1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVContraseña;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContrasenia1;
 
         /// <summary>
-        /// Control DDLTipoUsuario.
+        /// Control cvContrasenia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLTipoUsuario;
+        protected global::System.Web.UI.WebControls.CompareValidator cvContrasenia;
 
         /// <summary>
-        /// Control RFVTipoUsuario.
+        /// Control txtb_contrasenia2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVTipoUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtb_contrasenia2;
+
+        /// <summary>
+        /// Control rfvContrasenia2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContrasenia2;
+
+        /// <summary>
+        /// Control ddlUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlUsuario;
+
+        /// <summary>
+        /// Control rfvTipoUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTipoUsuario;
+
+        /// <summary>
+        /// Control cvUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvUsuario;
 
         /// <summary>
         /// Control btn_iniciar.
