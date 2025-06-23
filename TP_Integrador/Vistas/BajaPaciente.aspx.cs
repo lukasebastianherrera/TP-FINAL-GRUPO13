@@ -11,59 +11,46 @@ namespace Vistas
 {
     public partial class BajaPaciente : System.Web.UI.Page
     {
-        private PacienteNegocio negocio = new PacienteNegocio();
+        private PacienteNegocio pacienteNegocio = new PacienteNegocio();
+
+        // Acá reemplazás o completás el método Page_Load
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // Limpiar controles al cargar la página por primera vez
-                GridView1.DataSource = null;
-                GridView1.DataBind();
-                lblMensaje.Text = "";
+                CargarTodosLosPacientes(); // NUEVO
             }
+        }
+
+        // NUEVO MÉTODO para cargar todos los pacientes al inicio
+        private void CargarTodosLosPacientes()
+        {
+            GridView1.DataSource = pacienteNegocio.ObtenerTodosLosPacientes();
+            GridView1.DataBind();
         }
 
         protected void btnBuscarPaciente_Click(object sender, EventArgs e)
         {
             string dni = txtDni.Text.Trim();
-
-            var pacientes = negocio.BuscarPorDni(dni);
-
-            GridView1.DataSource = pacientes;
+            GridView1.DataSource = pacienteNegocio.BuscarPacientePorDNI(dni);
             GridView1.DataBind();
-
-            ViewState["Paciente"] = pacientes; // Guardar para luego eliminar
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (ViewState["Paciente"] != null)
-            {
-                var lista = (List<Paciente>)ViewState["Paciente"];
-                if (lista.Count > 0)
-                {
-                    Paciente paciente = lista[0];
-                    negocio.BajaLogicaPaciente(paciente.Id_paciente);
-                    lblMensaje.Text = $"Paciente eliminado: {paciente.Apellido}, {paciente.Nombre}";
+            string dni = txtDni.Text.Trim();
 
-                    // Limpiar después de eliminar
-                    GridView1.DataSource = null;
-                    GridView1.DataBind();
-                    txtDni.Text = "";
-                    ViewState["Paciente"] = null;
-                }
+            bool resultado = pacienteNegocio.BajaLogicaPaciente(dni);
+
+            if (resultado)
+            {
+                lblMensaje.Text = "Paciente dado de baja correctamente.";
+                CargarTodosLosPacientes(); // se refresca el listado
             }
             else
             {
-                lblMensaje.Text = "No hay paciente para eliminar.";
+                lblMensaje.Text = "No se pudo dar de baja al paciente.";
             }
         }
-
-
-
-
-
-
-
     }
 }

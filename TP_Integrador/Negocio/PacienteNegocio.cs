@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +11,24 @@ namespace Negocio
 {
     public class PacienteNegocio
     {
-        DatosPaciente datos = new DatosPaciente();
+        private DatosPaciente datosPaciente = new DatosPaciente();
 
-        public List<Paciente> BuscarPorDni(string dni)
+        public DataTable ObtenerTodosLosPacientes()
         {
-            return datos.ObtenerPorDni(dni);
+            return datosPaciente.ObtenerTodosLosPacientes();
         }
 
-        public void BajaLogicaPaciente(int idPaciente)
+
+
+
+        public DataTable BuscarPacientePorDNI(string dni)
         {
-            datos.EliminarPaciente(idPaciente);
+            return datosPaciente.BuscarPacientePorDNI(dni);
+        }
+
+        public bool BajaLogicaPaciente(string dni)
+        {
+            return datosPaciente.BajaLogicaPaciente(dni);
         }
     }
 }

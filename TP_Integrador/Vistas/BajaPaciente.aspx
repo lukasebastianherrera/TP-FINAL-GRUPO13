@@ -84,7 +84,7 @@
             <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
                     </td>
                     <td class="auto-style14">
-             <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar" />  
+             <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar"  OnClick="btnBuscarPaciente_Click"/>  
                     </td>
                     <td class="auto-style7"></td>
                 </tr>
@@ -99,8 +99,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:GridView ID="GridView1" runat="server">
+                       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true">
                         </asp:GridView>
+
                     </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>

@@ -5,55 +5,66 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Entidades;
+using System.Data;
 
 namespace Datos
 {
     public class DatosPaciente
     {
-        AccesoDatos acceso = new AccesoDatos();
+        private AccesoDatos acceso = new AccesoDatos();
 
-        public List<Paciente> ObtenerPorDni(string dni)
+        public DataTable ObtenerTodosLosPacientes()
         {
-            List<Paciente> lista = new List<Paciente>();
-
-            string consulta = $"SELECT * FROM Pacientes pa JOIN Personas pe ON pa.ID_Paciente = pe.ID_Persona WHERE pe.DNI = '{dni}' AND pa.Estado = 1";
-
-            using (SqlDataReader dr = acceso.ObtenerReader(consulta))
+            using (SqlConnection conexion = acceso.ObtenerConexion())
             {
-                while (dr.Read())
-                {
-                    Paciente p = new Paciente
-                    {
-                        Id_paciente = Convert.ToInt32(dr["ID_Paciente"]),
-                        Dni = dr["DNI"].ToString(),
-                        Nombre = dr["Nombre"].ToString(),
-                        Apellido = dr["Apellido"].ToString(),
-                        Sexo = dr["Sexo"].ToString(),
-                        Nacionalidad = dr["Nacionalidad"].ToString(),
-                        Fecha_nacimiento = Convert.ToDateTime(dr["Fecha_nacimiento"]),
-                        Correo_electronico = dr["Correo_electronico"].ToString(),
-                        Telefono = dr["Telefono"].ToString(),
-                        Direccion = dr["Direccion"].ToString(),
-                        Id_localidad = Convert.ToInt32(dr["ID_Localidad"]),
-                        Estado = Convert.ToBoolean(dr["Estado"])
-                    };
+                string consulta = @"SELECT p.ID_Paciente, per.Nombre, per.Apellido, per.DNI, p.Estado
+                            FROM Pacientes p
+                            JOIN Persona per ON p.ID_Persona = per.ID_Persona";
 
-                    lista.Add(p);
-                }
-                dr.Close();
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
             }
-
-            return lista;
         }
 
-        public void EliminarPaciente(int idPaciente)
+
+
+
+
+
+        public DataTable BuscarPacientePorDNI(string dni)
         {
-            using (SqlConnection conn = acceso.ObtenerConexion())
+            using (SqlConnection conexion = acceso.ObtenerConexion())
             {
-                string consulta = "UPDATE Pacientes SET Estado = 0 WHERE ID_Paciente = @id";
-                SqlCommand cmd = new SqlCommand(consulta, conn);
-                cmd.Parameters.AddWithValue("@id", idPaciente);
-                cmd.ExecuteNonQuery();
+                string consulta = @"SELECT p.ID_Paciente, per.Nombre, per.Apellido, per.DNI, p.Estado FROM Pacientes p
+                                    JOIN Persona per ON p.ID_Persona = per.ID_Persona WHERE per.DNI = @dni";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+
+                return tabla;
+            }
+        }
+
+        public bool BajaLogicaPaciente(string dni)
+        {
+            using (SqlConnection conexion = acceso.ObtenerConexion())
+            {
+                string consulta = @"UPDATE Pacientes
+                                    SET Estado = 0
+                                    WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE DNI = @dni)";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas > 0;
             }
         }
     }
