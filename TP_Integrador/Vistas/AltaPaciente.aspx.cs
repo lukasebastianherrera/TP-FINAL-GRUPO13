@@ -120,7 +120,7 @@ namespace Vistas
             else
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Text = "El paciente ya existe o no pudo añadirse";
+                lblMensaje.Text = "El paciente ya existe";
             }
 
             LimpiarFormulario();
