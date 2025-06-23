@@ -129,7 +129,7 @@
                             <asp:TextBox ID="txtb_usuario" runat="server"></asp:TextBox>
                         </td>
                         <td class="auto-style22">
-                            <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtb_usuario" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese un usuario</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtb_usuario" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">*Ingrese un usuario</asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4"></td>
                     </tr>
@@ -140,37 +140,25 @@
                             <asp:TextBox ID="txtb_contrasenia1" runat="server" TextMode="Password"></asp:TextBox>
                         </td>
                         <td class="auto-style22">
-                            <asp:RequiredFieldValidator ID="rfvContrasenia1" runat="server" ControlToValidate="txtb_contrasenia1" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese contraseña</asp:RequiredFieldValidator>
-                            <asp:CompareValidator ID="cvContrasenia" runat="server" ControlToCompare="txtb_contrasenia1" ControlToValidate="txtb_contrasenia2" Display="Dynamic" ErrorMessage="CompareValidator" ForeColor="Red" ValidationGroup="grupo1">Contraseñas no coinciden</asp:CompareValidator>
+                            <asp:RequiredFieldValidator ID="rfvContrasenia1" runat="server" ControlToValidate="txtb_contrasenia1" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">*Ingrese contraseña</asp:RequiredFieldValidator>
                         </td>
                         <td class="auto-style4"></td>
                     </tr>
                     <tr>
                         <td class="auto-style27"></td>
-                        <td class="auto-style5">Reingrese Contraseña:</td>
+                        <td class="auto-style5">&nbsp;</td>
                         <td class="auto-style6">
-                            <asp:TextBox ID="txtb_contrasenia2" runat="server" TextMode="Password"></asp:TextBox>
-                        </td>
-                        <td class="auto-style22">
-                            <asp:RequiredFieldValidator ID="rfvContrasenia2" runat="server" ControlToValidate="txtb_contrasenia2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese contraseña</asp:RequiredFieldValidator>
-                        </td>
-                        <td class="auto-style4"></td>
-                    </tr>
-                     <tr>
-                         <td class="auto-style24"></td>
-                         <td class="auto-style17"></td>
-                         <td class="auto-style18">
                             <asp:DropDownList ID="ddlUsuario" runat="server" ValidationGroup="grupo1">
                                 <asp:ListItem Value="0">Seleccione tipo de usuario</asp:ListItem>
                                 <asp:ListItem Value="1">Medico/a</asp:ListItem>
                                 <asp:ListItem Value="2">Administrador/a</asp:ListItem>
                             </asp:DropDownList>
-                                             </td>
-                         <td class="auto-style19">
-                             <asp:RequiredFieldValidator ID="rfvTipoUsuario" runat="server" ControlToValidate="ddlUsuario" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" SetFocusOnError="True" ValidationGroup="grupo1">Por favor seleccione un tipo de usuario</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="auto-style22">
+                             <asp:RequiredFieldValidator ID="rfvTipoUsuario" runat="server" ControlToValidate="ddlUsuario" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" SetFocusOnError="True" ValidationGroup="grupo1">*Seleccione un tipo de usuario</asp:RequiredFieldValidator>
                              <asp:CustomValidator ID="cvUsuario" runat="server" ControlToValidate="ddlUsuario" Display="Dynamic" ErrorMessage="&quot;&quot;" ForeColor="Red" OnServerValidate="cvUsuario_ServerValidate" ValidationGroup="grupo1"></asp:CustomValidator>
-                                             </td>
-                         <td class="auto-style16"></td>
+                        </td>
+                        <td class="auto-style4"></td>
                     </tr>
                      <tr>
                          <td class="auto-style24"></td>
@@ -178,6 +166,15 @@
                          <td class="auto-style18">
                             <asp:Button ID="btn_iniciar" runat="server" Font-Bold="False" Text="Iniciar Sesión" OnClick="btn_iniciar_Click" ValidationGroup="grupo1" />
                                              </td>
+                         <td class="auto-style19">
+                             &nbsp;</td>
+                         <td class="auto-style16"></td>
+                    </tr>
+                     <tr>
+                         <td class="auto-style24"></td>
+                         <td class="auto-style17"></td>
+                         <td class="auto-style18">
+                             &nbsp;</td>
                          <td class="auto-style19">&nbsp;</td>
                          <td class="auto-style16"></td>
                      </tr>

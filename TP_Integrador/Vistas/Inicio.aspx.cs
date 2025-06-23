@@ -15,7 +15,7 @@ namespace Vistas
         private NegocioUsuario negocioUsuario = new NegocioUsuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-           // ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
         }
 
         protected void btn_iniciar_Click(object sender, EventArgs e)
@@ -33,6 +33,7 @@ namespace Vistas
                 Response.Redirect("VistaMedico.aspx");
             else
                 Response.Redirect("AdminMenu.aspx");
+
             /*
             string usuario = txtb_usuario.Text.Trim();
             string contrasenia =txtb_contrasenia.Text.Trim();
@@ -76,14 +77,14 @@ namespace Vistas
             if (usuario == null)
             {
                 args.IsValid = false;
-                cvUsuario.ErrorMessage = "Usuario o contraseña incorrecto";
+                cvUsuario.ErrorMessage = "*Usuario o contraseña incorrecto";
                 return;
             }
 
             args.IsValid = (ddlUsuario.SelectedValue == usuario.Tipo_usuario);
             if (!args.IsValid)
             {
-                cvUsuario.ErrorMessage = "El tipo de usuario no coincide";
+                cvUsuario.ErrorMessage = "*El tipo de usuario no coincide";
             }
         }
     }
