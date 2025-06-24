@@ -32,6 +32,16 @@ namespace Negocio
         {
             return datosPaciente.BajaLogicaPaciente(dni);
         }
+        public DataTable obtenerTodosLosPacientesyDatos()
+        {
+            return datosPaciente.obtenerTodosLosPacientesyDatos();
+        }
+
+        public bool modificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
+        {
+            return datosPaciente.modificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
+        }
+
     }
 }
 

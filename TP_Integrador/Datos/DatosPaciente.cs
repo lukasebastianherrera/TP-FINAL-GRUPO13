@@ -70,6 +70,22 @@ namespace Datos
             }
         }
 
+
+        public DataTable obtenerTodosLosPacientesyDatos()
+        {
+            SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
+            string consulta = @"SELECT p.id_persona,p.id_paciente , dni, nombre, apellido, sexo, nacionalidad, 
+                                    fecha_nacimiento, correo_electronico, telefono, direccion, estado
+                                    FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona";
+
+            SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter (sqlcommand);
+            DataTable tabla = new DataTable();
+            adapter.Fill (tabla);
+            return tabla;
+        }
+
+
         public DataTable BuscarPacientePorDNI(string dni)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
@@ -104,6 +120,48 @@ namespace Datos
                 return filasAfectadas > 0;
             }
         }
+
+        public bool modificarPaciente(string nombre, string apellido, string dni, string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado)
+        {
+            SqlConnection sqlConnection =  accesoDatos.ObtenerConexion();
+
+            string consultaPersona = @"UPDATE Persona
+                                       Set nombre= @nombre, apellido = @apellido, sexo = @sexo, nacionalidad = @nacionalidad, fecha_nacimiento = @fechaNacimiento, correo_electronico = @correoElectronico, telefono = @telefono, direccion = @direccion
+                                       WHERE dni = @dni";
+            SqlCommand sqlCommand = new SqlCommand(consultaPersona, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@nombre", nombre);
+            sqlCommand.Parameters.AddWithValue("@apellido", apellido);
+            sqlCommand.Parameters.AddWithValue("@sexo", sexo);
+            sqlCommand.Parameters.AddWithValue("@nacionalidad", nacionalidad);
+            sqlCommand.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+            sqlCommand.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+            sqlCommand.Parameters.AddWithValue("@telefono", telefono);
+            sqlCommand.Parameters.AddWithValue("@direccion", direccion);
+            sqlCommand.Parameters.AddWithValue("@dni", dni);
+
+
+            int filasAfectadasPersona = sqlCommand.ExecuteNonQuery();
+
+            string consultaPaciente = @"UPDATE Pacientes
+                                     SET estado = @estado 
+                                      WHERE id_persona = (SELECT id_persona FROM Persona WHERE dni = @dni)";
+
+            SqlCommand sqlCommandPaciente = new SqlCommand(consultaPaciente, sqlConnection);
+            sqlCommandPaciente.Parameters.AddWithValue("@dni", dni);
+            sqlCommandPaciente.Parameters.AddWithValue("@estado", estado ? 1 : 0);
+
+            int filasAfectadasPaciente = sqlCommandPaciente.ExecuteNonQuery();
+
+            if(filasAfectadasPaciente > 0 && filasAfectadasPersona > 0)
+            {
+                return true;
+            } else { 
+                return false; 
+            }
+
+        }
+
+
     }
 }
 
