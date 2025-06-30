@@ -13,7 +13,10 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            lblNombreMedico.Text = usuario.Nombre_usuario;
+            if (Session["usuario"] != null)
+            {
+                lblNombreMedico.Text = usuario.Nombre_usuario;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Entidades;
 using System.Data;
+using System.Reflection;
 
 namespace Datos
 {
@@ -90,10 +91,17 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
+                /*
                 string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
                                      FROM Pacientes p
                                      JOIN Persona per ON p.ID_Persona = per.ID_Persona
                                      WHERE per.DNI = @dni AND p.Estado = 1";
+                */
+
+                string consulta = @"SELECT p.id_persona,p.id_paciente , dni, nombre, apellido, sexo, nacionalidad, 
+                                    fecha_nacimiento, correo_electronico, telefono, direccion, estado
+                                    FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona
+                                    WHERE dni = @dni AND estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 cmd.Parameters.AddWithValue("@dni", dni);

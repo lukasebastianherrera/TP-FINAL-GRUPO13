@@ -20,7 +20,8 @@ namespace Negocio
 
         public DataTable ObtenerTodosLosPacientes()
         {
-            return datosPaciente.ObtenerTodosLosPacientes();
+            //cambie aca obtenertodoslospacientes
+            return datosPaciente.obtenerTodosLosPacientesyDatos();
         }
 
         public DataTable BuscarPacientePorDNI(string dni)

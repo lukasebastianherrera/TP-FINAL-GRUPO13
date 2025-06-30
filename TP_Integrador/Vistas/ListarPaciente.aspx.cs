@@ -17,7 +17,11 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            lblAdministrador.Text = usuario.Nombre_usuario;
+            if (Session["usuario"] != null) {
+               
+                lblAdministrador.Text = usuario.Nombre_usuario;
+            }
+            
 
             CargarTodosLosPacientes();
         }
@@ -31,9 +35,24 @@ namespace Vistas
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
             string dni = txtDni.Text.Trim();
-            DataTable dt = pacienteNegocio.BuscarPacientePorDNI(dni);
-            gvPacientes.DataSource = dt;
-            gvPacientes.DataBind();
+            if (dni != null)
+            {
+
+                DataTable dt = pacienteNegocio.BuscarPacientePorDNI(dni);
+                gvPacientes.DataSource = dt;
+                gvPacientes.DataBind();
+                txtDni.Text = string.Empty;
+            }
+            else {
+                CargarTodosLosPacientes();
+            }
+            
+            
+        }
+
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
