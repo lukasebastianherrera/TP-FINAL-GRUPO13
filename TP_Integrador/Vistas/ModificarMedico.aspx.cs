@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
 using Negocio;
 
 namespace Vistas
@@ -12,6 +13,9 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblAdministrador.Text = usuario.Nombre_usuario;
+
             if (!IsPostBack)
             {
                 cargarMedicos();

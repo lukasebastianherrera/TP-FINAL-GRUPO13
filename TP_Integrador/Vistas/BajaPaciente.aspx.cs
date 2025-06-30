@@ -25,6 +25,9 @@ namespace Vistas
 
         private void CargarTodosLosPacientes()
         {
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblAdministrador.Text = usuario.Nombre_usuario;
+
             GridView1.DataSource = pacienteNegocio.ObtenerTodosLosPacientes();
             GridView1.DataBind();
         }

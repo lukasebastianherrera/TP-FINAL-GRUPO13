@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Negocio;
 
 using System.Data;
+using Entidades;
 
 namespace Vistas
 {
@@ -15,6 +16,9 @@ namespace Vistas
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblAdministrador.Text = usuario.Nombre_usuario;
+
             CargarTodosLosPacientes();
         }
 
