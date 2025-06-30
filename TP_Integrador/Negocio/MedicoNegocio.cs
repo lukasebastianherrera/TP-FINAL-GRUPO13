@@ -25,6 +25,11 @@ namespace Negocio
             return datosMedico.ObtenerTodosLosMedicos();
         }
 
+        public DataTable ObtenerTodosLosMedicosActivos()
+        {
+            return datosMedico.ObtenerTodosLosMedicosActivos();
+        }
+
         public DataTable BuscarMedicoPorDNI(string dni)
         {
             return datosMedico.BuscarMedicoPorDNI(dni);

@@ -14,13 +14,32 @@
             width: 152px;
         }
         .auto-style4 {
-            width: 399px;
+            width: 379px;
         }
         .auto-style6 {
             width: 400px;
         }
         .auto-style7 {
             width: 360px;
+        }
+        .auto-style8 {
+            width: 400px;
+            height: 42px;
+        }
+        .auto-style9 {
+            width: 152px;
+            height: 42px;
+        }
+        .auto-style10 {
+            width: 379px;
+            height: 42px;
+        }
+        .auto-style11 {
+            width: 360px;
+            height: 42px;
+        }
+        .auto-style12 {
+            height: 42px;
         }
     </style>
 </head>
@@ -58,12 +77,51 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9">
                         <asp:Label ID="lblDniMedico" runat="server" Text="DNI del Médico:"></asp:Label>
                     </td>
-                    <td class="auto-style4"> 
-            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
+                    <td class="auto-style10"> 
+            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI" Width="139px"></asp:TextBox>
+                       <asp:RequiredFieldValidator 
+                          ID="rfvDni" 
+                          runat="server" 
+                          ControlToValidate="txtDni" 
+                          ErrorMessage="El DNI es obligatorio." 
+                          ForeColor="Red" 
+                          Display="Dynamic" 
+                          SetFocusOnError="True" />
+                      
+                      
+                      <asp:RegularExpressionValidator 
+                          ID="revDni" 
+                          runat="server" 
+                          ControlToValidate="txtDni" 
+                          ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
+                          ValidationExpression="^\d{1,8}$" 
+                          ForeColor="Red" 
+                          Display="Dynamic" 
+                          SetFocusOnError="True" />
+                                             
+                    </td>
+                    <td class="auto-style11">
+                        <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar" OnClick="btnBuscarMedico_Click" />
+                    </td>
+                    <td class="auto-style12"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:GridView ID="Grv_medicos" runat="server">
+                        </asp:GridView>
                     </td>
                     <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -79,7 +137,9 @@
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
                     </td>
                     <td class="auto-style7">
                         <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>

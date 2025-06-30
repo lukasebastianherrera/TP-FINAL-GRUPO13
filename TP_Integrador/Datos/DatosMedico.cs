@@ -73,6 +73,27 @@ namespace Datos
             }
         }
 
+
+        public DataTable ObtenerTodosLosMedicosActivos()
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                                     FROM Medicos m
+                                    JOIN Persona per ON m.id_persona = per.id_persona
+                                    where m.Estado= 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+
+
+
         public DataTable BuscarMedicoPorDNI(string dni)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
