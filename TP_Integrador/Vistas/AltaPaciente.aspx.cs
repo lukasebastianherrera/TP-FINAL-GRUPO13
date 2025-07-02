@@ -28,10 +28,7 @@ namespace Vistas
             }
 
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            if (usuario != null)
-            {
-                lblAdministrador.Text = usuario.Nombre_usuario;
-            }
+            lblAdministrador.Text = usuario.Nombre_usuario;
         }
 
         private void CargarProvincias()

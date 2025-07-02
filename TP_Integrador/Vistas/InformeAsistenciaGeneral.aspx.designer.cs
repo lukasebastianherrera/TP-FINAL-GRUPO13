@@ -69,6 +69,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlMes;
 
         /// <summary>
+        /// Control rfvMes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMes;
+
+        /// <summary>
         /// Control ddlAño.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAño;
+
+        /// <summary>
+        /// Control rfvAnio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnio;
 
         /// <summary>
         /// Control lblHasta.
@@ -96,6 +114,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlMes0;
 
         /// <summary>
+        /// Control rfvMes0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMes0;
+
+        /// <summary>
         /// Control ddlAño0.
         /// </summary>
         /// <remarks>
@@ -103,6 +130,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAño0;
+
+        /// <summary>
+        /// Control rfvAnio0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnio0;
 
         /// <summary>
         /// Control btnGenerarInforme.

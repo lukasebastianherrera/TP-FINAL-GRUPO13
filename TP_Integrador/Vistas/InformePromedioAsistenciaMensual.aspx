@@ -58,8 +58,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Label ID="lblMes" runat="server" Font-Size="Medium" Text="Mes:"></asp:Label>
                     &nbsp;&nbsp;
-                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                    <asp:DropDownList ID="ddlMes" runat="server">
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvMes" runat="server" ControlToValidate="ddlMes" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un Mes</asp:RequiredFieldValidator>
                                 </td>
                     <td class="auto-style8">
                                     &nbsp;</td>
@@ -75,7 +76,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" />
+                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" ValidationGroup="grupo1" />
                     </td>
                     <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>

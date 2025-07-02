@@ -34,6 +34,9 @@
         .auto-style17 {
             height: 34px;
         }
+        .auto-style18 {
+            width: 294px;
+        }
     </style>
     </head>
 <body>
@@ -74,7 +77,7 @@
                         <asp:Label ID="lblDNI" runat="server" Font-Bold="False" Font-Size="Medium" Text="DNI del paciente:"></asp:Label>
                     </td>
                     <td class="auto-style16">
-             <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingrese DNI"></asp:TextBox>
+             <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingresar DNI"></asp:TextBox>
                     &nbsp;<asp:RequiredFieldValidator 
                         ID="rfvDni" 
                         runat="server" 
@@ -112,7 +115,7 @@
                 </table>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
                     <td>
 
              <asp:GridView ID="gvPacientes0" runat="server" Height="69px" Width="335px" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateEditButton="True" OnRowCancelingEdit="gvPacientes0_RowCancelingEdit" OnRowEditing="gvPacientes0_RowEditing" OnRowUpdating="gvPacientes0_RowUpdating">
@@ -221,12 +224,12 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
                     <td>
                         <asp:Label ID="lbl_Exito" runat="server"></asp:Label>
                     </td>

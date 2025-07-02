@@ -13,11 +13,7 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            if (Session["usuario"] != null)
-            {
-
-                lblAdministrador.Text = usuario.Nombre_usuario;
-            }
+            lblAdministrador.Text = usuario.Nombre_usuario;
         }
 
         protected void cvDias_ServerValidate(object source, ServerValidateEventArgs args)

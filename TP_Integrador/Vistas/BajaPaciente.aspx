@@ -60,11 +60,11 @@
         .auto-style24 {
             height: 76px;
         }
-        .auto-style25 {
-            width: 556px;
-        }
         .auto-style26 {
             width: 701px;
+        }
+        .auto-style27 {
+            width: 320px;
         }
     </style>
 </head>
@@ -144,7 +144,7 @@
                 </table>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style27">&nbsp;</td>
                     <td class="auto-style26">
                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true">
                         </asp:GridView>

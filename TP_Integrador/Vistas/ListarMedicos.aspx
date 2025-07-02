@@ -22,6 +22,9 @@
         .auto-style12 {
             width: 404px;
         }
+        .auto-style13 {
+            width: 382px;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +64,7 @@
                         <asp:Label ID="lblDniMedico" runat="server" Text="DNI del Médico:"></asp:Label>
                     </td>
                     <td class="auto-style11">
-                        <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDni" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
                        <asp:RequiredFieldValidator 
                           ID="rfvDni" 
                           runat="server" 
@@ -100,7 +103,7 @@
                 </table>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>
                         <asp:GridView ID="gvMedicos" runat="server">
                         </asp:GridView>
@@ -108,12 +111,12 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>

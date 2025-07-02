@@ -57,8 +57,9 @@
                     <td class="auto-style5">
                         <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad:"></asp:Label>
                     </td>
-                    <td class="auto-style6"> <asp:DropDownList ID="DropDownList1" runat="server">
+                    <td class="auto-style6"> <asp:DropDownList ID="ddlEspecialidad" runat="server">
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="ddlEspecialidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una especialidad</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -74,8 +75,9 @@
                         <asp:Label ID="lblMedico" runat="server" Text="Medicó:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:DropDownList ID="ddlMedico" runat="server">
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvMedico" runat="server" ControlToValidate="ddlMedico" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un médico</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -95,12 +97,15 @@
                         <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control" >
                             <asp:ListItem Value="0">Seleccionar Día</asp:ListItem>
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvDia" runat="server" ControlToValidate="ddlDia" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un día</asp:RequiredFieldValidator>
                         <asp:DropDownList ID="ddlMes" runat="server" CssClass="form-control">
                             <asp:ListItem Text="Seleccionar Mes" Value="0" />
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvMes" runat="server" ControlToValidate="ddlMes" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un Mes</asp:RequiredFieldValidator>
                         <asp:DropDownList ID="ddlAño" runat="server" CssClass="form-control">
                             <asp:ListItem Text="Seleccionar Año" Value="0" />
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvAnio" runat="server" ControlToValidate="ddlAño" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un Año</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -117,8 +122,9 @@
                         <asp:Label ID="lblHorario" runat="server" Text="Horario:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:DropDownList ID="ddlHorario" runat="server">
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvHorario" runat="server" ControlToValidate="ddlHorario" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un horario</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -135,8 +141,9 @@
                         <asp:Label ID="lblPaciente" runat="server" Text="Paciente"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:DropDownList ID="DropDownList4" runat="server">
+                        <asp:DropDownList ID="ddlPaciente" runat="server">
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvPaciente" runat="server" ControlToValidate="ddlPaciente" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un paciente</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -150,7 +157,7 @@
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6"><asp:Button ID="btnAsignarTurno" runat="server" Text="Asignar Turno" />
+                    <td class="auto-style6"><asp:Button ID="btnAsignarTurno" runat="server" Text="Asignar Turno" ValidationGroup="grupo1" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>

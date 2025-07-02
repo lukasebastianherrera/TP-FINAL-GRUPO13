@@ -71,8 +71,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad:"></asp:Label>
 &nbsp;
-                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                    <asp:DropDownList ID="ddlEspecialidad" runat="server">
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="ddlEspecialidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una especialidad</asp:RequiredFieldValidator>
                                 </td>
                     <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>

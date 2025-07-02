@@ -62,10 +62,7 @@
             width: 187px;
         }
         .auto-style38 {
-            width: 173px;
-        }
-        .auto-style39 {
-            width: 194px;
+            width: 175px;
         }
         .auto-style40 {
             width: 64px;
@@ -81,6 +78,9 @@
         }
         .auto-style44 {
             width: 313px;
+        }
+        .auto-style45 {
+            width: 246px;
         }
     </style>
 </head>
@@ -128,7 +128,7 @@
                                     <asp:Label ID="lblLegajo" runat="server" Font-Size="Medium" Text="Legajo:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
-                        <asp:TextBox ID="TxtLegajo" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtLegajo" runat="server" placeholder="Ingresar Legajo"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvLegajo" runat="server" ControlToValidate="TxtLegajo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese Legajo</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
@@ -136,7 +136,7 @@
                                     <asp:Label ID="lblNombre" runat="server" Font-Size="Medium" Text="Nombre:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
-                        <asp:TextBox ID="TxtNombre" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtNombre" runat="server" placeholder="Ingresar nombre"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TxtNombre" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un nombre</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="TxtNombre" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
@@ -145,7 +145,7 @@
                                     <asp:Label ID="lblApellido" runat="server" Font-Size="Medium" Text="Apellido:"></asp:Label>
                                 </td>
                                 <td>
-                        <asp:TextBox ID="TxtApellido" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtApellido" runat="server" placeholder="Ingresar apellido"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TxtApellido" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un apellido</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="TxtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
@@ -167,7 +167,7 @@
                                     <asp:Label ID="lblDNI" runat="server" Font-Size="Medium" Text="DNI:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
-                        <asp:TextBox ID="TxtDNI" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtDNI" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese DNI</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
@@ -345,7 +345,7 @@
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style38">&nbsp;</td>
                                 <td class="auto-style41">&nbsp;</td>
-                                <td class="auto-style39">&nbsp;</td>
+                                <td class="auto-style45">&nbsp;</td>
                                 <td class="auto-style40">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
@@ -355,7 +355,7 @@
                                     <asp:Label ID="lblHorarioAtencion" runat="server" Font-Size="Medium" Text="Horario de atención:"></asp:Label>
                                 </td>
                                 <td class="auto-style41">&nbsp;</td>
-                                <td class="auto-style39">&nbsp;</td>
+                                <td class="auto-style45">&nbsp;</td>
                                 <td class="auto-style40">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
@@ -365,8 +365,8 @@
                                 <td class="auto-style41">
                                     <asp:Label ID="lblDesde" runat="server" Font-Size="Medium" Text="Desde:"></asp:Label>
                                 </td>
-                                <td class="auto-style39">
-                                    <asp:TextBox ID="txtDesde" runat="server"></asp:TextBox>
+                                <td class="auto-style45">
+                                    <asp:TextBox ID="txtDesde" runat="server" placeholder="Ingresar horario"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una hora</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
@@ -374,7 +374,7 @@
                                     <asp:Label ID="lblHasta" runat="server" Font-Size="Medium" Text="Hasta:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtHasta" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtHasta" runat="server" placeholder="Ingresar horario"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvHasta" runat="server" ControlToValidate="txtHasta" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una hora</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revHasta" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>

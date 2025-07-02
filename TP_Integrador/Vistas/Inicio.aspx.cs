@@ -33,32 +33,6 @@ namespace Vistas
                 Response.Redirect("VistaMedico.aspx");
             else
                 Response.Redirect("AdminMenu.aspx");
-
-            /*
-            string usuario = txtb_usuario.Text.Trim();
-            string contrasenia =txtb_contrasenia.Text.Trim();
-
-
-            if (DDLTipoUsuario.SelectedIndex == 1 && negociousuario.TipoUsuario(usuario, contrasenia) == 1)
-            {
-                Response.Redirect("VistaMedico.aspx");
-            }
-            else if (DDLTipoUsuario.SelectedIndex == 2 && negociousuario.TipoUsuario(usuario, contrasenia) == 2)
-            {
-                Response.Redirect("AdminMenu.aspx");
-            }
-            else {
-                RFVTipoUsuario.Text = "Usuario invalido o inexistente. Por favor reintente";
-            }
-
-            if (DDLTipoUsuario.SelectedIndex == 1 )
-            {
-                Response.Redirect("VistaMedico.aspx");
-            }
-            else if (DDLTipoUsuario.SelectedIndex == 2 )
-            {
-                Response.Redirect("AdminMenu.aspx");
-            }*/
         }
 
         protected void cvUsuario_ServerValidate(object source, ServerValidateEventArgs args)

@@ -19,6 +19,9 @@
         .auto-style13 {
             width: 170px;
         }
+        .auto-style14 {
+            width: 351px;
+        }
     </style>
     </head>
 <body>
@@ -59,7 +62,7 @@
                         <asp:Label ID="lblDNI" runat="server" Font-Bold="False" Font-Size="Medium" Text="DNI del Médico:"></asp:Label>
                     </td>
                     <td class="auto-style12">
-             <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingrese DNI"></asp:TextBox>
+             <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingresar DNI"></asp:TextBox>
                     &nbsp;<asp:RequiredFieldValidator 
                           ID="rfvDni" 
                           runat="server" 
@@ -96,7 +99,7 @@
                 </table>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>
 
                         <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="69px" OnRowCancelingEdit="gvMedico_RowCancelingEdit" OnRowEditing="gvMedico_RowEditing" OnRowUpdating="gvMedico_RowUpdating" Width="335px">
@@ -183,14 +186,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>
                         <asp:Label ID="LabelPrueba" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
