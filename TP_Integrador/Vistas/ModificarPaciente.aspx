@@ -14,7 +14,7 @@
             width: 400px;
         }
         .auto-style12 {
-            width: 644px;
+            width: 352px;
         }
         .auto-style13 {
             width: 171px;
@@ -28,7 +28,7 @@
             height: 34px;
         }
         .auto-style16 {
-            width: 644px;
+            width: 352px;
             height: 34px;
         }
         .auto-style17 {
@@ -37,11 +37,18 @@
         .auto-style18 {
             width: 294px;
         }
+        .auto-style19 {
+            width: 415px;
+        }
+        .auto-style20 {
+            width: 415px;
+            height: 34px;
+        }
     </style>
     </head>
 <body>
     <form id="form1" runat="server">
-        <div style="font-weight: bold;" >
+        <div>
            
             <table class="auto-style1">
                 <tr>
@@ -50,7 +57,7 @@
                     </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style12">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -59,16 +66,17 @@
                     <td class="auto-style12">
                         <asp:Label ID="lblModificarPaciente" runat="server" Font-Size="XX-Large" Text="Modificar Paciente"></asp:Label>
                     </td>
+                    <td class="auto-style19">
+                        &nbsp;</td>
                     <td>
                         <asp:Label ID="lblAdministrador" runat="server" Text="NombreAdmin" Font-Bold="False" Font-Size="Medium"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style12">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -85,23 +93,18 @@
                         ErrorMessage="El DNI es obligatorio" 
                         ForeColor="Red" 
                         Display="Dynamic" 
-                        SetFocusOnError="True" Font-Bold="False" />
+                        SetFocusOnError="True" Font-Bold="False" ValidationGroup="grupo1" />
                     
                     
-                    <asp:RegularExpressionValidator 
-                        ID="revDni" 
-                        runat="server" 
-                        ControlToValidate="txtDni" 
-                        ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
-                        ValidationExpression="^\d{1,8}$" 
-                        ForeColor="Red" 
-                        Display="Dynamic" 
-                        SetFocusOnError="True" Font-Bold="False" />
+                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                    
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
                     </td>
-                    <td class="auto-style17">
-             <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar" />  
+                    <td class="auto-style20">
+             <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar" OnClick="btnBuscarPaciente_Click" ValidationGroup="grupo1" />  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click1" Text="Cancelar" />
+                        <asp:Label ID="lblMensaje" runat="server" Font-Bold="False"></asp:Label>
                     </td>
                     <td class="auto-style17"></td>
                 </tr>
@@ -109,7 +112,7 @@
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style12">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 </table>

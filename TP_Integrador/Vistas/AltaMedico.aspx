@@ -130,6 +130,7 @@
                                 <td class="auto-style12">
                         <asp:TextBox ID="TxtLegajo" runat="server" placeholder="Ingresar Legajo"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvLegajo" runat="server" ControlToValidate="TxtLegajo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese Legajo</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revDni0" runat="server" ControlToValidate="TxtLegajo" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[A-Za-z0-9]{5}$" ValidationGroup="grupo1">Debe tener 5 caracteres</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style19">
@@ -169,7 +170,7 @@
                                 <td class="auto-style12">
                         <asp:TextBox ID="TxtDNI" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese DNI</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style19">
@@ -278,7 +279,7 @@
                                     <td>
             <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control" placeholder="Ingresar Celular"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtCelular" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese un número de teléfono</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtCelular" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtCelular" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{10}$" ValidationGroup="grupo1">Debe ingresar 10 dígitos</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>

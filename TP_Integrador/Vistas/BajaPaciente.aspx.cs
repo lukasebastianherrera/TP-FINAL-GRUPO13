@@ -38,11 +38,13 @@ namespace Vistas
 
             if (string.IsNullOrEmpty(dni))
             {
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Ingrese un DNI para buscar.";
                 return;
-            }
+            } 
 
             var tabla = pacienteNegocio.BuscarPacientePorDNI(dni);
+            
             if (tabla.Rows.Count > 0)
             {
                 GridView1.DataSource = tabla;
@@ -53,11 +55,10 @@ namespace Vistas
             {
                 GridView1.DataSource = null;
                 GridView1.DataBind();
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "No se encontró un paciente activo con ese DNI.";
             }
         }
-
-
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -66,7 +67,7 @@ namespace Vistas
             if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dni)
             {
                 Session["DniConfirmado"] = dni;
-                lblMensaje.Text = "¿Está seguro de eliminar al paciente con DNI " + dni + "? Haga clic nuevamente para confirmar.";
+                lblMensaje.Text = "¿Está seguro de eliminar al paciente con DNI " + dni + "? Haga clic nuevamente en 'Eliminar' para confirmar.";
                 return;
             }
 
@@ -74,12 +75,14 @@ namespace Vistas
 
             if (eliminado)
             {
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
                 lblMensaje.Text = "El paciente fue eliminado correctamente.";
                 txtDni.Text = "";
                 CargarTodosLosPacientes();
             }
             else
             {
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "No se encontró un paciente activo con ese DNI.";
             }
 
@@ -92,7 +95,6 @@ namespace Vistas
             lblMensaje.Text = "";
             Session["DniConfirmado"] = null;
 
-            
             CargarTodosLosPacientes();
         }
 

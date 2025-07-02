@@ -21,25 +21,25 @@
         }
         .auto-style6 {
             width: 400px;
-            height: 42px;
+            height: 40px;
         }
         .auto-style7 {
-            height: 42px;
+            height: 40px;
         }
         .auto-style8 {
             width: 152px;
-            height: 42px;
+            height: 40px;
         }
         .auto-style9 {
             width: 333px;
-            height: 42px;
+            height: 40px;
         }
         .auto-style13 {
             width: 348px;
         }
         .auto-style14 {
             width: 348px;
-            height: 42px;
+            height: 40px;
         }
         .auto-style20 {
             width: 400px;
@@ -118,15 +118,7 @@
                         SetFocusOnError="True" />
                     
                     
-                    <asp:RegularExpressionValidator 
-                        ID="revDni" 
-                        runat="server" 
-                        ControlToValidate="txtDni" 
-                        ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
-                        ValidationExpression="^\d{1,8}$" 
-                        ForeColor="Red" 
-                        Display="Dynamic" 
-                        SetFocusOnError="True" />
+                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                    
                     </td>
                     <td class="auto-style14">

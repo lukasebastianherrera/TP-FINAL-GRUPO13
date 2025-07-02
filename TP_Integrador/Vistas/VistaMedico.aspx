@@ -63,8 +63,9 @@
                     <td class="auto-style13">
                         <asp:TextBox ID="txtDNI" runat="server" ></asp:TextBox>
                     &nbsp;<asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDNI" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese DNI</asp:RequiredFieldValidator>
-                                    &nbsp;&nbsp;&nbsp;<asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:RegularExpressionValidator ID="revDni0" runat="server" ControlToValidate="txtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
+                                <asp:CompareValidator ID="cvDNI" runat="server" ControlToValidate="txtDNI" Display="Dynamic" ErrorMessage="CompareValidator" Font-Bold="False" ForeColor="Red" Operator="DataTypeCheck" Type="Integer" ValidationGroup="grupo1">Solo se permiten números</asp:CompareValidator>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
                     </td>
                     <td class="auto-style14">

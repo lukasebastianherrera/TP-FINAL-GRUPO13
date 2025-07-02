@@ -73,15 +73,7 @@
                           SetFocusOnError="True" Font-Bold="False" />
                       
                       
-                      <asp:RegularExpressionValidator 
-                          ID="revDni" 
-                          runat="server" 
-                          ControlToValidate="txtDni" 
-                          ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
-                          ValidationExpression="^\d{1,8}$" 
-                          ForeColor="Red" 
-                          Display="Dynamic" 
-                          SetFocusOnError="True" Font-Bold="False" />
+                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                                              
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar" />  
