@@ -129,6 +129,7 @@
                                 </td>
                                 <td class="auto-style12">
                         <asp:TextBox ID="TxtLegajo" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvLegajo" runat="server" ControlToValidate="TxtLegajo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese Legajo</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style19">
@@ -136,6 +137,8 @@
                                 </td>
                                 <td class="auto-style12">
                         <asp:TextBox ID="TxtNombre" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TxtNombre" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un nombre</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="TxtNombre" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style32">
@@ -143,6 +146,8 @@
                                 </td>
                                 <td>
                         <asp:TextBox ID="TxtApellido" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TxtApellido" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un apellido</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="TxtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -163,6 +168,8 @@
                                 </td>
                                 <td class="auto-style12">
                         <asp:TextBox ID="TxtDNI" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese DNI</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style19">
@@ -174,6 +181,7 @@
                             <asp:ListItem Value="M">Masculino</asp:ListItem>
                             <asp:ListItem Value="F">Femenino</asp:ListItem>
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ControlToValidate="ddlSexo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un sexo</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style32">
@@ -183,12 +191,15 @@
                                     <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control" >
                                         <asp:ListItem Value="0">Seleccionar Día</asp:ListItem>
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvDia" runat="server" ControlToValidate="ddlDia" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un día</asp:RequiredFieldValidator>
                                     <asp:DropDownList ID="ddlMes" runat="server" CssClass="form-control">
                                         <asp:ListItem Text="Seleccionar Mes" Value="0" />
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvMes" runat="server" ControlToValidate="ddlMes" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un Mes</asp:RequiredFieldValidator>
                                     <asp:DropDownList ID="ddlAño" runat="server" CssClass="form-control">
                                         <asp:ListItem Text="Seleccionar Año" Value="0" />
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvAnio" runat="server" ControlToValidate="ddlAño" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un Año</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -205,27 +216,31 @@
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
+                                <td class="auto-style26"></td>
                                 <td class="auto-style11">
                                     <asp:Label ID="lblNacionalidad" runat="server" Font-Size="Medium" Text="Nacionalidad:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
                         <asp:DropDownList ID="DdlNacionalidad" runat="server">
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="DdlNacionalidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Nacionalidad</asp:RequiredFieldValidator>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
+                                <td class="auto-style28"></td>
                                     <td class="auto-style19">
                                         <asp:Label ID="lblDireccion" runat="server" Text="Dirección:" Font-Size="Medium"></asp:Label>
                                                                 </td>
                                                                 <td class="auto-style12">
-                                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" placeholder="Ingresar Direccion"></asp:TextBox>
+                                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" placeholder="Ingresar Direccion" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfv" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una dirección</asp:RequiredFieldValidator>
                                                                 </td>
-                                                                <td class="auto-style28">&nbsp;</td>
+                                                                <td class="auto-style28"></td>
                                                                 <td class="auto-style32">
                                         <asp:Label ID="lblEmail" runat="server" Text="E-mail:" Font-Bold="False" Font-Size="Medium"></asp:Label>
                                                                 </td>
                                                                 <td>
                                         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Ingresar Correo"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese un email</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" ValidationGroup="grupo1">Error, ingrese un email valido</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -242,17 +257,19 @@
                             <tr>
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style11">
-                <asp:Label ID="lblLocalidad" runat="server" Text="Localidad:" Font-Size="Medium"></asp:Label>
-                                    </td>
-                                    <td class="auto-style12">
-                <asp:DropDownList ID="ddlLocalidad" runat="server" CssClass="form-control"></asp:DropDownList>
-                                    </td>
-                                    <td class="auto-style28">&nbsp;</td>
-                                    <td class="auto-style19">
                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia:" Font-Size="Medium"></asp:Label>
                                     </td>
                                     <td class="auto-style12">
                 <asp:DropDownList ID="ddlProvincia" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Provincia</asp:RequiredFieldValidator>
+                                    </td>
+                                    <td class="auto-style28">&nbsp;</td>
+                                    <td class="auto-style19">
+                <asp:Label ID="lblLocalidad" runat="server" Text="Localidad:" Font-Size="Medium"></asp:Label>
+                                    </td>
+                                    <td class="auto-style12">
+                <asp:DropDownList ID="ddlLocalidad" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="ddlLocalidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Localidad</asp:RequiredFieldValidator>
                                     </td>
                                     <td class="auto-style28">&nbsp;</td>
                                     <td class="auto-style32">
@@ -260,6 +277,8 @@
                                     </td>
                                     <td>
             <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control" placeholder="Ingresar Celular"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtCelular" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese un número de teléfono</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtCelular" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -285,6 +304,7 @@
                                 <td class="auto-style12">
                         <asp:DropDownList ID="DdlEspecialidad" runat="server">
                         </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="DdlEspecialidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Provincia</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="auto-style28"></td>
                                 <td class="auto-style19"></td>
@@ -316,6 +336,7 @@
                                         <asp:ListItem>Viernes</asp:ListItem>
                                         <asp:ListItem>Sábado</asp:ListItem>
                                     </asp:CheckBoxList>
+                                    <asp:CustomValidator ID="cvDias" runat="server" Display="Dynamic" ErrorMessage="Debe seleccionar al menos un día de atención" ForeColor="Red" OnServerValidate="cvDias_ServerValidate" ValidateEmptyText="True"></asp:CustomValidator>
                                 </td>
                             </tr>
                             </table>
@@ -346,12 +367,16 @@
                                 </td>
                                 <td class="auto-style39">
                                     <asp:TextBox ID="txtDesde" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una hora</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style40">
                                     <asp:Label ID="lblHasta" runat="server" Font-Size="Medium" Text="Hasta:"></asp:Label>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txtHasta" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvHasta" runat="server" ControlToValidate="txtHasta" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una hora</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revHasta" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                         </table>
@@ -366,7 +391,7 @@
                             <tr>
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style42">&nbsp;</td>
-                                <td class="auto-style43"><asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
+                                <td class="auto-style43"><asp:Button ID="btnGuardar" runat="server" Text="Guardar" ValidationGroup="grupo1" />
                                  </td>
                                 <td><asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
                                  </td>

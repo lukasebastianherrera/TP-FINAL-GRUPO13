@@ -20,6 +20,9 @@ namespace Vistas
             }
         }
 
-
+        protected void cvDias_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (cblDias.SelectedItem != null);
+        }
     }
 }

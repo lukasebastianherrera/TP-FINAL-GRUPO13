@@ -62,6 +62,26 @@
                     </td>
                     <td class="auto-style11">
                         <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
+                       <asp:RequiredFieldValidator 
+                          ID="rfvDni" 
+                          runat="server" 
+                          ControlToValidate="txtDni" 
+                          ErrorMessage="El DNI es obligatorio." 
+                          ForeColor="Red" 
+                          Display="Dynamic" 
+                          SetFocusOnError="True" Font-Bold="False" />
+                      
+                      
+                      <asp:RegularExpressionValidator 
+                          ID="revDni" 
+                          runat="server" 
+                          ControlToValidate="txtDni" 
+                          ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
+                          ValidationExpression="^\d{1,8}$" 
+                          ForeColor="Red" 
+                          Display="Dynamic" 
+                          SetFocusOnError="True" Font-Bold="False" />
+                                             
                     </td>
                     <td class="auto-style12">
                         <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
@@ -77,31 +97,28 @@
                     <td class="auto-style12">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                </table>
+            <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style11">
+                    <td>
                         <asp:GridView ID="gvMedicos" runat="server">
                         </asp:GridView>
                     </td>
-                    <td class="auto-style12">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
+            <br />
         </div>
     </form>
 </body>

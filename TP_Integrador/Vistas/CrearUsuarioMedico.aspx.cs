@@ -19,5 +19,10 @@ namespace Vistas
                 lblAdministrador.Text = usuario.Nombre_usuario;
             }
         }
+
+        protected void btnCrearUsuario_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

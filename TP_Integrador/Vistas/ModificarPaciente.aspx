@@ -75,10 +75,31 @@
                     </td>
                     <td class="auto-style16">
              <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingrese DNI"></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;<asp:RequiredFieldValidator 
+                        ID="rfvDni" 
+                        runat="server" 
+                        ControlToValidate="txtDni" 
+                        ErrorMessage="El DNI es obligatorio" 
+                        ForeColor="Red" 
+                        Display="Dynamic" 
+                        SetFocusOnError="True" Font-Bold="False" />
+                    
+                    
+                    <asp:RegularExpressionValidator 
+                        ID="revDni" 
+                        runat="server" 
+                        ControlToValidate="txtDni" 
+                        ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
+                        ValidationExpression="^\d{1,8}$" 
+                        ForeColor="Red" 
+                        Display="Dynamic" 
+                        SetFocusOnError="True" Font-Bold="False" />
+                   
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    </td>
+                    <td class="auto-style17">
              <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar" />  
                     </td>
-                    <td class="auto-style17"></td>
                     <td class="auto-style17"></td>
                 </tr>
                 <tr>
@@ -88,10 +109,11 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                </table>
+            <table class="auto-style1">
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td>
 
              <asp:GridView ID="gvPacientes0" runat="server" Height="69px" Width="335px" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateEditButton="True" OnRowCancelingEdit="gvPacientes0_RowCancelingEdit" OnRowEditing="gvPacientes0_RowEditing" OnRowUpdating="gvPacientes0_RowUpdating">
                  <Columns>
@@ -197,25 +219,22 @@
 
                     </td>
                     <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style10">&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td>
                         <asp:Label ID="lbl_Exito" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
             </table>
+            <br />
+            <br />
             <br />
            
         </div>

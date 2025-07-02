@@ -41,25 +41,6 @@
             width: 348px;
             height: 42px;
         }
-        .auto-style15 {
-            width: 400px;
-            height: 23px;
-        }
-        .auto-style16 {
-            width: 152px;
-            height: 23px;
-        }
-        .auto-style17 {
-            width: 333px;
-            height: 23px;
-        }
-        .auto-style18 {
-            width: 348px;
-            height: 23px;
-        }
-        .auto-style19 {
-            height: 23px;
-        }
         .auto-style20 {
             width: 400px;
             height: 76px;
@@ -78,6 +59,12 @@
         }
         .auto-style24 {
             height: 76px;
+        }
+        .auto-style25 {
+            width: 556px;
+        }
+        .auto-style26 {
+            width: 701px;
         }
     </style>
 </head>
@@ -154,15 +141,37 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                </table>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style26">
+                       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true">
+                        </asp:GridView>
+
+                    &nbsp;&nbsp;&nbsp; </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">
-                       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true">
-                        </asp:GridView>
-
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" Width="72px" OnClick="btnCancelar_Click" />
                     </td>
-                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style13">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -172,35 +181,9 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" Width="72px" OnClick="btnCancelar_Click" />
-                    </td>
-                    <td class="auto-style13">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style15"></td>
-                    <td class="auto-style16"></td>
-                    <td class="auto-style17"></td>
-                    <td class="auto-style18"></td>
-                    <td class="auto-style19"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
-                        &nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
             </table>
+            <br />
+            <br />
         </div>
     </form>
 </body>

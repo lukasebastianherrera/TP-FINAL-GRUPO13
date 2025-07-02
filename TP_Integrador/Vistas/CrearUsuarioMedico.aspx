@@ -66,8 +66,28 @@
                     </td>
                     <td class="auto-style8">
                         <asp:TextBox ID="txtIdMedico" runat="server"></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnBuscarIdMedico" runat="server" Text="Buscar" />
+                    &nbsp;<asp:RequiredFieldValidator 
+                          ID="rfvDni" 
+                          runat="server" 
+                          ControlToValidate="txtIdMedico" 
+                          ErrorMessage="El DNI es obligatorio." 
+                          ForeColor="Red" 
+                          Display="Dynamic" 
+                          SetFocusOnError="True" Font-Bold="False" />
+                      
+                      
+                        &nbsp;<asp:RegularExpressionValidator 
+                          ID="revDni" 
+                          runat="server" 
+                          ControlToValidate="txtIdMedico" 
+                          ErrorMessage="Ingrese solo números (máx. 8 dígitos)." 
+                          ValidationExpression="^\d{1,8}$" 
+                          ForeColor="Red" 
+                          Display="Dynamic" 
+                          SetFocusOnError="True" Font-Bold="False" />
+                                             
+                        &nbsp;<asp:Button ID="btnBuscarIdMedico" runat="server" Text="Buscar" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -112,6 +132,7 @@
                      </td>
                      <td class="auto-style8">
                         <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtUsuario" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un usuario</asp:RequiredFieldValidator>
                      </td>
                      <td class="auto-style6">&nbsp;</td>
                      <td>&nbsp;</td>
@@ -130,7 +151,8 @@
                         <asp:Label ID="lblContrasena" runat="server" Text="Contraseña:" Font-Size="Medium"></asp:Label>
                     </td>
                     <td class="auto-style8">
-                        <asp:TextBox ID="txtContrasena" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContrasena1" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvContrasena1" runat="server" ControlToValidate="txtContrasena1" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una contraseña</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -149,7 +171,9 @@
                         <asp:Label ID="lblConfirmarContrasena" runat="server" Font-Size="Medium" Text="Confirmar contraseña:"></asp:Label>
                     </td>
                     <td class="auto-style8">
-                        <asp:TextBox ID="txtConfirmarContrasena" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContrasena2" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvContrasena" runat="server" ControlToValidate="txtContrasena2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Reingrese la contraseña</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvContrasena" runat="server" ControlToCompare="txtContrasena1" ControlToValidate="txtContrasena2" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red" ValidationGroup="grupo1"></asp:CompareValidator>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -167,7 +191,7 @@
                     <td class="auto-style5">
                         &nbsp;</td>
                     <td class="auto-style8">
-                        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" />
+                        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" OnClick="btnCrearUsuario_Click" ValidationGroup="grupo1" />
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -175,7 +199,9 @@
                 <tr>
                     <td class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:Label ID="lblMensajeExito" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>

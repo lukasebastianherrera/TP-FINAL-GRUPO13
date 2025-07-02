@@ -61,8 +61,10 @@
                         <asp:Label ID="lblDniPaciente" runat="server" Text="DNI del paciente:"></asp:Label>
                     </td>
                     <td class="auto-style13">
-                        <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:TextBox ID="txtDNI" runat="server" ></asp:TextBox>
+                    &nbsp;<asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDNI" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese DNI</asp:RequiredFieldValidator>
+                                    &nbsp;&nbsp;&nbsp;<asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
                     </td>
                     <td class="auto-style14">
