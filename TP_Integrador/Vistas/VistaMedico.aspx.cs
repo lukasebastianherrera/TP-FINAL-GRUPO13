@@ -13,8 +13,10 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            //lblNombreMedico.Text = usuario.Nombre_usuario;
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblNombreMedico.Text = usuario.Nombre_usuario;
+            int idPersona = usuario.Id_persona;
+
             if (!IsPostBack)
             {
                 cargarGridview();
@@ -22,8 +24,11 @@ namespace Vistas
         }
         private void cargarGridview()
         {
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            int idPersona = usuario.Id_persona;
+
             MedicoNegocio medicoNegocio = new MedicoNegocio();
-            GridView1.DataSource = medicoNegocio.TurnosMedico();
+            GridView1.DataSource = medicoNegocio.TurnosMedico(idPersona);
             GridView1.DataBind();
         }
     }

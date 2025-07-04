@@ -182,12 +182,18 @@ namespace Datos
             }
 
         }
-        public DataTable TurnosMedico()
+        public DataTable TurnosMedico(int id_persona)
         {
             AccesoDatos accesoDatos = new AccesoDatos();
             SqlConnection connection = accesoDatos.ObtenerConexion();
-            string consulta = @"SELECT * FROM Turnos";
+            string consulta = @"SELECT per.nombre, per.apellido, t.dia_turno, t.hora_turno, t.observacion,  per.dni, per.sexo, per.nacionalidad,
+                              per.fecha_nacimiento, per.correo_electronico, per.telefono, per.direccion, t.asistencia, t.estado FROM Turnos t
+                              INNER JOIN Pacientes p ON t.id_paciente = p.id_paciente
+                              INNER JOIN PERSONA per ON p.id_persona = per.id_persona
+                              INNER JOIN MEDICOS m ON t.id_medico = m.id_medico
+                              WHERE m.id_persona = @idpersonaMedico";
             SqlCommand sqlCommand = new SqlCommand(consulta, connection);
+            sqlCommand.Parameters.AddWithValue("idpersonaMedico", id_persona);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
 
             DataTable tabla = new DataTable();
