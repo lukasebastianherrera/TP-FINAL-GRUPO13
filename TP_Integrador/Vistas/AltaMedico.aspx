@@ -82,6 +82,60 @@
         .auto-style45 {
             width: 246px;
         }
+        .auto-style46 {
+            width: 100px;
+            height: 23px;
+        }
+        .auto-style47 {
+            width: 151px;
+            height: 23px;
+        }
+        .auto-style48 {
+            width: 240px;
+            height: 23px;
+        }
+        .auto-style49 {
+            width: 50px;
+            height: 23px;
+        }
+        .auto-style50 {
+            width: 121px;
+            height: 23px;
+        }
+        .auto-style51 {
+            width: 187px;
+            height: 23px;
+        }
+        .auto-style52 {
+            height: 23px;
+        }
+        .auto-style53 {
+            width: 100px;
+            height: 127px;
+        }
+        .auto-style54 {
+            width: 151px;
+            height: 127px;
+        }
+        .auto-style55 {
+            width: 240px;
+            height: 127px;
+        }
+        .auto-style56 {
+            width: 50px;
+            height: 127px;
+        }
+        .auto-style57 {
+            width: 121px;
+            height: 127px;
+        }
+        .auto-style58 {
+            width: 187px;
+            height: 127px;
+        }
+        .auto-style59 {
+            height: 127px;
+        }
     </style>
 </head>
 <body>
@@ -163,20 +217,20 @@
                                 <td class="auto-style16"></td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style11">
+                                <td class="auto-style53"></td>
+                                <td class="auto-style54">
                                     <asp:Label ID="lblDNI" runat="server" Font-Size="Medium" Text="DNI:"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style55">
                         <asp:TextBox ID="TxtDNI" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese DNI</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style19">
+                                <td class="auto-style56"></td>
+                                <td class="auto-style57">
                                     <asp:Label ID="lblSexo" runat="server" Font-Size="Medium" Text="Sexo:"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style55">
                         <asp:DropDownList ID="ddlSexo" runat="server" >
                             <asp:ListItem Value="0">Seleccionar sexo</asp:ListItem>
                             <asp:ListItem Value="M">Masculino</asp:ListItem>
@@ -184,11 +238,11 @@
                         </asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ControlToValidate="ddlSexo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un sexo</asp:RequiredFieldValidator>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style32">
+                                <td class="auto-style56"></td>
+                                <td class="auto-style58">
         <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento:" Font-Size="Medium"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style59">
                                     <asp:DropDownList ID="ddlDia" runat="server" CssClass="form-control" >
                                         <asp:ListItem Value="0">Seleccionar Día</asp:ListItem>
                                     </asp:DropDownList>
@@ -204,17 +258,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style11">&nbsp;</td>
-                                <td class="auto-style12">&nbsp;</td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style19">
-                                    &nbsp;</td>
-                                <td class="auto-style12">
-                                    &nbsp;</td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style32">&nbsp;</td>
-                                <td>&nbsp;</td>
+                                <td class="auto-style46"></td>
+                                <td class="auto-style47"></td>
+                                <td class="auto-style48"></td>
+                                <td class="auto-style49"></td>
+                                <td class="auto-style50">
+                                    </td>
+                                <td class="auto-style48">
+                                    </td>
+                                <td class="auto-style49"></td>
+                                <td class="auto-style51"></td>
+                                <td class="auto-style52"></td>
                             </tr>
                             <tr>
                                 <td class="auto-style26"></td>

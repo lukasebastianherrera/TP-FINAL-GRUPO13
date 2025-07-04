@@ -100,7 +100,7 @@ namespace Datos
                 string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
                                      FROM Medicos m
                                      JOIN Persona per ON m.ID_Persona = per.ID_Persona
-                                     WHERE per.DNI = @dni AND p.Estado = 1";
+                                     WHERE per.DNI = @dni AND m.Estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 cmd.Parameters.AddWithValue("@dni", dni);

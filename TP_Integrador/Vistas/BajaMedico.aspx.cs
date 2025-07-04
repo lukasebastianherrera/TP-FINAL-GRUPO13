@@ -14,8 +14,7 @@ namespace Vistas
         private MedicoNegocio medicoNegocio = new MedicoNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            lblAdministrador.Text = usuario.Nombre_usuario;
+          
 
             if (!IsPostBack)
             {
@@ -23,6 +22,11 @@ namespace Vistas
                 Session["DniConfirmado"] = null;
                 lblMensaje.Text = "";
             }
+
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblAdministrador.Text = usuario.Nombre_usuario;
+
+
         }
 
         private void CargarTodosLosMedicos()
