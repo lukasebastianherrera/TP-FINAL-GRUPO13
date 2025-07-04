@@ -71,7 +71,7 @@ namespace Datos
             }
         }
 
-
+        
         public DataTable obtenerTodosLosPacientesyDatos()
         {
             SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
@@ -86,17 +86,34 @@ namespace Datos
             return tabla;
         }
 
+        public DataTable BuscarPacienteConDNI(string dni)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+
+                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                                     FROM Pacientes p
+                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona
+                                     WHERE per.DNI = @dni AND p.Estado = 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+
+
+
 
         public DataTable BuscarPacientePorDNI(string dni)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                /*
-                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
-                                     FROM Pacientes p
-                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona
-                                     WHERE per.DNI = @dni AND p.Estado = 1";
-                */
 
                 string consulta = @"SELECT p.id_persona,p.id_paciente , dni, nombre, apellido, sexo, nacionalidad, 
                                     fecha_nacimiento, correo_electronico, telefono, direccion, estado

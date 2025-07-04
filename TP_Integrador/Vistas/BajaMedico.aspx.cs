@@ -42,7 +42,7 @@ namespace Vistas
                 return;
             }
 
-            var tabla = medicoNegocio.BuscarMedicoPorDNI(dni);
+            var tabla = medicoNegocio.BuscarMedicoConDNI(dni);
             if (tabla.Rows.Count>0)
             {
                 Grv_medicos.DataSource = tabla;

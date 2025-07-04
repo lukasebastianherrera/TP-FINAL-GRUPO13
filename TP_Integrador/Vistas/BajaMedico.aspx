@@ -103,9 +103,16 @@
                           ForeColor="Red" 
                           Display="Dynamic" 
                           SetFocusOnError="True" />
-                      
-                      
-                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
+
+             <asp:RegularExpressionValidator 
+                 ID="revDni" 
+                 runat="server" 
+                 ControlToValidate="txtDni" 
+                 Display="Dynamic" 
+                 ErrorMessage="RegularExpressionValidator"
+                 ForeColor="Red" 
+                 ValidationExpression="^\d{8}$" 
+                 ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                                              
                     </td>
                     <td class="auto-style11">

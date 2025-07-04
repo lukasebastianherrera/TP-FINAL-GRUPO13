@@ -92,6 +92,32 @@ namespace Datos
         }
 
 
+        public DataTable BuscarMedicoConDNI(string dni)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+
+                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                                     FROM Medicos m
+                                     JOIN Persona per ON m.ID_Persona = per.ID_Persona
+                                     WHERE per.DNI = @dni AND p.Estado = 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+
+
+
+
+
+
 
 
         public DataTable BuscarMedicoPorDNI(string dni)

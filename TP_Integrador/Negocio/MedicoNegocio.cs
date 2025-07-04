@@ -35,6 +35,13 @@ namespace Negocio
             return datosMedico.BuscarMedicoPorDNI(dni);
         }
 
+        public DataTable BuscarMedicoConDNI(string dni)
+        {
+            return datosMedico.BuscarMedicoConDNI(dni);
+        }
+
+
+
         public bool BajaLogicaMedico(string dni)
         {
             return datosMedico.BajaLogicaMedico(dni);

@@ -43,7 +43,7 @@ namespace Vistas
                 return;
             } 
 
-            var tabla = pacienteNegocio.BuscarPacientePorDNI(dni);
+            var tabla = pacienteNegocio.BuscarPacienteConDNI(dni);
             
             if (tabla.Rows.Count > 0)
             {
