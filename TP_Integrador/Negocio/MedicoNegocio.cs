@@ -50,5 +50,12 @@ namespace Negocio
         {
             return datosMedico.ModificarMedico(nombre, apellido, dni, legajo, IdEspecialidad, estado);
         }
+
+        public DataTable TurnosMedico()
+        {
+            return datosMedico.TurnosMedico();
+        }
+
+
     }
 }

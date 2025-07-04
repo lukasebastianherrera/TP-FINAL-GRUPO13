@@ -112,14 +112,6 @@ namespace Datos
             }
         }
 
-
-
-
-
-
-
-
-
         public DataTable BuscarMedicoPorDNI(string dni)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
@@ -188,6 +180,21 @@ namespace Datos
             {
                 return false;
             }
+
+        }
+        public DataTable TurnosMedico()
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            SqlConnection connection = accesoDatos.ObtenerConexion();
+            string consulta = @"SELECT * FROM Turnos";
+            SqlCommand sqlCommand = new SqlCommand(consulta, connection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+            DataTable tabla = new DataTable();
+            sqlDataAdapter.Fill(tabla);
+            return tabla;
+
+
         }
     }
 }

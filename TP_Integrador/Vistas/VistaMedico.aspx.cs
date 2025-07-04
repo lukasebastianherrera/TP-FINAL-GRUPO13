@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Entidades;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 
 namespace Vistas
 {
@@ -12,8 +13,18 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            lblNombreMedico.Text = usuario.Nombre_usuario;
+            //Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            //lblNombreMedico.Text = usuario.Nombre_usuario;
+            if (!IsPostBack)
+            {
+                cargarGridview();
+            }
+        }
+        private void cargarGridview()
+        {
+            MedicoNegocio medicoNegocio = new MedicoNegocio();
+            GridView1.DataSource = medicoNegocio.TurnosMedico();
+            GridView1.DataBind();
         }
     }
 }

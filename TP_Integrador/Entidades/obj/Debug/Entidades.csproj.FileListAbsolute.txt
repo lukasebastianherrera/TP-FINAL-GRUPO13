@@ -34,3 +34,9 @@ C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Entida
 C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Entidades\obj\Debug\Entidades.dll
 C:\Users\seba\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_2\TP_Integrador\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Admin\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_v2\TP_Integrador\Entidades\bin\Debug\Entidades.dll
+C:\Users\Admin\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_v2\TP_Integrador\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Admin\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_v2\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_v2\TP_Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_v2\TP_Integrador\Entidades\obj\Debug\Entidades.dll
+C:\Users\Admin\Desktop\UTN\PROGRAMACION 3\TP-FINAL-GRUPO13_v2\TP_Integrador\Entidades\obj\Debug\Entidades.pdb
