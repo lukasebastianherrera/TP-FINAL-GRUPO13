@@ -15,7 +15,6 @@ namespace Vistas
         {
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblNombreMedico.Text = usuario.Nombre_usuario;
-            int idPersona = usuario.Id_persona;
 
             if (!IsPostBack)
             {
