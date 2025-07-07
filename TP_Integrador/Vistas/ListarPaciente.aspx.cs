@@ -16,15 +16,15 @@ namespace Vistas
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            lblAdministrador.Text = usuario.Nombre_usuario;
+           // Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+          //  lblAdministrador.Text = usuario.Nombre_usuario;
 
             CargarTodosLosPacientes();
         }
 
         private void CargarTodosLosPacientes()
         {
-            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientes();
+            DataTable dt = pacienteNegocio.obtenerTodosLosPacientesyDatos();
             gvPacientes.DataSource = dt;
             gvPacientes.DataBind();
         }

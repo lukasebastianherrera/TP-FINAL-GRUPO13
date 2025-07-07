@@ -1,42 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\",
+  "WorkspaceRootPath": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\bajapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\bajapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\modificarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\modificarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\listarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\listarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\listarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5DC91D27-729C-4275-832F-C32C33840661}|Datos\\Datos.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\datos\\datospaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5DC91D27-729C-4275-832F-C32C33840661}|Datos\\Datos.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\datos\\datospaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5DC91D27-729C-4275-832F-C32C33840661}|Datos\\Datos.csproj|solutionrelative:datos\\datospaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\negocio\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\negocio\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|solutionrelative:negocio\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\bajapaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\bajapaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\listarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\listarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\modificarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5DC91D27-729C-4275-832F-C32C33840661}|Datos\\Datos.csproj|c:\\workspace\\tp-final-grupo13\\tp_integrador\\datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DC91D27-729C-4275-832F-C32C33840661}|Datos\\Datos.csproj|solutionrelative:datos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|c:\\workspace\\tp-final-grupo13\\tp_integrador\\vistas\\altamedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\altamedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|c:\\workspace\\tp-final-grupo13\\tp_integrador\\vistas\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\bajapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\bajapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\modificarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\modificarpaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\modificarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\modificarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|d:\\documentos\\escritorio\\utn\\4to cuatrimestre\\programaci\u00F3n iii\\tp-final-grupo13\\tp_integrador\\vistas\\listarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\listarpaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\bajapaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\bajapaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,15 +54,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 260,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Inicio.aspx",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\Inicio.aspx",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\Inicio.aspx",
               "RelativeDocumentMoniker": "Vistas\\Inicio.aspx",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\Inicio.aspx",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\Inicio.aspx",
               "RelativeToolTip": "Vistas\\Inicio.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -64,13 +76,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "ListarPaciente.aspx.cs",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx.cs",
               "RelativeDocumentMoniker": "Vistas\\ListarPaciente.aspx.cs",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx.cs",
               "RelativeToolTip": "Vistas\\ListarPaciente.aspx.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAwCoAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:06:33.049Z",
               "IsPinned": true,
@@ -78,11 +90,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ListarPaciente.aspx",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx",
               "RelativeDocumentMoniker": "Vistas\\ListarPaciente.aspx",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ListarPaciente.aspx",
               "RelativeToolTip": "Vistas\\ListarPaciente.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -92,13 +104,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "PacienteNegocio.cs",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Negocio\\PacienteNegocio.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Negocio\\PacienteNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\PacienteNegocio.cs",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Negocio\\PacienteNegocio.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Negocio\\PacienteNegocio.cs",
               "RelativeToolTip": "Negocio\\PacienteNegocio.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCIAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwCIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:21:31.952Z",
               "IsPinned": true,
@@ -106,13 +118,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DatosPaciente.cs",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Datos\\DatosPaciente.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Datos\\DatosPaciente.cs",
               "RelativeDocumentMoniker": "Datos\\DatosPaciente.cs",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Datos\\DatosPaciente.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Datos\\DatosPaciente.cs",
               "RelativeToolTip": "Datos\\DatosPaciente.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAowMAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAcwHgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:15:04.029Z",
               "IsPinned": true,
@@ -120,24 +132,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "AccesoDatos.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Datos\\AccesoDatos.cs",
+              "RelativeDocumentMoniker": "Datos\\AccesoDatos.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Datos\\AccesoDatos.cs",
+              "RelativeToolTip": "Datos\\AccesoDatos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T22:56:45.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AltaMedico.aspx.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\AltaMedico.aspx.cs",
+              "RelativeDocumentMoniker": "Vistas\\AltaMedico.aspx.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\AltaMedico.aspx.cs",
+              "RelativeToolTip": "Vistas\\AltaMedico.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T22:53:25.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "BajaPaciente.aspx.cs",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx.cs",
               "RelativeDocumentMoniker": "Vistas\\BajaPaciente.aspx.cs",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx.cs",
               "RelativeToolTip": "Vistas\\BajaPaciente.aspx.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAQwEEAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:58:50.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ModificarPaciente.aspx",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx",
               "RelativeDocumentMoniker": "Vistas\\ModificarPaciente.aspx",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx",
               "RelativeToolTip": "Vistas\\ModificarPaciente.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -146,26 +184,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "BajaPaciente.aspx",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx",
               "RelativeDocumentMoniker": "Vistas\\BajaPaciente.aspx",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\BajaPaciente.aspx",
               "RelativeToolTip": "Vistas\\BajaPaciente.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-07-07T13:51:57.182Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ModificarPaciente.aspx.cs",
-              "DocumentMoniker": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx.cs",
+              "DocumentMoniker": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx.cs",
               "RelativeDocumentMoniker": "Vistas\\ModificarPaciente.aspx.cs",
-              "ToolTip": "D:\\Documentos\\Escritorio\\UTN\\4to Cuatrimestre\\Programaci\u00F3n III\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx.cs",
+              "ToolTip": "C:\\Workspace\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\ModificarPaciente.aspx.cs",
               "RelativeToolTip": "Vistas\\ModificarPaciente.aspx.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAswHYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwHYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:54:21.777Z",
               "EditorCaption": ""
