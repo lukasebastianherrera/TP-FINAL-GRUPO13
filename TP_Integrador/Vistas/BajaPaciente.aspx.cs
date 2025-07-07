@@ -2,6 +2,7 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -36,13 +37,6 @@ namespace Vistas
         {
             string dni = txtDni.Text.Trim();
 
-            if (string.IsNullOrEmpty(dni))
-            {
-                lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Text = "Ingrese un DNI para buscar.";
-                return;
-            } 
-
             var tabla = pacienteNegocio.BuscarPacienteConDNI(dni);
             
             if (tabla.Rows.Count > 0)
@@ -56,13 +50,21 @@ namespace Vistas
                 GridView1.DataSource = null;
                 GridView1.DataBind();
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Text = "No se encontró un paciente activo con ese DNI.";
+                lblMensaje.Text = "No se encontró un/a paciente con ese DNI.";
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             string dni = txtDni.Text.Trim();
+
+            DataTable dt = pacienteNegocio.BuscarPacienteConDNI(dni);
+            if(dt.Rows.Count == 0)
+            {
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensaje.Text = $"No existe ningún paciente con DNI {dni}";
+                return;
+            }
 
             if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dni)
             {
@@ -83,7 +85,7 @@ namespace Vistas
             else
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Text = "No se encontró un paciente activo con ese DNI.";
+                lblMensaje.Text = "No se encontró un paciente con ese DNI.";
             }
 
             Session["DniConfirmado"] = null;
@@ -98,7 +100,11 @@ namespace Vistas
             CargarTodosLosPacientes();
         }
 
-
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            CargarTodosLosPacientes();
+        }
     }
 }
 

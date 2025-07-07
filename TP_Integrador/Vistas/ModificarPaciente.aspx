@@ -104,14 +104,15 @@
              <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar" OnClick="btnBuscarPaciente_Click" ValidationGroup="grupo1" />  
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click1" Text="Cancelar" />
-                        <asp:Label ID="lblMensaje" runat="server" Font-Bold="False"></asp:Label>
                     </td>
                     <td class="auto-style17"></td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style12">
+                        <asp:Label ID="lblMensaje" runat="server" Font-Bold="False"></asp:Label>
+                    </td>
                     <td class="auto-style19">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -121,16 +122,8 @@
                     <td class="auto-style18">&nbsp;</td>
                     <td>
 
-             <asp:GridView ID="gvPacientes0" runat="server" Height="69px" Width="335px" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateEditButton="True" OnRowCancelingEdit="gvPacientes0_RowCancelingEdit" OnRowEditing="gvPacientes0_RowEditing" OnRowUpdating="gvPacientes0_RowUpdating">
+             <asp:GridView ID="gvPacientes0" runat="server" Height="69px" Width="335px" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateEditButton="True" OnRowCancelingEdit="gvPacientes0_RowCancelingEdit" OnRowEditing="gvPacientes0_RowEditing" OnRowUpdating="gvPacientes0_RowUpdating" AllowPaging="True" OnPageIndexChanging="gvPacientes0_PageIndexChanging" PageSize="6">
                  <Columns>
-                     <asp:TemplateField HeaderText="ID Paciente">
-                         <EditItemTemplate>
-                             <asp:Label ID="lbl_eit_IdPaciente" runat="server" Text='<%# Bind("id_paciente") %>'></asp:Label>
-                         </EditItemTemplate>
-                         <ItemTemplate>
-                             <asp:Label ID="lbl_IdPaciente" runat="server" Text='<%# Bind("id_paciente") %>'></asp:Label>
-                         </ItemTemplate>
-                     </asp:TemplateField>
                      <asp:TemplateField HeaderText="Nombre">
                          <EditItemTemplate>
                              <asp:TextBox ID="txt_eit_Nombre" runat="server" Text='<%# Bind("nombre") %>'></asp:TextBox>
@@ -173,10 +166,10 @@
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Fecha Nacimiento">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_FechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_FechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento", "{0:dd/MM/yyyy}") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_FechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento") %>'></asp:Label>
+                             <asp:Label ID="lbl_FechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento", "{0:dd/MM/yyyy}") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Correo Electronico">
@@ -214,7 +207,7 @@
                  </Columns>
                  <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                  <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                 <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                 <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Center" />
                  <RowStyle BackColor="White" ForeColor="#003399" />
                  <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
                  <SortedAscendingCellStyle BackColor="#EDF6F6" />

@@ -23,7 +23,13 @@
             width: 454px;
         }
         .auto-style13 {
-            width: 320px;
+            width: 149px;
+        }
+        .auto-style14 {
+            width: 926px;
+        }
+        .auto-style15 {
+            margin-left: 385px;
         }
     </style>
 </head>
@@ -72,23 +78,25 @@
                         ErrorMessage="El DNI es obligatorio" 
                         ForeColor="Red" 
                         Display="Dynamic" 
-                        SetFocusOnError="True" Font-Bold="False" />
+                        SetFocusOnError="True" Font-Bold="False" ValidationGroup="grupo1" />
                     
                     
                                     <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
                    
                     </td>
                     <td class="auto-style12">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" OnClick="btnFiltrar_Click" ValidationGroup="grupo1" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" />
+                        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" CausesValidation="False" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style11">
+                        <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
                     <td class="auto-style12">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -96,20 +104,22 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td>
-                        <asp:GridView ID="gvPacientes" runat="server">
+                    <td class="auto-style14">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" CssClass="auto-style15" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6">
+                            <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>

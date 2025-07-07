@@ -60,7 +60,7 @@ namespace Datos
             {
                 string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
                                      FROM Pacientes p
-                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona
+                                     JOIN Persona per ON p.id_persona = per.id_persona
                                      WHERE p.Estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);

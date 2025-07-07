@@ -30,7 +30,7 @@ namespace Vistas
 
             if (string.IsNullOrEmpty(dni))
             {
-                tabla = pacienteNegocio.ObtenerTodosLosPacientes();
+                tabla = pacienteNegocio.obtenerTodosLosPacientesyDatos();
             }
             else
             {
@@ -92,12 +92,12 @@ namespace Vistas
         {
             string dni = txtDni.Text.Trim();
 
-            if (string.IsNullOrEmpty(dni))
+           /* if (string.IsNullOrEmpty(dni))
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Ingrese un DNI para buscar.";
                 return;
-            }
+            }*/
 
             cargarPacientes();
 
@@ -116,9 +116,15 @@ namespace Vistas
         {
             txtDni.Text = "";
             lbl_Exito.Text = "";
+            lblMensaje.Text = "";
             gvPacientes0.EditIndex = -1;
             cargarPacientes();
         }
 
+        protected void gvPacientes0_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPacientes0.PageIndex = e.NewPageIndex;
+            cargarPacientes();
+        }
     }
 }

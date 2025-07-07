@@ -42,7 +42,7 @@
             height: 42px;
         }
         .auto-style13 {
-            width: 527px;
+            width: 548px;
         }
         .auto-style14 {
             width: 744px;

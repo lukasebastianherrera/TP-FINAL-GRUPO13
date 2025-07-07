@@ -64,7 +64,7 @@
             width: 701px;
         }
         .auto-style27 {
-            width: 320px;
+            width: 555px;
         }
     </style>
 </head>
@@ -129,7 +129,9 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -138,7 +140,8 @@
                 <tr>
                     <td class="auto-style27">&nbsp;</td>
                     <td class="auto-style26">
-                       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true">
+                       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="6">
+                           <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
 
                     &nbsp;&nbsp;&nbsp; </td>
@@ -162,8 +165,7 @@
                         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" Width="72px" OnClick="btnCancelar_Click" />
                     </td>
                     <td class="auto-style13">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
