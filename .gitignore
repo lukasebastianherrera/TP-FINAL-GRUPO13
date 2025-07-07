@@ -1,0 +1,23 @@
+# Visual Studio
+.vs/
+*.suo
+
+# Compilados
+bin/
+obj/
+
+# PDB, logs, paquetes
+*.pdb
+*.log
+*.nupkg
+
+# Archivos de usuario
+*.user
+*.userosscache
+
+# Ignorar binarios de compilación
+**/bin/
+**/obj/
+
+# Ignorar archivos de Visual Studio
+.vs/

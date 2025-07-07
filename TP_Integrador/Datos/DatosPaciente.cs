@@ -75,7 +75,7 @@ namespace Datos
         public DataTable obtenerTodosLosPacientesyDatos()
         {
             SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
-            string consulta = @"SELECT p.id_persona,p.id_paciente , dni, nombre, apellido, sexo, nacionalidad, 
+            string consulta = @"SELECT dni, nombre, apellido, sexo, nacionalidad, 
                                     fecha_nacimiento, correo_electronico, telefono, direccion, estado
                                     FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona";
 
@@ -115,7 +115,7 @@ namespace Datos
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
 
-                string consulta = @"SELECT p.id_persona,p.id_paciente , dni, nombre, apellido, sexo, nacionalidad, 
+                string consulta = @"SELECT  dni, nombre, apellido, sexo, nacionalidad, 
                                     fecha_nacimiento, correo_electronico, telefono, direccion, estado
                                     FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona
                                     WHERE dni = @dni AND estado = 1";
