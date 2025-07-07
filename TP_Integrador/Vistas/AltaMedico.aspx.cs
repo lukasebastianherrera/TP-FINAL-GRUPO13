@@ -44,38 +44,43 @@ namespace Vistas
                 Id_especialidad = int.Parse(DdlEspecialidad.SelectedValue),
                 Legajo = TxtLegajo.Text.Trim()
             };
-        //    bool exito = medicoNeg.AltaMedico(medico);
-        //    if (exito)
-        //    {
-        //        lblMensaje.ForeColor = System.Drawing.Color.Green;
-        //        lblMensaje.Text = "Paciente añadido con éxito";
-        //    }
-        //    else
-        //    {
-        //        lblMensaje.ForeColor = System.Drawing.Color.Red;
-        //        lblMensaje.Text = "El paciente ya existe";
-        //    }
-        //        LimpiarFormulario();
-        //}
-        //private void LimpiarFormulario()
-        //{
-        //    txtNombre.Text = "";
-        //    txtApellido.Text = "";
-        //    txtDNI.Text = "";
-        //    txtEmail.Text = "";
-        //    txtCelular.Text = "";
-        //    txtDireccion.Text = "";
+            bool exito = medicoNeg.AltaMedico(medico);
+            if (exito)
+            {
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
+                lblMensaje.Text = "Paciente añadido con éxito";
+            }
+            else
+            {
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensaje.Text = "El paciente ya existe";
+            }
+            LimpiarFormulario();
+        }
+        private void LimpiarFormulario()
+        {
+            TxtNombre.Text = "";
+            TxtApellido.Text = "";
+            TxtDNI.Text = "";
+            txtEmail.Text = "";
+            txtCelular.Text = "";
+            txtDireccion.Text = "";
+            txtDesde.Text = "";
+            txtHasta.Text = "";
+            TxtLegajo.Text = "";
+            cblDias.ClearSelection();
+            DdlEspecialidad.SelectedIndex = 0;
 
-        //    ddlSexo.SelectedIndex = 0;
-        //    ddlNacionalidad.SelectedIndex = 0;
+            ddlSexo.SelectedIndex = 0;
+            DdlNacionalidad.SelectedIndex = 0;
+            ddlLocalidad.SelectedIndex = 0;
+            ddlDia.SelectedIndex = 0;
+            ddlMes.SelectedIndex = 0;
+            ddlAño.SelectedIndex = 0;
 
-        //    ddlDia.SelectedIndex = 0;
-        //    ddlMes.SelectedIndex = 0;
-        //    ddlAnio.SelectedIndex = 0;
-
-        //    ddlProvincia.SelectedIndex = 0;
-        //    ddlLocalidad.Items.Clear();
-        //    ddlLocalidad.Items.Add(new ListItem("Seleccionar Localidad", "0"));
+            ddlProvincia.SelectedIndex = 0;
+            ddlLocalidad.Items.Clear();
+            ddlLocalidad.Items.Add(new ListItem("Seleccionar Localidad", "0"));
         }
     }
 }

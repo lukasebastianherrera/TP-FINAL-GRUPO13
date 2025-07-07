@@ -7,15 +7,19 @@
       "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\altamedico.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|c:\\users\\sonva\\documents\\github\\tp-final-grupo13\\tp_integrador\\vistas\\altapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\altapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|c:\\users\\sonva\\documents\\github\\tp-final-grupo13\\tp_integrador\\vistas\\altamedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\altamedico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|c:\\users\\sonva\\documents\\github\\tp-final-grupo13\\tp_integrador\\negocio\\mediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\negocio\\mediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mediconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|c:\\users\\sonva\\documents\\github\\tp-final-grupo13\\tp_integrador\\negocio\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\vistas\\altapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{187C093F-FEFB-4645-A3E5-A3E792477B4F}|Vistas\\Vistas.csproj|solutionrelative:vistas\\altapaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\negocio\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFF03B6D-77CF-417C-8BD4-545779C034C2}|Negocio\\Negocio.csproj|solutionrelative:negocio\\pacientenegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,7 +40,7 @@
               "RelativeDocumentMoniker": "Vistas\\AltaMedico.aspx.cs",
               "ToolTip": "C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\AltaMedico.aspx.cs",
               "RelativeToolTip": "Vistas\\AltaMedico.aspx.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAIwDAAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAtwD4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-04T17:08:15.49Z",
               "IsPinned": true,
@@ -45,6 +49,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AltaMedico.aspx",
+              "DocumentMoniker": "C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\AltaMedico.aspx",
+              "RelativeDocumentMoniker": "Vistas\\AltaMedico.aspx",
+              "ToolTip": "C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\AltaMedico.aspx",
+              "RelativeToolTip": "Vistas\\AltaMedico.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-07T00:56:43.507Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AltaPaciente.aspx.cs",
               "DocumentMoniker": "C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\Vistas\\AltaPaciente.aspx.cs",
               "RelativeDocumentMoniker": "Vistas\\AltaPaciente.aspx.cs",
@@ -57,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PacienteNegocio.cs",
               "DocumentMoniker": "C:\\Users\\sonva\\Documents\\GitHub\\TP-FINAL-GRUPO13\\TP_Integrador\\Negocio\\PacienteNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\PacienteNegocio.cs",
@@ -80,14 +106,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-04T17:33:50.973Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             }
           ]
         }
