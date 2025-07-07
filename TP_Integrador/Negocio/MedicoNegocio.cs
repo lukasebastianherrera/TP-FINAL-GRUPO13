@@ -15,9 +15,18 @@ namespace Negocio
 
         public MedicoNegocio() { }
 
-        public bool AltaMedico(Medico medico)
+        public bool AltaMedicoConHorario(Medico medico, List<string> dias, TimeSpan desde, TimeSpan hasta)
         {
-            return datosMedico.AltaMedico(medico);
+            int idMed = datosMedico.AltaMedico(medico);
+
+            if (idMed <= 0) return false;
+
+            foreach(string dia in dias)
+            {
+                datosMedico.AltaHorarioMedico(idMed, dia, desde, hasta);
+            }
+
+            return true;
         }
 
         public DataTable ObtenerTodosLosMedicos()

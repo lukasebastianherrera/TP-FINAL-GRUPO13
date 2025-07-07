@@ -510,13 +510,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.CheckBoxList cblDias;
 
         /// <summary>
-        /// Control cvDias.
+        /// Control lblErrorDias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvDias;
+        protected global::System.Web.UI.WebControls.Label lblErrorDias;
 
         /// <summary>
         /// Control lblHorarioAtencion.
@@ -526,6 +526,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblHorarioAtencion;
+
+        /// <summary>
+        /// Control lblErrorHorario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorHorario;
 
         /// <summary>
         /// Control lblDesde.

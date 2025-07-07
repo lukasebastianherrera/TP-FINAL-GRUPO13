@@ -31,29 +31,30 @@ namespace Datos
             }
         }
 
-        public bool AltaMedico(Persona persona)
+        public int AltaMedico(Medico medico)
         {
-            if (ExisteMedico(persona.Dni))
-                return false;
+            if (ExisteMedico(medico.Dni))
+                return 0;
 
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand("sp_AltaMedico", conexion))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@dni", persona.Dni);
-                cmd.Parameters.AddWithValue("@nombre", persona.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", persona.Apellido);
-                cmd.Parameters.AddWithValue("@sexo", persona.Sexo);
-                cmd.Parameters.AddWithValue("@nacionalidad", persona.Nacionalidad);
-                cmd.Parameters.AddWithValue("@fecha_nacimiento", persona.Fecha_nacimiento);
-                cmd.Parameters.AddWithValue("@correo_electronico", persona.Correo_electronico);
-                cmd.Parameters.AddWithValue("@telefono", persona.Telefono);
-                cmd.Parameters.AddWithValue("@direccion", persona.Direccion);
-                cmd.Parameters.AddWithValue("@id_localidad", persona.Id_localidad);
+                cmd.Parameters.AddWithValue("@dni", medico.Dni);
+                cmd.Parameters.AddWithValue("@nombre", medico.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", medico.Apellido);
+                cmd.Parameters.AddWithValue("@sexo", medico.Sexo);
+                cmd.Parameters.AddWithValue("@nacionalidad", medico.Nacionalidad);
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", medico.Fecha_nacimiento);
+                cmd.Parameters.AddWithValue("@correo_electronico", medico.Correo_electronico);
+                cmd.Parameters.AddWithValue("@telefono", medico.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", medico.Direccion);
+                cmd.Parameters.AddWithValue("@id_localidad", medico.Id_localidad);
+                cmd.Parameters.AddWithValue("@id_especialidad", medico.Id_especialidad);
+                cmd.Parameters.AddWithValue("@legajo", medico.Legajo);
 
-                int filas = cmd.ExecuteNonQuery();
-                return filas > 0;
+                return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
 
@@ -70,6 +71,22 @@ namespace Datos
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
                 return tabla;
+            }
+        }
+
+        public void AltaHorarioMedico(int idMedico, string diaSemana, TimeSpan horaDesde, TimeSpan horaHasta)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand("sp_AltaHorarioMedico", conexion))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_medico", idMedico);
+                cmd.Parameters.AddWithValue("@dia_semana", diaSemana);
+                cmd.Parameters.AddWithValue("@hora_desde", horaDesde);
+                cmd.Parameters.AddWithValue("@hora_hasta", horaHasta);
+
+                cmd.ExecuteNonQuery();
             }
         }
 

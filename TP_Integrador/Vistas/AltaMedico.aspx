@@ -16,10 +16,6 @@
         .auto-style12 {
             width: 240px;
         }
-        .auto-style14 {
-            width: 151px;
-            height: 29px;
-        }
         .auto-style15 {
             width: 240px;
             height: 29px;
@@ -40,11 +36,8 @@
         .auto-style25 {
             width: 774px;
         }
-        .auto-style26 {
-            width: 100px;
-        }
         .auto-style27 {
-            width: 100px;
+            width: 75px;
             height: 29px;
         }
         .auto-style28 {
@@ -55,11 +48,8 @@
             height: 29px;
         }
         .auto-style31 {
-            width: 187px;
+            width: 174px;
             height: 29px;
-        }
-        .auto-style32 {
-            width: 187px;
         }
         .auto-style38 {
             width: 175px;
@@ -70,24 +60,11 @@
         .auto-style41 {
             width: 60px;
         }
-        .auto-style42 {
-            width: 432px;
-        }
-        .auto-style43 {
-            width: 400px;
-        }
         .auto-style44 {
             width: 313px;
         }
-        .auto-style45 {
-            width: 246px;
-        }
         .auto-style46 {
-            width: 100px;
-            height: 23px;
-        }
-        .auto-style47 {
-            width: 151px;
+            width: 75px;
             height: 23px;
         }
         .auto-style48 {
@@ -103,18 +80,14 @@
             height: 23px;
         }
         .auto-style51 {
-            width: 187px;
+            width: 174px;
             height: 23px;
         }
         .auto-style52 {
             height: 23px;
         }
         .auto-style53 {
-            width: 100px;
-            height: 127px;
-        }
-        .auto-style54 {
-            width: 151px;
+            width: 75px;
             height: 127px;
         }
         .auto-style55 {
@@ -130,11 +103,56 @@
             height: 127px;
         }
         .auto-style58 {
-            width: 187px;
+            width: 174px;
             height: 127px;
         }
         .auto-style59 {
             height: 127px;
+        }
+        .auto-style60 {
+            width: 75px;
+        }
+        .auto-style61 {
+            width: 120px;
+        }
+        .auto-style62 {
+            width: 120px;
+            height: 29px;
+        }
+        .auto-style63 {
+            width: 120px;
+            height: 127px;
+        }
+        .auto-style64 {
+            width: 120px;
+            height: 23px;
+        }
+        .auto-style65 {
+            width: 174px;
+        }
+        .auto-style66 {
+            width: 581px;
+        }
+        .auto-style67 {
+            width: 242px;
+        }
+        .auto-style68 {
+            width: 75px;
+            height: 33px;
+        }
+        .auto-style69 {
+            width: 581px;
+            height: 33px;
+        }
+        .auto-style70 {
+            width: 242px;
+            height: 33px;
+        }
+        .auto-style71 {
+            height: 33px;
+        }
+        .auto-style72 {
+            width: 351px;
         }
     </style>
 </head>
@@ -177,8 +195,8 @@
                         </table>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style11">
+                                <td class="auto-style60">&nbsp;</td>
+                                <td class="auto-style61">
                                     <asp:Label ID="lblLegajo" runat="server" Font-Size="Medium" Text="Legajo:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
@@ -196,7 +214,7 @@
                                     <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="TxtNombre" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style32">
+                                <td class="auto-style65">
                                     <asp:Label ID="lblApellido" runat="server" Font-Size="Medium" Text="Apellido:"></asp:Label>
                                 </td>
                                 <td>
@@ -207,7 +225,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style27"></td>
-                                <td class="auto-style14"></td>
+                                <td class="auto-style62"></td>
                                 <td class="auto-style15"></td>
                                 <td class="auto-style29"></td>
                                 <td class="auto-style20"></td>
@@ -218,7 +236,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style53"></td>
-                                <td class="auto-style54">
+                                <td class="auto-style63">
                                     <asp:Label ID="lblDNI" runat="server" Font-Size="Medium" Text="DNI:"></asp:Label>
                                 </td>
                                 <td class="auto-style55">
@@ -233,8 +251,8 @@
                                 <td class="auto-style55">
                         <asp:DropDownList ID="ddlSexo" runat="server" >
                             <asp:ListItem Value="0">Seleccionar sexo</asp:ListItem>
-                            <asp:ListItem Value="M">Masculino</asp:ListItem>
-                            <asp:ListItem Value="F">Femenino</asp:ListItem>
+                            <asp:ListItem Value="Masculino">Masculino</asp:ListItem>
+                            <asp:ListItem Value="Femenino">Femenino</asp:ListItem>
                         </asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ControlToValidate="ddlSexo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un sexo</asp:RequiredFieldValidator>
                                 </td>
@@ -259,7 +277,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style46"></td>
-                                <td class="auto-style47"></td>
+                                <td class="auto-style64"></td>
                                 <td class="auto-style48"></td>
                                 <td class="auto-style49"></td>
                                 <td class="auto-style50">
@@ -271,12 +289,24 @@
                                 <td class="auto-style52"></td>
                             </tr>
                             <tr>
-                                <td class="auto-style26"></td>
-                                <td class="auto-style11">
+                                <td class="auto-style60"></td>
+                                <td class="auto-style61">
                                     <asp:Label ID="lblNacionalidad" runat="server" Font-Size="Medium" Text="Nacionalidad:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
                         <asp:DropDownList ID="DdlNacionalidad" runat="server">
+                            <asp:ListItem Value="0">Seleccionar Nacionalidad</asp:ListItem>
+                            <asp:ListItem Value="Argentina">Argentina</asp:ListItem>
+                            <asp:ListItem Value="Bolivia">Bolivia</asp:ListItem>
+                            <asp:ListItem Value="Brasil">Brasil</asp:ListItem>
+                            <asp:ListItem Value="Chile">Chile</asp:ListItem>
+                            <asp:ListItem Value="Colombia">Colombia</asp:ListItem>
+                            <asp:ListItem Value="Ecuador">Ecuador</asp:ListItem>
+                            <asp:ListItem Value="Paraguay">Paraguay</asp:ListItem>
+                            <asp:ListItem Value="Perú">Perú</asp:ListItem>
+                            <asp:ListItem Value="Uruguay">Uruguay</asp:ListItem>
+                            <asp:ListItem Value="Venezuela">Venezuela</asp:ListItem>
+                            <asp:ListItem Value="Otros">Otros</asp:ListItem>
                         </asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="DdlNacionalidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Nacionalidad</asp:RequiredFieldValidator>
                                 </td>
@@ -289,7 +319,7 @@
                                     <asp:RequiredFieldValidator ID="rfv" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una dirección</asp:RequiredFieldValidator>
                                                                 </td>
                                                                 <td class="auto-style28"></td>
-                                                                <td class="auto-style32">
+                                                                <td class="auto-style65">
                                         <asp:Label ID="lblEmail" runat="server" Text="E-mail:" Font-Bold="False" Font-Size="Medium"></asp:Label>
                                                                 </td>
                                                                 <td>
@@ -299,23 +329,23 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style11">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
+                                <td class="auto-style61">&nbsp;</td>
                                 <td class="auto-style12">&nbsp;</td>
                                 <td class="auto-style28">&nbsp;</td>
                                 <td class="auto-style19">&nbsp;</td>
                                 <td class="auto-style12">&nbsp;</td>
                                 <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style32">&nbsp;</td>
+                                <td class="auto-style65">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style11">
+                                <td class="auto-style60">&nbsp;</td>
+                                <td class="auto-style61">
                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia:" Font-Size="Medium"></asp:Label>
                                     </td>
                                     <td class="auto-style12">
-                <asp:DropDownList ID="ddlProvincia" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                <asp:DropDownList ID="ddlProvincia" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged1"></asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Provincia</asp:RequiredFieldValidator>
                                     </td>
                                     <td class="auto-style28">&nbsp;</td>
@@ -327,7 +357,7 @@
                                     <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="ddlLocalidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Localidad</asp:RequiredFieldValidator>
                                     </td>
                                     <td class="auto-style28">&nbsp;</td>
-                                    <td class="auto-style32">
+                                    <td class="auto-style65">
             <asp:Label ID="lblCelular" runat="server" Text="Tel/Celular:" Font-Size="Medium"></asp:Label>
                                     </td>
                                     <td>
@@ -337,8 +367,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style11">
+                                <td class="auto-style60">&nbsp;</td>
+                                <td class="auto-style61">
                                     &nbsp;</td>
                                 <td class="auto-style12">
                                     &nbsp;</td>
@@ -348,115 +378,117 @@
                                 <td class="auto-style12">
                                     &nbsp;</td>
                                 <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style32">&nbsp;</td>
+                                <td class="auto-style65">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26"></td>
-                                <td class="auto-style11">
+                                <td class="auto-style60"></td>
+                                <td class="auto-style61">
                                     <asp:Label ID="lblEspecialidad" runat="server" Font-Size="Medium" Text="Especialidad:"></asp:Label>
                                 </td>
                                 <td class="auto-style12">
                         <asp:DropDownList ID="DdlEspecialidad" runat="server">
                         </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="DdlEspecialidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Provincia</asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="DdlEspecialidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Especialidad</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="auto-style28"></td>
                                 <td class="auto-style19"></td>
                                 <td class="auto-style12"></td>
                                 <td class="auto-style28"></td>
-                                <td class="auto-style32"></td>
+                                <td class="auto-style65"></td>
                                 <td></td>
                             </tr>
                             
                         </table>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
                                 <td class="auto-style11">
                                     &nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
                                 <td class="auto-style11">
                                     <asp:Label ID="lblDiasAtencion" runat="server" Font-Size="Medium" Text="Días de atención:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:CheckBoxList ID="cblDias" runat="server" RepeatDirection="Horizontal" Font-Size="Medium">
-                                        <asp:ListItem>Lunes</asp:ListItem>
-                                        <asp:ListItem>Martes</asp:ListItem>
-                                        <asp:ListItem>Miércoles</asp:ListItem>
-                                        <asp:ListItem>Jueves</asp:ListItem>
-                                        <asp:ListItem>Viernes</asp:ListItem>
-                                        <asp:ListItem>Sábado</asp:ListItem>
+                                    <asp:CheckBoxList ID="cblDias" runat="server" RepeatDirection="Horizontal" Font-Size="Medium" ValidationGroup="grupo1">
+                                        <asp:ListItem Value="1">Lunes</asp:ListItem>
+                                        <asp:ListItem Value="2">Martes</asp:ListItem>
+                                        <asp:ListItem Value="3">Miércoles</asp:ListItem>
+                                        <asp:ListItem Value="4">Jueves</asp:ListItem>
+                                        <asp:ListItem Value="5">Viernes</asp:ListItem>
+                                        <asp:ListItem Value="6">Sábado</asp:ListItem>
                                     </asp:CheckBoxList>
-                                    <asp:CustomValidator ID="cvDias" runat="server" Display="Dynamic" ErrorMessage="Debe seleccionar al menos un día de atención" ForeColor="Red" OnServerValidate="cvDias_ServerValidate" ValidateEmptyText="True"></asp:CustomValidator>
+                                    <asp:Label ID="lblErrorDias" runat="server" ForeColor="Red"></asp:Label>
                                 </td>
                             </tr>
                             </table>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
                                 <td class="auto-style38">&nbsp;</td>
                                 <td class="auto-style41">&nbsp;</td>
-                                <td class="auto-style45">&nbsp;</td>
+                                <td class="auto-style72">&nbsp;</td>
                                 <td class="auto-style40">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
                                 <td class="auto-style38">
                                     <asp:Label ID="lblHorarioAtencion" runat="server" Font-Size="Medium" Text="Horario de atención:"></asp:Label>
                                 </td>
                                 <td class="auto-style41">&nbsp;</td>
-                                <td class="auto-style45">&nbsp;</td>
+                                <td class="auto-style72">
+                                    <asp:Label ID="lblErrorHorario" runat="server" ForeColor="Red"></asp:Label>
+                                </td>
                                 <td class="auto-style40">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
                                 <td class="auto-style38">&nbsp;</td>
                                 <td class="auto-style41">
                                     <asp:Label ID="lblDesde" runat="server" Font-Size="Medium" Text="Desde:"></asp:Label>
                                 </td>
-                                <td class="auto-style45">
-                                    <asp:TextBox ID="txtDesde" runat="server" placeholder="Ingresar horario"></asp:TextBox>
+                                <td class="auto-style72">
+                                    <asp:TextBox ID="txtDesde" runat="server" placeholder="Ingresar horario" TextMode="Time"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una hora</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="revDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revDesde" runat="server" ControlToValidate="txtDesde" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^([01]?\d|2[0-3]):[0-5]\d$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style40">
                                     <asp:Label ID="lblHasta" runat="server" Font-Size="Medium" Text="Hasta:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtHasta" runat="server" placeholder="Ingresar horario"></asp:TextBox>
+                                    <asp:TextBox ID="txtHasta" runat="server" placeholder="Ingresar horario" TextMode="Time"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvHasta" runat="server" ControlToValidate="txtHasta" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una hora</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="revHasta" runat="server" ControlToValidate="TxtDNI" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revHasta" runat="server" ControlToValidate="txtHasta" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^([01]?\d|2[0-3]):[0-5]\d$" ValidationGroup="grupo1">Error, solo ingrese números</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                         </table>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style42">&nbsp;</td>
-                                <td class="auto-style43">&nbsp;</td>
+                                <td class="auto-style60">&nbsp;</td>
+                                <td class="auto-style66">&nbsp;</td>
+                                <td class="auto-style67">&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style42">&nbsp;</td>
-                                <td class="auto-style43"><asp:Button ID="btnGuardar" runat="server" Text="Guardar" ValidationGroup="grupo1" />
+                                <td class="auto-style68"></td>
+                                <td class="auto-style69"></td>
+                                <td class="auto-style70"><asp:Button ID="btnGuardar" runat="server" Text="Guardar" ValidationGroup="grupo1" OnClick="btnGuardar_Click" />
                                  </td>
-                                <td><asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
+                                <td class="auto-style71"><asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
                                  </td>
-                                <td>&nbsp;</td>
+                                <td class="auto-style71"></td>
                             </tr>
                             <tr>
-                                <td class="auto-style26">&nbsp;</td>
-                                <td class="auto-style42">
+                                <td class="auto-style60">&nbsp;</td>
+                                <td class="auto-style66">
                                     &nbsp;</td>
-                                <td class="auto-style43">&nbsp;</td>
+                                <td class="auto-style67">&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
