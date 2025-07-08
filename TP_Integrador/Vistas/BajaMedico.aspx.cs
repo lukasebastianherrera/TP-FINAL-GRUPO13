@@ -14,7 +14,11 @@ namespace Vistas
         private MedicoNegocio medicoNegocio = new MedicoNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
 
             if (!IsPostBack)
             {

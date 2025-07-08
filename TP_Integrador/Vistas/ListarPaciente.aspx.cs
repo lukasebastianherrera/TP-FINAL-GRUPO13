@@ -16,8 +16,12 @@ namespace Vistas
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-           // Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-          //  lblAdministrador.Text = usuario.Nombre_usuario;
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblAdministrador.Text = usuario.Nombre_usuario;
 
             CargarTodosLosPacientes();
         }

@@ -18,6 +18,12 @@ namespace Vistas
         private PacienteNegocio pacNeg = new PacienteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+
             if (!IsPostBack)
             {
                 CargarProvincias();

@@ -13,6 +13,12 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
         }

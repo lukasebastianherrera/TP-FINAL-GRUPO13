@@ -107,7 +107,79 @@
                     <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style13">
-                        <asp:GridView ID="GridView1" runat="server">
+                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" PageSize="6">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Nombre">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("nombre") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Apellido">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Dia Del Turno">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_diaTurno" runat="server" Text='<%# Bind("dia_turno") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Hora del Turno">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_HoraTurno" runat="server" Text='<%# Bind("hora_turno") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Observación ">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Observacion" runat="server" Text='<%# Bind("observacion") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="DNI">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Bind("dni") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Sexo">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Sexo" runat="server" Text='<%# Bind("sexo") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nacionalidad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Nacionalidad" runat="server" Text='<%# Bind("nacionalidad") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Fecha De Nacimiento">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_fechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Correo Electronico">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_CorreoElectronico" runat="server" Text='<%# Bind("correo_electronico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Telefono">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Telefono" runat="server" Text='<%# Bind("Telefono") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Direccion">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("direccion") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Asistencia">
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="ckbox_it_Asistencia" runat="server" Checked='<%# Bind("asistencia") %>' Enabled="False" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Estado">
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="ckBox_it_Estado" runat="server" Checked='<%# Bind("estado") %>' />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
                         </asp:GridView>
                     </td>
                     <td class="auto-style14">&nbsp;</td>

@@ -85,7 +85,7 @@
                         <asp:Label ID="lblDNI" runat="server" Font-Bold="False" Font-Size="Medium" Text="DNI del paciente:"></asp:Label>
                     </td>
                     <td class="auto-style16">
-             <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingresar DNI"></asp:TextBox>
+             <asp:TextBox ID="txtDni" runat="server" placeholder = " Ingresar DNI" OnTextChanged="txtDni_TextChanged"></asp:TextBox>
                     &nbsp;<asp:RequiredFieldValidator 
                         ID="rfvDni" 
                         runat="server" 

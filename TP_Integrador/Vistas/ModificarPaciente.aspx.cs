@@ -15,6 +15,11 @@ namespace Vistas
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
 
@@ -83,6 +88,7 @@ namespace Vistas
             }
 
             gvPacientes0.EditIndex = -1;
+            txtDni.Text = "";
             cargarPacientes();
         }
 
@@ -125,6 +131,11 @@ namespace Vistas
         {
             gvPacientes0.PageIndex = e.NewPageIndex;
             cargarPacientes();
+        }
+
+        protected void txtDni_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

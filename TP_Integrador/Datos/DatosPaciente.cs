@@ -134,7 +134,7 @@ namespace Datos
                 string consulta = @"SELECT  dni, nombre, apellido, sexo, nacionalidad, 
                                     fecha_nacimiento, correo_electronico, telefono, direccion, estado
                                     FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona
-                                    WHERE dni = @dni AND estado = 1";
+                                    WHERE dni = @dni";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 cmd.Parameters.AddWithValue("@dni", dni);
