@@ -31,7 +31,10 @@ namespace Negocio
 
         }
 
-
+        public DataTable BuscarPacientePorApellido(string apellido)
+        {
+            return datosPaciente.BuscarPacientePorApellido(apellido);
+        }
         public DataTable BuscarPacientePorDNI(string dni)
         {
             return datosPaciente.BuscarPacientePorDNI(dni);
