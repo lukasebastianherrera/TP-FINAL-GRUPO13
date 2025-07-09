@@ -21,7 +21,7 @@ namespace Negocio
 
             if (idMed <= 0) return false;
 
-            foreach(string dia in dias)
+            foreach (string dia in dias)
             {
                 datosMedico.AltaHorarioMedico(idMed, dia, desde, hasta);
             }
@@ -65,6 +65,13 @@ namespace Negocio
             return datosMedico.TurnosMedico(id_persona);
         }
 
-
+        public bool TurnoMedicoAsistencia(string DNI, string observacion, bool asistencia, bool estado)
+        {
+            return datosMedico.TurnoMedicoAsistencia(DNI, observacion, asistencia, estado);
+        }
+        public DataTable TurnosMedicoporDNI(int id_persona, string dni)
+        {
+            return datosMedico.TurnosMedicoporDNI(id_persona, dni);
+        }
     }
 }

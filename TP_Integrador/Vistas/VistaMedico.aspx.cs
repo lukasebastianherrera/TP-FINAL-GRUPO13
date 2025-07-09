@@ -2,6 +2,7 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -30,8 +31,18 @@ namespace Vistas
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             int idPersona = usuario.Id_persona;
 
+            string dni = txtDNI.Text.Trim();
             MedicoNegocio medicoNegocio = new MedicoNegocio();
-            GridView1.DataSource = medicoNegocio.TurnosMedico(idPersona);
+            DataTable tabla;
+            if (String.IsNullOrEmpty(dni))
+            {
+                tabla = medicoNegocio.TurnosMedico(idPersona);
+            } else
+            {
+                tabla = medicoNegocio.TurnosMedicoporDNI(idPersona,dni); 
+            }
+
+            GridView1.DataSource = tabla;
             GridView1.DataBind();
         }
 
@@ -55,7 +66,45 @@ namespace Vistas
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            string Observacion  = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("txt_eit_observacion")).Text;
+            bool asistencia = ((CheckBox)GridView1.Rows[e.RowIndex].FindControl("ckBox_eit_Asistencia")).Checked;
+            bool estado = ((CheckBox)GridView1.Rows[e.RowIndex].FindControl("ckBox_eit_Estado")).Checked;
+            string dni = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_eit_DNI")).Text;
+
+            MedicoNegocio medicoNegocio = new MedicoNegocio();
+
+            if(medicoNegocio.TurnoMedicoAsistencia(dni, Observacion, asistencia, estado) == true)
+            {
+                lbl_exito.Text = "Turno actualizado correctamente.";
+            }
+            else {   
+                lbl_exito.Text = "Error al actualizar el turno.";
+            }
+
+
+
             GridView1.EditIndex = -1;
+            cargarGridview();
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cargarGridview();
+
+            if (GridView1.Rows.Count == 0)
+            {
+                lbl_mensaje.Text = "No se encontro un/a paciente con ese DNI.";
+            }
+            else
+            {
+                lbl_mensaje.Text = "";
+
+            }
+        }
+
+        protected void btn_MostrarTodos_Click(object sender, EventArgs e)
+        {
+            txtDNI.Text = "";
             cargarGridview();
         }
     }

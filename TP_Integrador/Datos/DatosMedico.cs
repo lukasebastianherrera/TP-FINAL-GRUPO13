@@ -219,5 +219,59 @@ namespace Datos
 
 
         }
+
+        public bool TurnoMedicoAsistencia(string DNI, string observacion, bool asistencia, bool estado)
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            sqlConnection = accesoDatos.ObtenerConexion();
+
+            string consulta = @"UPDATE Turnos 
+                                SET observacion = @observacion, asistencia = @asistencia, estado = @estado 
+                                WHERE id_paciente = (SELECT id_paciente FROM Pacientes WHERE id_persona =  
+                                (SELECT id_persona FROM persona WHERE dni = @dni))";
+
+
+            SqlCommand cmd = new SqlCommand(consulta, sqlConnection);
+            cmd.Parameters.AddWithValue("@dni", DNI);
+            cmd.Parameters.AddWithValue("@observacion", observacion);
+            cmd.Parameters.AddWithValue("@asistencia", asistencia);
+            cmd.Parameters.AddWithValue("@estado", estado);
+            int filasAfectadas = cmd.ExecuteNonQuery();
+
+            if (filasAfectadas > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public DataTable TurnosMedicoporDNI(int id_persona, string dni)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            SqlConnection connection = accesoDatos.ObtenerConexion();
+            string consulta = @"SELECT per.nombre, per.apellido, t.dia_turno, t.hora_turno, t.observacion,  per.dni, per.sexo, per.nacionalidad,
+                              per.fecha_nacimiento, per.correo_electronico, per.telefono, per.direccion, t.asistencia, t.estado FROM Turnos t
+                              INNER JOIN Pacientes p ON t.id_paciente = p.id_paciente
+                              INNER JOIN PERSONA per ON p.id_persona = per.id_persona
+                              INNER JOIN MEDICOS m ON t.id_medico = m.id_medico
+                              WHERE m.id_persona = @idpersonaMedico AND per.dni = @dni";
+            SqlCommand sqlCommand = new SqlCommand(consulta, connection);
+            sqlCommand.Parameters.AddWithValue("idpersonaMedico", id_persona);
+            sqlCommand.Parameters.AddWithValue("dni", dni);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+            DataTable tabla = new DataTable();
+            sqlDataAdapter.Fill(tabla);
+            return tabla;
+
+
+
+
+
+        }
     }
 }
