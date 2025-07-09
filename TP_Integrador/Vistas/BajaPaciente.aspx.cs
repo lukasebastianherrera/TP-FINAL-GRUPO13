@@ -67,7 +67,6 @@ namespace Vistas
             {
                 GridView1.DataSource = null;
                 GridView1.DataBind();
-                lblMensajeDni.ForeColor = System.Drawing.Color.Red;
                 lblMensajeDni.Text = "No se encontró un/a paciente con ese DNI.";
             }
 
@@ -100,7 +99,6 @@ namespace Vistas
             {
                 GridView1.DataSource= null;
                 GridView1.DataBind();
-                lblMensajeApellido.ForeColor = System.Drawing.Color.Red;
                 lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'";
             }
 
@@ -110,6 +108,8 @@ namespace Vistas
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtApellido.Text = "";
+
             GridViewRow row = GridView1.SelectedRow;
 
             string nombre = row.Cells[1].Text;
@@ -129,6 +129,7 @@ namespace Vistas
 
             if (string.IsNullOrEmpty(dniSeleccionado))
             {
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Primero seleccioná un paciente (hacé clic en 'Seleccionar').";
                 return;
             }
@@ -144,6 +145,7 @@ namespace Vistas
 
             if (eliminado)
             {
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
                 lblMensaje.Text = "El paciente fue eliminado correctamente.";
                 txtDni.Text = "";
                 CargarTodosLosPacientes();

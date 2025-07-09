@@ -46,7 +46,6 @@ namespace Datos
                     return tabla;
                 }
             }
-           
         }
 
         public bool AltaPaciente(Persona persona)

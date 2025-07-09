@@ -186,7 +186,7 @@
                 <tr>
                     <td class="auto-style29">&nbsp;</td>
                     <td class="auto-style28">&nbsp;</td>
-                    <td class="auto-style30">&nbsp;<asp:Label ID="lblMensaje" runat="server" ForeColor="Green"></asp:Label>
+                    <td class="auto-style30">&nbsp;<asp:Label ID="lblMensaje" runat="server"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp; </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
