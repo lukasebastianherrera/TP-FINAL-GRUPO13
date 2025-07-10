@@ -42,6 +42,25 @@
         .auto-style19 {
             height: 60px;
         }
+        .auto-style20 {
+            width: 400px;
+            height: 61px;
+        }
+        .auto-style21 {
+            width: 158px;
+            height: 61px;
+        }
+        .auto-style22 {
+            width: 384px;
+            height: 61px;
+        }
+        .auto-style23 {
+            width: 245px;
+            height: 61px;
+        }
+        .auto-style24 {
+            height: 61px;
+        }
     </style>
 </head>
 <body>
@@ -91,7 +110,6 @@
                     </td>
                     <td class="auto-style18">
 &nbsp;&nbsp;
-                        <asp:Label ID="lbl_mensaje" runat="server"></asp:Label>
                         </td>
                     <td class="auto-style19"></td>
                 </tr>
@@ -109,9 +127,9 @@
                     </td>
                     <td class="auto-style13">
                         <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem Value="Todos">Todos</asp:ListItem>
-                            <asp:ListItem>Presentes</asp:ListItem>
-                            <asp:ListItem>Ausentes</asp:ListItem>
+                            <asp:ListItem Value="0">Todos</asp:ListItem>
+                            <asp:ListItem Value="2">Presentes</asp:ListItem>
+                            <asp:ListItem Value="1">Ausentes</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style14">&nbsp;</td>
@@ -256,6 +274,25 @@
                             <SortedDescendingCellStyle BackColor="#D6DFDF" />
                             <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
+                    </td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style20">
+                    </td>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style22">
+                    </td>
+                    <td class="auto-style23"></td>
+                    <td class="auto-style24"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style8">
+                        &nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style13">
+                        <asp:Label ID="lbl_mensaje" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style14">&nbsp;</td>
                     <td>&nbsp;</td>

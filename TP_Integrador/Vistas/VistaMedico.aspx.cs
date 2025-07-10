@@ -34,9 +34,18 @@ namespace Vistas
             string dni = txtDNI.Text.Trim();
             MedicoNegocio medicoNegocio = new MedicoNegocio();
             DataTable tabla;
+
+
+
             if (String.IsNullOrEmpty(dni))
             {
-                tabla = medicoNegocio.TurnosMedico(idPersona);
+                if (DropDownList1.SelectedValue == "0") {
+                    tabla = medicoNegocio.TurnosMedico(idPersona); 
+                } else
+                {
+                    int asistencia = Convert.ToInt32(DropDownList1.SelectedValue) - 1;
+                    tabla = medicoNegocio.TurnosMedicoPorEstado(idPersona, asistencia);
+                }
             } else
             {
                 tabla = medicoNegocio.TurnosMedicoporDNI(idPersona,dni); 
@@ -105,6 +114,7 @@ namespace Vistas
         protected void btn_MostrarTodos_Click(object sender, EventArgs e)
         {
             txtDNI.Text = "";
+            DropDownList1.SelectedValue = "0";
             cargarGridview();
         }
     }

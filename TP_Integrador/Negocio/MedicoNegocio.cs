@@ -73,5 +73,10 @@ namespace Negocio
         {
             return datosMedico.TurnosMedicoporDNI(id_persona, dni);
         }
+        public DataTable TurnosMedicoPorEstado(int id_persona, int asistencia)
+        {
+            return datosMedico.TurnosMedicoPorEstado(id_persona, asistencia);
+
+        }
     }
 }
