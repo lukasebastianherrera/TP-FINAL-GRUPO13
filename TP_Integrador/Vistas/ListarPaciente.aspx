@@ -11,7 +11,7 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 400px;
+            width: 157px;
         }
         .auto-style7 {
             width: 152px;
@@ -22,14 +22,14 @@
         .auto-style12 {
             width: 454px;
         }
-        .auto-style13 {
-            width: 149px;
-        }
-        .auto-style14 {
-            width: 926px;
-        }
         .auto-style15 {
             margin-left: 385px;
+        }
+        .auto-style16 {
+            width: 10px;
+        }
+        .auto-style17 {
+            width: 912px;
         }
     </style>
 </head>
@@ -81,7 +81,7 @@
                         SetFocusOnError="True" Font-Bold="False" ValidationGroup="grupo1" />
                     
                     
-                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{1,8}$" ValidationGroup="grupo1" Font-Bold="False">Sólo  y hasta 8 dígitos</asp:RegularExpressionValidator>
                    
                     </td>
                     <td class="auto-style12">
@@ -103,8 +103,8 @@
                 </table>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style14">
+                    <td class="auto-style16"></td>
+                    <td class="auto-style17">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" CssClass="auto-style15" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6">
                             <PagerStyle HorizontalAlign="Center" />
@@ -113,13 +113,13 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>

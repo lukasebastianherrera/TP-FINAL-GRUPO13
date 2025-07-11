@@ -20,13 +20,16 @@ namespace Datos
                                        JOIN Persona persona ON paciente.id_persona = persona.id_persona
                                        WHERE persona.dni = @dni AND paciente.Estado = 1";
 
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-            {
-                cmd.Parameters.AddWithValue("@dni", dni);
-                int contador = Convert.ToInt32(cmd.ExecuteScalar());
-                return contador > 0;
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion()) {
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@dni", dni);
+                    int contador = Convert.ToInt32(cmd.ExecuteScalar());
+                    return contador > 0;
+
+                    }
             }
+           
         }
 
         public DataTable BuscarPacientePorApellido(string apellido)
@@ -110,13 +113,14 @@ namespace Datos
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
 
-                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                string consulta = @"SELECT per.DNI, per.Nombre, per.Apellido, per.sexo, per.nacionalidad, per.fecha_nacimiento, 
+                                     per.correo_electronico, per.telefono, per.direccion
                                      FROM Pacientes p
                                      JOIN Persona per ON p.ID_Persona = per.ID_Persona
-                                     WHERE per.DNI = @dni AND p.Estado = 1";
+                                     WHERE per.DNI LIKE @dni AND p.Estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
-                cmd.Parameters.AddWithValue("@dni", dni);
+                cmd.Parameters.AddWithValue("@dni", "%" + dni + "%");
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable tabla = new DataTable();
