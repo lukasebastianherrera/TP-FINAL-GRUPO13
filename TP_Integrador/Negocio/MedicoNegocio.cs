@@ -49,7 +49,10 @@ namespace Negocio
             return datosMedico.BuscarMedicoConDNI(dni);
         }
 
-
+        public DataTable BuscarMedicoPorApellido(string apellido)
+        {
+            return datosMedico.BuscarMedicoPorApellido(apellido);
+        }
 
         public bool BajaLogicaMedico(string dni)
         {

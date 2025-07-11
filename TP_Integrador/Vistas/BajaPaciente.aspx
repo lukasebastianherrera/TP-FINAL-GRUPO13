@@ -75,6 +75,25 @@
         .auto-style30 {
             width: 406px;
         }
+        .auto-style31 {
+            width: 400px;
+            height: 23px;
+        }
+        .auto-style32 {
+            width: 152px;
+            height: 23px;
+        }
+        .auto-style33 {
+            width: 333px;
+            height: 23px;
+        }
+        .auto-style34 {
+            width: 348px;
+            height: 23px;
+        }
+        .auto-style35 {
+            height: 23px;
+        }
     </style>
 </head>
 
@@ -83,14 +102,14 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style31">
             <asp:HyperLink ID="hlVolver" runat="server" Font-Size="Medium" NavigateUrl="~/ABMLPacientes.aspx" ForeColor="Blue">Volver</asp:HyperLink>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td class="auto-style32"></td>
+                    <td class="auto-style33"></td>
+                    <td class="auto-style34"></td>
+                    <td class="auto-style35">
+                        </td>
                 </tr>
                 <tr>
                     <td class="auto-style20"></td>

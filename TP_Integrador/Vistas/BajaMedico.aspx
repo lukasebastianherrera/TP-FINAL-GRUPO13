@@ -116,9 +116,18 @@
                                              
                     </td>
                     <td class="auto-style11">
-                        <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar" OnClick="btnBuscarMedico_Click" />
+                        <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar por DNI" OnClick="btnBuscarMedico_Click" ValidationGroup="grupo1" />
                     </td>
                     <td class="auto-style12"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblMensajeDni" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
@@ -127,12 +136,44 @@
                     <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style3">Apellido:</td>
+                    <td class="auto-style4">
+                              <asp:TextBox ID="txtApellido" 
+                                  runat="server" 
+                                  placeholder="Ingrese parte del apellido" Width="141px"></asp:TextBox>
+                    
+                             <asp:RegularExpressionValidator ID="revApellido" 
+                                 runat="server"
+                                 ControlToValidate="txtApellido" 
+                                 Display="Dynamic"
+                                 ErrorMessage="RegularExpressionValidator" 
+                                 ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" 
+                                 ValidationGroup="grupo2">Error, solo texto
+                             </asp:RegularExpressionValidator>
+
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="btn_buscarApellido" runat="server" Text="filtrar" OnClick="btn_BuscarApellido_Click" ValidationGroup="grupo2" />
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblMensajeApellido" runat="server" EnableTheming="True" ForeColor="Red"></asp:Label>
+                    </td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
                 </table>
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style14">
-                        <asp:GridView ID="Grv_medicos" runat="server">
+                        <asp:GridView ID="Grv_medicos" runat="server" AllowPaging="True" AutoGenerateSelectButton="True" PageSize="6" OnSelectedIndexChanged="Grv_medicos_SelectedIndexChanged" OnPageIndexChanging="Grv_medicos_PageIndexChanging" DataKeyNames="dni" >
                         </asp:GridView>
                     </td>
                     <td>&nbsp;</td>
@@ -150,9 +191,9 @@
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" CausesValidation="false" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false"/>
                     </td>
                     <td class="auto-style16">
                         <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>

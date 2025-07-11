@@ -58,6 +58,31 @@ namespace Datos
             }
         }
 
+
+        public DataTable BuscarMedicoPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT persona.nombre AS Nombre, persona.apellido AS Apellido, persona.dni as DNI FROM Medicos m
+                                        JOIN Persona persona ON m.id_persona = persona.id_persona
+                                        WHERE persona.apellido LIKE @apellido AND m.estado = 1";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
+
+
+
+
+
         public DataTable ObtenerTodosLosMedicos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
