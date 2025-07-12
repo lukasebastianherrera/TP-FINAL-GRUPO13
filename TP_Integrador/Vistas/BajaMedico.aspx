@@ -89,47 +89,6 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"></td>
-                    <td class="auto-style9">
-                        <asp:Label ID="lblDniMedico" runat="server" Text="DNI del Médico:"></asp:Label>
-                    </td>
-                    <td class="auto-style10"> 
-            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI" Width="139px"></asp:TextBox>
-                       <asp:RequiredFieldValidator 
-                          ID="rfvDni" 
-                          runat="server" 
-                          ControlToValidate="txtDni" 
-                          ErrorMessage="El DNI es obligatorio." 
-                          ForeColor="Red" 
-                          Display="Dynamic" 
-                          SetFocusOnError="True" />
-
-             <asp:RegularExpressionValidator 
-                 ID="revDni" 
-                 runat="server" 
-                 ControlToValidate="txtDni" 
-                 Display="Dynamic" 
-                 ErrorMessage="RegularExpressionValidator"
-                 ForeColor="Red" 
-                 ValidationExpression="^\d{8}$" 
-                 ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
-                                             
-                    </td>
-                    <td class="auto-style11">
-                        <asp:Button ID="btnBuscarMedico" runat="server" Text="Buscar por DNI" OnClick="btnBuscarMedico_Click" ValidationGroup="grupo1" />
-                    </td>
-                    <td class="auto-style12"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
-                        <asp:Label ID="lblMensajeDni" runat="server" ForeColor="Red"></asp:Label>
-                    </td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>

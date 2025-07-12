@@ -17,23 +17,21 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           /* if (Session["UsuarioLogueado"] == null)
+            if (Session["UsuarioLogueado"] == null)
             {
                 Response.Redirect("Inicio.aspx");
-            }*/
+            }
 
             if (!IsPostBack)
             {
                 CargarTodosLosMedicos();
-                Session["DniConfirmado"] = null;
                 Session["SelectedDni"] = null;
-                lblMensajeDni.Text = "";
                 lblMensajeApellido.Text = "";
                 lblMensaje.Text = "";
             }
 
-           // Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-           // lblAdministrador.Text = usuario.Nombre_usuario;
+            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+            lblAdministrador.Text = usuario.Nombre_usuario;
 
 
         }
@@ -46,45 +44,9 @@ namespace Vistas
         }
 
 
-        protected void btnBuscarMedico_Click(object sender, EventArgs e)
-        {
-            lblMensajeApellido.Text = "";
-            lblMensaje.Text = "";
-            lblMensajeDni.Text = "";
-            
-            
-            string dni= txtDni.Text.Trim();
-            if (string.IsNullOrEmpty(dni)) {
-
-                lblMensaje.Text = "Ingrese un DNI para buscar. ";
-                return;
-            }
-
-            DataTable tabla = medicoNegocio.BuscarMedicoConDNI(dni);
-
-            if (tabla.Rows.Count>0)
-            {
-                Grv_medicos.DataSource = tabla;
-                Grv_medicos.DataBind();
-               // lblMensaje.Text = "";
-
-            }
-            else
-            {
-                Grv_medicos.DataSource= null;
-                Grv_medicos.DataBind();
-                lblMensaje.Text = "No se encontró un Medico Activo con ese DNI.";
-
-            }
-
-            txtApellido.Text = "";
-            Session["SelectedDni"] = null;
-
-        }
 
         protected void btn_BuscarApellido_Click(object sender, EventArgs e)
         {
-            lblMensajeDni.Text = "";
             lblMensaje.Text = "";
             lblMensajeApellido.Text = "";
 
@@ -109,8 +71,6 @@ namespace Vistas
                 Grv_medicos.DataBind();
                 lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'";
             }
-
-            txtDni.Text = "";
             Session["SelectedDni"] = null;
         }
 
@@ -134,28 +94,16 @@ namespace Vistas
         }
 
 
-
-
-
-
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
             txtApellido.Text = "";
-            txtDni.Text = "";
+
             string dniSeleccionado = Session["SelectedDni"] as string;
 
             if (string.IsNullOrEmpty(dniSeleccionado))
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Text = "Primero seleccioná un medico (hacé clic en 'Seleccionar').";
-                return;
-            }
-
-            if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dniSeleccionado)
-            {
-                Session["DniConfirmado"] = dniSeleccionado;
-                lblMensaje.Text = $"¿Está seguro de eliminar al medico con DNI {dniSeleccionado}?" + "Haga clic nuevamente en 'Eliminar' para confirmar.";
+                lblMensaje.Text = "Primero seleccioná un médico (hacé clic en 'Seleccionar').";
                 return;
             }
 
@@ -164,34 +112,26 @@ namespace Vistas
             if (eliminado)
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Green;
-                lblMensaje.Text = "El medico fue eliminado correctamente.";
-                txtDni.Text = "";
-                CargarTodosLosMedicos();
+                lblMensaje.Text = "El médico fue eliminado correctamente.";
             }
             else
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Text = "No se encontró un medico con ese DNI.";
+                lblMensaje.Text = "No se encontró un médico con ese DNI.";
             }
 
-            Session.Remove("DniConfirmado");
             Session.Remove("SelectedDni");
             Grv_medicos.SelectedIndex = -1;
             CargarTodosLosMedicos();
-
-
         }
+
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtDni.Text = "";
             txtApellido.Text = "";
-            lblMensajeDni.Text = "";
             lblMensaje.Text = "";
             lblMensajeApellido.Text = "";
-            Session["DniConfirmado"] = null;
             Grv_medicos.DataSource = null;
-
 
             CargarTodosLosMedicos();
         }
