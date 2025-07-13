@@ -40,8 +40,6 @@ namespace Vistas
             GridView1.DataBind();
         }
 
-      
-
         protected void btnBuscarApellido_Click(object sender, EventArgs e)
         {
             lblMensaje.Text = "";
@@ -117,7 +115,6 @@ namespace Vistas
             GridView1.SelectedIndex = -1;
             CargarTodosLosPacientes();
         }
-
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {

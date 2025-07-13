@@ -78,16 +78,13 @@ namespace Datos
             }
         }
 
-
-
-
-
-
         public DataTable ObtenerTodosLosMedicos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT m.ID_Medico, per.Nombre, per.Apellido, per.DNI,  m.Estado, m.id_especialidad, esp.nombre_especialidad, m.legajo  FROM Medicos m
+                string consulta = @"SELECT m.ID_Medico, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI, 
+                                    m.Estado as Estado, m.id_especialidad as Especialidad, esp.nombre_especialidad as Nombre Especialidad,
+                                    m.legajo as Legajo  FROM Medicos m
                                     JOIN Persona per ON m.id_persona = per.id_persona
                                     JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad";
 
@@ -115,13 +112,12 @@ namespace Datos
             }
         }
 
-
         public DataTable ObtenerTodosLosMedicosActivos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
-                                     FROM Medicos m
+                string consulta = @"SELECT per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
+                                    FROM Medicos m
                                     JOIN Persona per ON m.id_persona = per.id_persona
                                     where m.Estado= 1";
 
@@ -133,6 +129,41 @@ namespace Datos
             }
         }
 
+        public DataTable ObtenerMedicosSinUsuario()
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT per.id_persona, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
+                                      FROM Medicos m
+                                      JOIN Persona per ON m.id_persona = per.id_persona
+                                      LEFT JOIN Usuarios u ON u.id_persona = per.id_persona
+                                      WHERE u.id_persona IS NULL AND m.Estado = 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+        public bool AltaUsuarioMedico(int idPersona, string nombreUsuario, string contrasenia)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_AltaUsuarioMedico", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_persona", idPersona);
+                    cmd.Parameters.AddWithValue("@nombre_usuario", nombreUsuario);
+                    cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
+                    cmd.Parameters.AddWithValue("@tipo_usuario", "1");
+
+                    int filas = cmd.ExecuteNonQuery();
+                    return filas > 0;
+                }
+            }
+        }
 
         public DataTable BuscarMedicoConDNI(string dni)
         {

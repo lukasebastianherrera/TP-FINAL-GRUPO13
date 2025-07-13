@@ -32,8 +32,6 @@ namespace Vistas
 
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
-
-
         }
 
         private void CargarTodosLosMedicos()
@@ -42,8 +40,6 @@ namespace Vistas
             Grv_medicos.DataBind();
             
         }
-
-
 
         protected void btn_BuscarApellido_Click(object sender, EventArgs e)
         {
@@ -74,8 +70,6 @@ namespace Vistas
             Session["SelectedDni"] = null;
         }
 
-
-
         protected void Grv_medicos_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtApellido.Text = "";
@@ -89,8 +83,6 @@ namespace Vistas
             Session["SelectedDni"] = dni;
 
             lblMensaje.Text = $"Medico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} (DNI {dni})";
-
-
         } 
 
 
@@ -126,7 +118,6 @@ namespace Vistas
             CargarTodosLosMedicos();
         }
 
-
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             txtApellido.Text = "";
@@ -136,8 +127,6 @@ namespace Vistas
 
             CargarTodosLosMedicos();
         }
-
-
 
         protected void Grv_medicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

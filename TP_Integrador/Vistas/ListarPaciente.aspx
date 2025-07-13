@@ -22,14 +22,11 @@
         .auto-style12 {
             width: 454px;
         }
-        .auto-style15 {
-            margin-left: 385px;
-        }
         .auto-style16 {
-            width: 10px;
+            width: 284px;
         }
         .auto-style17 {
-            width: 912px;
+            width: 434px;
         }
     </style>
 </head>
@@ -67,21 +64,13 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblDniPaciente" runat="server" Text="DNI del paciente:"></asp:Label>
+                        <asp:Label ID="lblApellido" runat="server" Text="Apellido:"></asp:Label>
                     </td>
                     <td class="auto-style11">
-                        <asp:TextBox ID="txtDni" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
-                        <asp:RequiredFieldValidator 
-                        ID="rfvDni" 
-                        runat="server" 
-                        ControlToValidate="txtDni" 
-                        ErrorMessage="El DNI es obligatorio" 
-                        ForeColor="Red" 
-                        Display="Dynamic" 
-                        SetFocusOnError="True" Font-Bold="False" ValidationGroup="grupo1" />
+                        <asp:TextBox ID="txtApellido" runat="server" placeholder="Ingrese parte del apellido"></asp:TextBox>
                     
                     
-                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{1,8}$" ValidationGroup="grupo1" Font-Bold="False">Sólo  y hasta 8 dígitos</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                    
                     </td>
                     <td class="auto-style12">
@@ -95,7 +84,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style11">
-                        <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+                        <asp:Label ID="lblMensajeApellido" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                     <td class="auto-style12">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -105,8 +94,7 @@
                 <tr>
                     <td class="auto-style16"></td>
                     <td class="auto-style17">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" CssClass="auto-style15" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6">
                             <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
                     </td>
@@ -119,7 +107,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style16">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style17">
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>

@@ -23,7 +23,7 @@
             width: 404px;
         }
         .auto-style13 {
-            width: 382px;
+            width: 536px;
         }
     </style>
 </head>
@@ -61,34 +61,28 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblDniMedico" runat="server" Text="DNI del Médico:"></asp:Label>
+                        <asp:Label ID="lblApellido" runat="server" Text="Apellido:"></asp:Label>
                     </td>
                     <td class="auto-style11">
-                        <asp:TextBox ID="txtDni" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
-                       <asp:RequiredFieldValidator 
-                          ID="rfvDni" 
-                          runat="server" 
-                          ControlToValidate="txtDni" 
-                          ErrorMessage="El DNI es obligatorio." 
-                          ForeColor="Red" 
-                          Display="Dynamic" 
-                          SetFocusOnError="True" Font-Bold="False" />
-                      
-                      
-                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
-                                             
+                        <asp:TextBox ID="txtApellido" runat="server" placeholder="Ingrese parte del apellido"></asp:TextBox>
+                    
+                    
+                                    <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
+                   
                     </td>
                     <td class="auto-style12">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ValidationGroup="grupo1" OnClick="btnFiltrar_Click1" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" />
+                        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style11">
+                        <asp:Label ID="lblMensajeApellido" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
                     <td class="auto-style12">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -97,7 +91,7 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td>
-                        <asp:GridView ID="gvMedicos" runat="server">
+                        <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" OnPageIndexChanging="gvMedicos_PageIndexChanging" PageSize="3">
                         </asp:GridView>
                     </td>
                     <td>&nbsp;</td>

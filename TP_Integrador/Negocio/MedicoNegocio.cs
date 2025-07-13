@@ -39,6 +39,16 @@ namespace Negocio
             return datosMedico.ObtenerTodosLosMedicosActivos();
         }
 
+        public DataTable ListarMedicosSinUsuario()
+        {
+            return datosMedico.ObtenerMedicosSinUsuario();
+        }
+
+        public bool CrearUsuarioMedico(int idPersona, string usuario, string contrasenia)
+        {
+            return datosMedico.AltaUsuarioMedico(idPersona, usuario, contrasenia);
+        }
+
         public DataTable BuscarMedicoPorDNI(string dni)
         {
             return datosMedico.BuscarMedicoPorDNI(dni);

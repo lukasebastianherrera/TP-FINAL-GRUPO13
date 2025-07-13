@@ -46,6 +46,7 @@ namespace Datos
             }
             return null;
         }
+
         /*public int TipoUsuario(string user, string pass) {
             //busca en la base de datos si existe y trae el codigo tipo de usuario
             int tipo;

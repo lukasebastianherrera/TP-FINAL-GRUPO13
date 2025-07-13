@@ -12,31 +12,70 @@ namespace Vistas
 {
     public partial class ListarMedicos : System.Web.UI.Page
     {
-        private MedicoNegocio Medico = new MedicoNegocio();
+        private MedicoNegocio medicoNegocio = new MedicoNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioLogueado"] == null)
             {
                 Response.Redirect("Inicio.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                CargarTodosLosMedicos();
+                lblMensajeApellido.Text = "";
+            }
+
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
-
-            CargarTodosLosMedicos();
         }
 
         private void CargarTodosLosMedicos()
         {
-            DataTable dt = Medico.ObtenerTodosLosMedicos();
+            DataTable dt = medicoNegocio.ObtenerTodosLosMedicosActivos();
             gvMedicos.DataSource = dt;
             gvMedicos.DataBind();
         }
-        protected void btnFiltrar_Click(object sender, EventArgs e)
+
+        protected void btnFiltrar_Click1(object sender, EventArgs e)
         {
-            string dni = txtDni.Text.Trim();
-            DataTable dt = Medico.BuscarMedicoPorDNI(dni);
-            gvMedicos.DataSource = dt;
-            gvMedicos.DataBind();
+            lblMensajeApellido.Text = "";
+
+            string apellido = txtApellido.Text.Trim();
+
+            if (string.IsNullOrEmpty(apellido))
+            {
+                lblMensajeApellido.Text = "Ingrese parte del apellido";
+                return;
+            }
+
+            DataTable dt = medicoNegocio.BuscarMedicoPorApellido(apellido);
+
+            if (dt.Rows.Count > 0)
+            {
+                gvMedicos.DataSource = dt;
+                gvMedicos.DataBind();
+            }
+            else
+            {
+                gvMedicos.DataSource = null;
+                gvMedicos.DataBind();
+                lblMensajeApellido.Text = $"No se encontraron médicos con apellido que contenga '{apellido}'.";
+            }
+
+            txtApellido.Text = "";
+        }
+
+        protected void gvMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMedicos.PageIndex = e.NewPageIndex;
+            CargarTodosLosMedicos();
+        }
+
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            lblMensajeApellido.Text = "";
+            CargarTodosLosMedicos();
         }
     }
 }

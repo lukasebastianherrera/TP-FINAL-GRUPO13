@@ -20,45 +20,56 @@ namespace Vistas
             {
                 Response.Redirect("Inicio.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                CargarTodosLosPacientes();
+                lblMensajeApellido.Text = "";
+            }
+
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
-
-            CargarTodosLosPacientes();
         }
 
         private void CargarTodosLosPacientes()
         {
-            DataTable dt = pacienteNegocio.obtenerTodosLosPacientesyDatos();
+            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientes();
             gvPacientes.DataSource = dt;
             gvPacientes.DataBind();
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid) return;
+            lblMensajeApellido.Text = "";
 
-            string dni = txtDni.Text.Trim();
+            string apellido = txtApellido.Text.Trim();
 
-            DataTable dt = pacienteNegocio.BuscarPacienteConDNI(dni);
-
-            if (dt.Rows.Count == 0)
+            if(string.IsNullOrEmpty(apellido))
             {
-                lblError.Text = "No existe ningún paciente con ese DNI";
-                gvPacientes.DataSource = null;
-                gvPacientes.DataBind();
+                lblMensajeApellido.Text = "Ingrese parte del apellido";
+                return;
             }
-            else 
+
+            DataTable dt = pacienteNegocio.BuscarPacientePorApellido(apellido);
+
+            if(dt.Rows.Count > 0 )
             {
-                lblError.Text = string.Empty;
                 gvPacientes.DataSource = dt;
                 gvPacientes.DataBind();
             }
-            txtDni.Text = string.Empty;
+            else
+            {
+                gvPacientes.DataSource = null;
+                gvPacientes.DataBind();
+                lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'.";
+            }
+
+            txtApellido.Text = "";
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            lblError.Text = string.Empty;
+            lblMensajeApellido.Text = string.Empty;
             CargarTodosLosPacientes();
         }
 

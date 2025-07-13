@@ -95,7 +95,7 @@
 
                     </td>
                     <td class="auto-style7">
-                        <asp:Button ID="btn_buscarApellido" runat="server" Text="filtrar" OnClick="btn_BuscarApellido_Click" ValidationGroup="grupo2" />
+                        <asp:Button ID="btn_buscarApellido" runat="server" Text="Filtrar" OnClick="btn_BuscarApellido_Click" ValidationGroup="grupo2" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -123,7 +123,9 @@
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
+                    </td>
                     <td class="auto-style16">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -136,8 +138,7 @@
                         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false"/>
                     </td>
                     <td class="auto-style16">
-                        <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

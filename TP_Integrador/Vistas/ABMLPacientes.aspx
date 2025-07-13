@@ -123,7 +123,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:HyperLink ID="hlModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Modificar Paciente</asp:HyperLink>
+            <asp:HyperLink ID="hlModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx" Font-Bold="False" Font-Size="Medium" ForeColor="Blue">Modificar paciente</asp:HyperLink>
 
                     </td>
                     <td>&nbsp;</td>

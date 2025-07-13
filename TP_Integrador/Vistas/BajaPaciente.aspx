@@ -150,10 +150,10 @@
                         <asp:TextBox ID="txtApellido" runat="server" placeholder="Ingrese parte del apellido"></asp:TextBox>
                     
                     
-                                    <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo2">Error, solo letras</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
                     <td class="auto-style13">
-                        <asp:Button ID="btnBuscarApellido" runat="server" OnClick="btnBuscarApellido_Click" Text="Filtrar" ValidationGroup="grupo2" />
+                        <asp:Button ID="btnBuscarApellido" runat="server" OnClick="btnBuscarApellido_Click" Text="Filtrar" ValidationGroup="grupo1" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>

@@ -14,13 +14,13 @@
             width: 182px;
         }
         .auto-style6 {
-            width: 189px;
+            width: 281px;
         }
         .auto-style7 {
             width: 400px;
         }
         .auto-style8 {
-            width: 466px;
+            width: 409px;
         }
     </style>
 </head>
@@ -62,26 +62,21 @@
                 <tr>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">
-                        <asp:Label ID="lblDniMedico" runat="server" Font-Size="Medium" Text="DNI Médico:"></asp:Label>
+                        <asp:Label ID="lblApellido" runat="server" Font-Size="Medium" Text="Apellido:"></asp:Label>
                     </td>
                     <td class="auto-style8">
-                        <asp:TextBox ID="txtIdMedico" runat="server" placeholder="Ingresar DNI"></asp:TextBox>
-                    &nbsp;<asp:RequiredFieldValidator 
-                          ID="rfvDni" 
-                          runat="server" 
-                          ControlToValidate="txtIdMedico" 
-                          ErrorMessage="El DNI es obligatorio." 
-                          ForeColor="Red" 
-                          Display="Dynamic" 
-                          SetFocusOnError="True" Font-Bold="False" />
+                        <asp:TextBox ID="txtApellido" runat="server" placeholder="Ingrese parte del apellido"></asp:TextBox>
+                    &nbsp;<asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                       
                       
-                        &nbsp;<asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1" Font-Bold="False">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
+                        &nbsp;<asp:Label ID="lblMensajeApellido" runat="server" ForeColor="Red"></asp:Label>
                                              
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnBuscarIdMedico" runat="server" Text="Buscar" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6"><asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnMostrar" runat="server" OnClick="btnMostrar_Click" Text="Mostrar Todos" />
+                        </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -96,13 +91,14 @@
                     <td class="auto-style5">
                         &nbsp;</td>
                     <td class="auto-style8">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                        <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" AutoGenerateSelectButton="True" DataKeyNames="id_persona" OnSelectedIndexChanged="gvMedicos_SelectedIndexChanged" PageSize="6" AutoGenerateColumns="False" OnPageIndexChanging="gvMedicos_PageIndexChanging">
                             <Columns>
-                                <asp:TemplateField HeaderText="IdMedico"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Nombre"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Apellido"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Especialidad"></asp:TemplateField>
+                                <asp:BoundField DataField="id_persona" HeaderText="IdPersona" Visible="False" />
+                                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                                <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
+                                <asp:BoundField DataField="DNI" HeaderText="DNI" />
                             </Columns>
+                            <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
@@ -113,10 +109,20 @@
                      <td class="auto-style7">&nbsp;</td>
                      <td class="auto-style5">
                          &nbsp;</td>
-                     <td class="auto-style8">&nbsp;</td>
+                     <td class="auto-style8">
+                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                     </td>
                      <td class="auto-style6">&nbsp;</td>
                      <td>&nbsp;</td>
                  </tr>
+                <tr>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style5">
+                        &nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
                  <tr>
                      <td class="auto-style7">&nbsp;</td>
                      <td class="auto-style5">

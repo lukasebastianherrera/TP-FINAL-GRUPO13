@@ -51,6 +51,25 @@ namespace Datos
             }
         }
 
+        public DataTable ListarTodosLosPacientesPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT persona.nombre AS Nombre, persona.apellido AS Apellido, persona.dni as DNI FROM Pacientes paciente
+                                        JOIN Persona persona ON paciente.id_persona = persona.id_persona
+                                        WHERE persona.apellido LIKE @apellido AND paciente.estado = 1";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
         public bool AltaPaciente(Persona persona)
         {
             if (ExistePaciente(persona.Dni))
@@ -80,7 +99,7 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
+                string consulta = @"SELECT per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
                                      FROM Pacientes p
                                      JOIN Persona per ON p.id_persona = per.id_persona
                                      WHERE p.Estado = 1";
@@ -97,8 +116,8 @@ namespace Datos
         public DataTable obtenerTodosLosPacientesyDatos()
         {
             SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
-            string consulta = @"SELECT dni, nombre, apellido, sexo, nacionalidad, 
-                                    fecha_nacimiento, correo_electronico, telefono, direccion, estado
+            string consulta = @"SELECT dni as DNI, nombre as Nombre, apellido as Apellido, sexo as Sexo, nacionalidad as Nacionalidad, 
+                                    fecha_nacimiento as 'Fecha de Nacimiento', correo_electronico as 'Correo Electrónico', telefono as Teléfono, direccion as Dirección, estado as Estados
                                     FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona";
 
             SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
