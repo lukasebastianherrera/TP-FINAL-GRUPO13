@@ -22,25 +22,6 @@
         .auto-style7 {
             width: 360px;
         }
-        .auto-style8 {
-            width: 400px;
-            height: 42px;
-        }
-        .auto-style9 {
-            width: 152px;
-            height: 42px;
-        }
-        .auto-style10 {
-            width: 379px;
-            height: 42px;
-        }
-        .auto-style11 {
-            width: 360px;
-            height: 42px;
-        }
-        .auto-style12 {
-            height: 42px;
-        }
         .auto-style13 {
             width: 548px;
         }
@@ -101,7 +82,7 @@
                     <td class="auto-style4">
                               <asp:TextBox ID="txtApellido" 
                                   runat="server" 
-                                  placeholder="Ingrese parte del apellido" Width="141px"></asp:TextBox>
+                                  placeholder="Ingrese parte del apellido" Width="158px"></asp:TextBox>
                     
                              <asp:RegularExpressionValidator ID="revApellido" 
                                  runat="server"

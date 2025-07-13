@@ -91,7 +91,7 @@ namespace Vistas
             lblMensaje.Text = $"Medico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} (DNI {dni})";
 
 
-        }
+        } 
 
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -113,6 +113,7 @@ namespace Vistas
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Green;
                 lblMensaje.Text = "El médico fue eliminado correctamente.";
+                CargarTodosLosMedicos();
             }
             else
             {

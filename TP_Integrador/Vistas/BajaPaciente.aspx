@@ -130,28 +130,6 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style8">
-                        <asp:Label ID="lblDNI" runat="server" Text="DNI del Paciente:"></asp:Label>
-                    </td>
-                    <td class="auto-style9"> 
-            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" placeholder="Ingresar DNI"></asp:TextBox>
-                    
-                    
-                                    <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^\d{8}$" ValidationGroup="grupo1">Debe ingresar 8 dígitos</asp:RegularExpressionValidator>
-                   
-                    </td>
-                    <td class="auto-style14">
-             <asp:Button ID="btnBuscarPaciente" runat="server" Text="Buscar por DNI"  OnClick="btnBuscarPaciente_Click" ValidationGroup="grupo1"/>  
-                    </td>
-                    <td class="auto-style7"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
-                        <asp:Label ID="lblMensajeDni" runat="server" ForeColor="Red"></asp:Label>
-                    </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
