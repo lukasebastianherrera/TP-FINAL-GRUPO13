@@ -88,7 +88,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style9">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" />
+                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" OnClick="btnGenerarInforme_Click" />
                     </td>
                     <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
