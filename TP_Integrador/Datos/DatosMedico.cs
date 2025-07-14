@@ -58,32 +58,12 @@ namespace Datos
             }
         }
 
-
-        public DataTable BuscarMedicoPorApellido(string apellido)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                const string consulta = @"SELECT persona.nombre AS Nombre, persona.apellido AS Apellido, persona.dni as DNI FROM Medicos m
-                                        JOIN Persona persona ON m.id_persona = persona.id_persona
-                                        WHERE persona.apellido LIKE @apellido AND m.estado = 1";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable tabla = new DataTable();
-                    adapter.Fill(tabla);
-                    return tabla;
-                }
-            }
-        }
-
         public DataTable ObtenerTodosLosMedicos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT m.ID_Medico, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI, 
-                                    m.Estado as Estado, m.id_especialidad as Especialidad, esp.nombre_especialidad as Nombre Especialidad,
+                string consulta = @"SELECT m.ID_Medico, per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, 
+                                    m.estado as Estado, m.id_especialidad as [Id Especialidad], esp.nombre_especialidad as Especialidad,
                                     m.legajo as Legajo  FROM Medicos m
                                     JOIN Persona per ON m.id_persona = per.id_persona
                                     JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad";
@@ -116,9 +96,10 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
-                                    FROM Medicos m
+                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad] 
+                                    esp.nombre_especialidad as Especialidad, m.legajo as Legajo  FROM Medicos m                                    
                                     JOIN Persona per ON m.id_persona = per.id_persona
+                                    JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
                                     where m.Estado= 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
@@ -126,6 +107,27 @@ namespace Datos
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
                 return tabla;
+            }
+        }
+
+        public DataTable BuscarMedicoPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad] 
+                                            esp.nombre_especialidad as Especialidad, m.legajo as Legajo FROM Medicos m
+                                            JOIN Persona per ON m.id_persona = per.id_persona
+                                            JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
+                                            WHERE per.apellido LIKE @apellido AND m.estado = 1";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
             }
         }
 

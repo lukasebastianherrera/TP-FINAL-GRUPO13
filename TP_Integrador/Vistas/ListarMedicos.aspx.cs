@@ -45,7 +45,7 @@ namespace Vistas
 
             if (string.IsNullOrEmpty(apellido))
             {
-                lblMensajeApellido.Text = "Ingrese parte del apellido";
+                lblMensajeApellido.Text = "Debe ingresar al menos una letra.";
                 return;
             }
 

@@ -94,71 +94,68 @@
                     <td class="auto-style14">&nbsp;</td>
                     <td>
 
-                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="69px" OnRowCancelingEdit="gvMedico_RowCancelingEdit" OnRowEditing="gvMedico_RowEditing" OnRowUpdating="gvMedico_RowUpdating" Width="335px">
+                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="69px" OnRowCancelingEdit="gvMedico_RowCancelingEdit" OnRowEditing="gvMedico_RowEditing" OnRowUpdating="gvMedico_RowUpdating" Width="335px" OnRowDataBound="gvMedico_RowDataBound">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
-                                <asp:TemplateField HeaderText="ID Medico">
-                                    <EditItemTemplate>
-                                        <asp:Label ID="lbl_eit_IdMedico" runat="server" Text='<%# Bind("[id_medico]") %>'></asp:Label>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_it_idMedico" runat="server" Text='<%# Bind("[id_medico]") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nombre">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_eit_Nombre" runat="server" Text='<%# Bind("[nombre]") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_eit_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("[nombre]") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Apellido">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_eit_Apellido" runat="server" Text='<%# Bind("[apellido]") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_eit_Apellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Bind("[apellido]") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Eval("Apellido") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="DNI">
                                     <EditItemTemplate>
-                                        <asp:Label ID="lbl_eit_DNI" runat="server" Text='<%# Bind("[dni]") %>'></asp:Label>
+                                        <asp:Label ID="lbl_eit_DNI" runat="server" Text='<%# Bind("DNI") %>'></asp:Label>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Bind("[dni]") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Eval("DNI") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Legajo">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_eit_Legajo" runat="server" Text='<%# Bind("[legajo]") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_eit_Legajo" runat="server" Text='<%# Bind("Legajo") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_it_Legajo" runat="server" Text='<%# Bind("[legajo]") %>'></asp:Label>
+                                        <asp:Label ID="lbl_it_Legajo" runat="server" Text='<%# Eval("Legajo") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="ID Especialidad">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txt_eit_IdEspecialidad" runat="server" Text='<%# Bind("[id_especialidad]") %>'></asp:TextBox>
+                                        <asp:TextBox ID="txt_eit_IdEspecialidad" runat="server" Text='<%# Bind("[Id Especialidad]") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_IdEspecialidad" runat="server" Text='<%# Bind("[id_especialidad]") %>'></asp:Label>
+                                        <asp:Label ID="lbl_IdEspecialidad" runat="server" Text='<%# Eval("[Id Especialidad]") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Especialidad">
                                     <EditItemTemplate>
-                                        <asp:Label ID="lbl_eit_Especialidad" runat="server" Text='<%# Bind("[nombre_especialidad]") %>'></asp:Label>
+                                        <asp:DropDownList
+                                          ID="ddlEspecialidad"
+                                          runat="server"
+                                          DataTextField="Especialidad"
+                                          DataValueField="[Id Especialidad]">
+                                        </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_Especialidad" runat="server" Text='<%# Bind("nombre_especialidad") %>'></asp:Label>
+                                        <asp:Label ID="lbl_Especialidad" runat="server" Text='<%# Eval("Especialidad") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estado">
                                     <EditItemTemplate>
-                                        <asp:CheckBox ID="cb_eit_Estado" runat="server" Checked='<%# Bind("[estado]") %>' />
+                                        <asp:CheckBox ID="cb_eit_Estado" runat="server" Checked='<%# Bind("Estado") %>' />
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:CheckBox ID="cb_it_Estado" runat="server" Checked='<%# Bind("[estado]") %>' Enabled="false" />
+                                        <asp:CheckBox ID="cb_it_Estado" runat="server" Checked='<%# Eval("Estado") %>' Enabled="false" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

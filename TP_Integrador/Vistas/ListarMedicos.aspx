@@ -23,7 +23,10 @@
             width: 404px;
         }
         .auto-style13 {
-            width: 536px;
+            width: 505px;
+        }
+        .auto-style14 {
+            width: 374px;
         }
     </style>
 </head>
@@ -90,7 +93,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td>
+                    <td class="auto-style14">
                         <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" OnPageIndexChanging="gvMedicos_PageIndexChanging" PageSize="3">
                         </asp:GridView>
                     </td>
@@ -98,12 +101,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>

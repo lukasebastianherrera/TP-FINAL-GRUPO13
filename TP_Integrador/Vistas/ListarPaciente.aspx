@@ -10,9 +10,6 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 157px;
-        }
         .auto-style7 {
             width: 152px;
         }
@@ -23,10 +20,13 @@
             width: 454px;
         }
         .auto-style16 {
-            width: 284px;
+            width: 558px;
         }
         .auto-style17 {
             width: 434px;
+        }
+        .auto-style18 {
+            width: 400px;
         }
     </style>
 </head>
@@ -35,7 +35,7 @@
         <div >
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style18">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/ABMLPacientes.aspx" Font-Size="Medium" ForeColor="Blue">Volver</asp:HyperLink>
                     </td>
                     <td class="auto-style7">&nbsp;</td>
@@ -44,7 +44,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style11">
                         <asp:Label ID="lblListarPacientes" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Listar Pacientes"></asp:Label>
@@ -55,14 +55,28 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style12">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style12">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style12">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style7">
                         <asp:Label ID="lblApellido" runat="server" Text="Apellido:"></asp:Label>
                     </td>
@@ -81,7 +95,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style11">
                         <asp:Label ID="lblMensajeApellido" runat="server" ForeColor="Red"></asp:Label>

@@ -51,25 +51,6 @@ namespace Datos
             }
         }
 
-        public DataTable ListarTodosLosPacientesPorApellido(string apellido)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                const string consulta = @"SELECT persona.nombre AS Nombre, persona.apellido AS Apellido, persona.dni as DNI FROM Pacientes paciente
-                                        JOIN Persona persona ON paciente.id_persona = persona.id_persona
-                                        WHERE persona.apellido LIKE @apellido AND paciente.estado = 1";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable tabla = new DataTable();
-                    adapter.Fill(tabla);
-                    return tabla;
-                }
-            }
-        }
-
         public bool AltaPaciente(Persona persona)
         {
             if (ExistePaciente(persona.Dni))
@@ -116,15 +97,37 @@ namespace Datos
         public DataTable obtenerTodosLosPacientesyDatos()
         {
             SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
-            string consulta = @"SELECT dni as DNI, nombre as Nombre, apellido as Apellido, sexo as Sexo, nacionalidad as Nacionalidad, 
-                                    fecha_nacimiento as 'Fecha de Nacimiento', correo_electronico as 'Correo Electrónico', telefono as Teléfono, direccion as Dirección, estado as Estados
-                                    FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona";
+            string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                                    per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono], 
+                                    per.direccion AS [Dirección], p.estado AS Estado
+                                    FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona";
 
             SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter (sqlcommand);
             DataTable tabla = new DataTable();
             adapter.Fill (tabla);
             return tabla;
+        }
+
+        public DataTable ListarTodosLosPacientesPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                                            per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
+                                            per.direccion AS [Dirección], p.estado AS Estado 
+                                            FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona
+                                            WHERE per.apellido LIKE @apellido";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
+            }
         }
 
         public DataTable BuscarPacienteConDNI(string dni)

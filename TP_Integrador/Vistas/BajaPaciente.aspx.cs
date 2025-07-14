@@ -49,7 +49,7 @@ namespace Vistas
 
             if (string.IsNullOrEmpty(apellido))
             {
-                lblMensajeApellido.Text = "Ingrese parte del apellido";
+                lblMensajeApellido.Text = "Debe ingresar al menos una letra.";
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace Vistas
 
             Session["SelectedDni"] = dni;
 
-            lblMensaje.Text = $"Paciente seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} (DNI {dni})";
+            lblMensaje.Text = $"Paciente seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} DNI {dni}";
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

@@ -50,7 +50,7 @@ namespace Vistas
 
             if (string.IsNullOrEmpty(apellido))
             {
-                lblMensajeApellido.Text = "Ingrese parte del apellido";
+                lblMensajeApellido.Text = "Debe ingresar al menos una letra.";
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace Vistas
             {
                 Grv_medicos.DataSource = null;
                 Grv_medicos.DataBind();
-                lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'";
+                lblMensajeApellido.Text = $"No se encontraron médicos con apellido que contenga '{apellido}'";
             }
             Session["SelectedDni"] = null;
         }
@@ -82,7 +82,7 @@ namespace Vistas
 
             Session["SelectedDni"] = dni;
 
-            lblMensaje.Text = $"Medico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} (DNI {dni})";
+            lblMensaje.Text = $"Medico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} DNI {dni}";
         } 
 
 

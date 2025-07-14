@@ -23,10 +23,10 @@
             width: 360px;
         }
         .auto-style13 {
-            width: 548px;
+            width: 465px;
         }
         .auto-style14 {
-            width: 744px;
+            width: 496px;
         }
         .auto-style15 {
             width: 154px;

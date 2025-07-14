@@ -11,6 +11,8 @@ namespace Vistas
 {
     public partial class ModificarMedico : System.Web.UI.Page
     {
+        private MedicoNegocio medicoNegocio = new MedicoNegocio();
+        private EspecialidadNegocio especialidadNegocio = new EspecialidadNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioLogueado"] == null)
@@ -29,7 +31,6 @@ namespace Vistas
 
         private void cargarMedicos()
         {
-            MedicoNegocio medicoNegocio = new MedicoNegocio();
             gvMedico.DataSource = medicoNegocio.ObtenerTodosLosMedicos();
             gvMedico.DataBind();
         }
@@ -48,6 +49,10 @@ namespace Vistas
 
         protected void gvMedico_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            GridViewRow row = gvMedico.Rows[e.RowIndex];
+
+            int nuevaIdEsp = int.Parse(((DropDownList)row.FindControl("ddlEspecialidad")).SelectedValue);
+
             string nombre = ((TextBox)gvMedico.Rows[e.RowIndex].FindControl("txt_eit_Nombre")).Text;
             string apellido = ((TextBox)gvMedico.Rows[e.RowIndex].FindControl("txt_eit_Apellido")).Text;
             string dni = ((Label)gvMedico.Rows[e.RowIndex].FindControl("lbl_eit_DNI")).Text;
@@ -71,6 +76,24 @@ namespace Vistas
 
             gvMedico.EditIndex = -1;
             cargarMedicos();
+        }
+
+        protected void gvMedico_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.DataRow && (e.Row.RowState & DataControlRowState.Edit) != 0){
+
+                var ddl = (DropDownList)e.Row.FindControl("ddlEspecialidad");
+
+                ddl.DataSource = especialidadNegocio.ObtenerEspecialidades();
+                ddl.DataTextField = "Nombre_especialidad";
+                ddl.DataValueField = "Id_especialidad";
+                ddl.DataBind();
+
+                string idActual = DataBinder.Eval(e.Row.DataItem, "Id Especialidad").ToString();
+
+                var item = ddl.Items.FindByValue(idActual);
+                if (item != null) item.Selected = true;
+            }
         }
     }
 }
