@@ -96,7 +96,7 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad] 
+                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad], 
                                     esp.nombre_especialidad as Especialidad, m.legajo as Legajo  FROM Medicos m                                    
                                     JOIN Persona per ON m.id_persona = per.id_persona
                                     JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
