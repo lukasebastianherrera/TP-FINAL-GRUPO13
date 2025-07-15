@@ -42,85 +42,12 @@ namespace Negocio
         {
             return datosPaciente.BajaLogicaPaciente(dni);
         }
-<<<<<<< HEAD
 
         public bool ModificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
         {
             return datosPaciente.ModificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
-=======
-        /*  public DataTable obtenerTodosLosPacientesyDatos()
-          {
-              return datosPaciente.obtenerTodosLosPacientesyDatos();
-          }*/
-
-        /* public bool modificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
-         {
-             return datosPaciente.modificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
-         }*/
-
-        /*-----------------------------------------------------*/
-
-        public DataTable BuscarPacienteconApellido(string apellido)
-        {
-            return datosPaciente.BuscarPacienteconApellido(apellido);
         }
-
-
-
-        public DataTable obtenerTodosLosPacientesyDatos()
-        {
-            return datosPaciente.obtenerTodosLosPacientesyDatos();
-        }
-
-        public bool modificarPaciente(
-            int idPersona, string nombre, string apellido,
-            string dniOriginal, string dniNuevo,
-            string sexo, string nacionalidad,
-            DateTime fechaNacimiento, string correoElectronico,
-            string telefono, string direccion, bool estado)
-        {
-            if (dniOriginal != dniNuevo && datosPaciente.ExisteDni(dniNuevo, idPersona))
-                return false;
-
-            if (datosPaciente.ExisteCorreo(correoElectronico, idPersona))
-                return false;
-
-            if (datosPaciente.ExisteTelefono(telefono, idPersona))
-                return false;
-
-            return datosPaciente.modificarPaciente(
-                idPersona, nombre, apellido, dniNuevo, sexo, nacionalidad,
-                fechaNacimiento, correoElectronico, telefono, direccion, estado);
->>>>>>> e6fc0f5383654bf081ebfad867237519ed4599d8
-        }
-
-
-
-
-
-
-        public bool EsDniDuplicado(string dni, int idPersona)
-        {
-            return datosPaciente.ExisteDni(dni, idPersona);
-        }
-
-        public bool EsCorreoDuplicado(string correo, int idPersona)
-        {
-            return datosPaciente.ExisteCorreo(correo, idPersona);
-        }
-
-        public bool EsTelefonoDuplicado(string telefono, int idPersona)
-        {
-            return datosPaciente.ExisteTelefono(telefono, idPersona);
-        }
-
-
 
     }
-
-
-
-
 }
-
 

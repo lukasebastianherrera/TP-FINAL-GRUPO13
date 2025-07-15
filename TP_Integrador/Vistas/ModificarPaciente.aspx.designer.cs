@@ -69,15 +69,6 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
 
         /// <summary>
-        /// Control rfvApellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellido;
-
-        /// <summary>
         /// Control revApellido.
         /// </summary>
         /// <remarks>
@@ -105,22 +96,22 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// Control lblMensaje.
+        /// Control lblMensajeApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        protected global::System.Web.UI.WebControls.Label lblMensajeApellido;
 
         /// <summary>
-        /// Control gvPacientes0.
+        /// Control gvPacientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPacientes0;
+        protected global::System.Web.UI.WebControls.GridView gvPacientes;
 
         /// <summary>
         /// Control lbl_Exito.
