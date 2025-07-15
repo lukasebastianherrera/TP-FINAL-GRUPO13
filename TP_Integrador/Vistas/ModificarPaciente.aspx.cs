@@ -8,14 +8,222 @@ using System.Web.UI.WebControls;
 using Entidades;
 using Negocio;
 
+
+
 namespace Vistas
+{
+    public partial class ModificarPaciente : System.Web.UI.Page
+    {
+        private PacienteNegocio pacienteNegocio = new PacienteNegocio();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+
+            if (!IsPostBack)
+            {
+                Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+                lblAdministrador.Text = usuario.Nombre_usuario;
+                cargarPacientes();
+                LimpiarMensajes();
+            }
+        }
+
+        private void cargarPacientes()
+        {
+            string apellido = txtApellido.Text.Trim();
+            DataTable tabla = string.IsNullOrEmpty(apellido)
+                ? pacienteNegocio.obtenerTodosLosPacientesyDatos()
+                : pacienteNegocio.BuscarPacienteconApellido(apellido);
+
+            gvPacientes0.DataSource = tabla;
+            gvPacientes0.DataBind();
+        }
+
+        private void LimpiarMensajes()
+        {
+            lbl_Exito.Text = "";
+            lblMensaje.Text = "";
+        }
+
+        private void MostrarMensaje(Label lbl, string mensaje, bool esExito)
+        {
+            lbl.ForeColor = esExito ? System.Drawing.Color.Green : System.Drawing.Color.Red;
+            lbl.Text = mensaje;
+        }
+
+        private bool ValidarDatosUnicos(string dniNuevo, string correo, string telefono, int idPersona)
+        {
+            if (pacienteNegocio.EsDniDuplicado(dniNuevo, idPersona))
+            {
+                MostrarMensaje(lbl_Exito, "Ese DNI ya está en uso por otro paciente.", false);
+                return false;
+            }
+
+            if (pacienteNegocio.EsCorreoDuplicado(correo, idPersona))
+            {
+                MostrarMensaje(lbl_Exito, "Ese correo electrónico ya está en uso por otro paciente.", false);
+                return false;
+            }
+
+            if (pacienteNegocio.EsTelefonoDuplicado(telefono, idPersona))
+            {
+                MostrarMensaje(lbl_Exito, "Ese teléfono ya está en uso por otro paciente.", false);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ObtenerDatosFila(GridViewRow fila, out string dniNuevo, out string nombre, out string apellido, out string sexo,
+                                      out string nacionalidad, out DateTime fechaNacimiento, out string correo,
+                                      out string telefono, out string direccion, out bool estado)
+        {
+            dniNuevo = ((TextBox)fila.FindControl("txt_eit_DNI")).Text.Trim();
+            nombre = ((TextBox)fila.FindControl("txt_eit_Nombre")).Text.Trim();
+            apellido = ((TextBox)fila.FindControl("txt_eit_Apellido")).Text.Trim();
+            sexo = ((TextBox)fila.FindControl("txt_eit_Sexo")).Text.Trim();
+            nacionalidad = ((TextBox)fila.FindControl("txt_eit_Nacionalidad")).Text.Trim();
+            string fechaNacimientoStr = ((TextBox)fila.FindControl("txt_eit_FechaNacimiento")).Text.Trim();
+            correo = ((TextBox)fila.FindControl("txt_eit_CorreoElectronico")).Text.Trim();
+            telefono = ((TextBox)fila.FindControl("txt_eit_Telefono")).Text.Trim();
+            direccion = ((TextBox)fila.FindControl("txt_eit_direccion")).Text.Trim();
+            estado = ((CheckBox)fila.FindControl("cb_eit_estado")).Checked;
+
+            return DateTime.TryParse(fechaNacimientoStr, out fechaNacimiento);
+        }
+
+        protected void gvPacientes0_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            LimpiarMensajes();
+            gvPacientes0.EditIndex = e.NewEditIndex;
+            cargarPacientes();
+        }
+
+        protected void gvPacientes0_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            LimpiarMensajes();
+            gvPacientes0.EditIndex = -1;
+            cargarPacientes();
+        }
+
+        protected void gvPacientes0_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            LimpiarMensajes();
+
+            int idPersona = Convert.ToInt32(gvPacientes0.DataKeys[e.RowIndex].Value);
+            string dniOriginal = gvPacientes0.DataKeys[e.RowIndex].Values["dni"].ToString();
+
+            GridViewRow fila = gvPacientes0.Rows[e.RowIndex];
+
+            if (!ObtenerDatosFila(fila, out string dniNuevo, out string nombre, out string apellido, out string sexo,
+                                  out string nacionalidad, out DateTime fechaNacimiento, out string correo,
+                                  out string telefono, out string direccion, out bool estado))
+            {
+                MostrarMensaje(lbl_Exito, "Fecha de nacimiento inválida.", false);
+                return;
+            }
+
+            if (!ValidarDatosUnicos(dniNuevo, correo, telefono, idPersona))
+                return;
+
+            bool success = pacienteNegocio.modificarPaciente(
+                idPersona, nombre, apellido, dniOriginal, dniNuevo, sexo,
+                nacionalidad, fechaNacimiento, correo, telefono, direccion, estado);
+
+            if (success)
+            {
+                MostrarMensaje(lbl_Exito, "Paciente fue modificado/a con éxito.", true);
+            }
+            else
+            {
+                MostrarMensaje(lbl_Exito, "Hubo un error al modificar el/la paciente.", false);
+            }
+
+            gvPacientes0.EditIndex = -1;
+            txtApellido.Text = "";
+            cargarPacientes();
+        }
+
+        protected void btnBuscarPaciente_Click(object sender, EventArgs e)
+        {
+            LimpiarMensajes();
+            cargarPacientes();
+
+            if (gvPacientes0.Rows.Count == 0)
+            {
+                MostrarMensaje(lblMensaje, "No se encontró un/a paciente con ese apellido.", false);
+            }
+        }
+
+        protected void btnCancelar_Click1(object sender, EventArgs e)
+        {
+            txtApellido.Text = "";
+            gvPacientes0.EditIndex = -1;
+            LimpiarMensajes();
+            cargarPacientes();
+        }
+
+        protected void gvPacientes0_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            if (gvPacientes0.EditIndex != -1)
+            {
+                MostrarMensaje(lbl_Exito, "Debe cancelar o guardar la edición antes de cambiar de página.", false);
+                e.Cancel = true;
+                return;
+            }
+
+            gvPacientes0.PageIndex = e.NewPageIndex;
+            LimpiarMensajes();
+            cargarPacientes();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*namespace Vistas
 {
     public partial class ModificarPaciente : System.Web.UI.Page
     {
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UsuarioLogueado"] == null)
+           /* if (Session["UsuarioLogueado"] == null)
             {
                 Response.Redirect("Inicio.aspx");
             }
@@ -26,8 +234,8 @@ namespace Vistas
                 lblMensajeApellido.Text = "";
             }
 
-            Usuario usuario = (Usuario)Session["UsuarioLogueado"];
-            lblAdministrador.Text = usuario.Nombre_usuario;
+           // Usuario usuario = (Usuario)Session["UsuarioLogueado"];
+           // lblAdministrador.Text = usuario.Nombre_usuario;
         }
         private void CargarPacientes()
         {
@@ -125,4 +333,4 @@ namespace Vistas
             CargarPacientes();
         }
     }
-}
+}*/
