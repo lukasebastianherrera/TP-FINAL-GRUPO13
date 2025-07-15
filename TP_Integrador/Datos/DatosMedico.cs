@@ -21,13 +21,14 @@ namespace Datos
                 Persona persona ON medico.id_persona = persona.id_persona
                 WHERE persona.dni = @dni";
 
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-            {
-                cmd.Parameters.AddWithValue("@dni", dni);
-                int contador = Convert.ToInt32(cmd.ExecuteScalar());
-
-                return contador > 0;
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion()) 
+            { 
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@dni", dni);
+                    int contador = Convert.ToInt32(cmd.ExecuteScalar());
+                    return contador > 0;
+                }
             }
         }
 
@@ -37,24 +38,26 @@ namespace Datos
                 return 0;
 
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand("sp_AltaMedico", conexion))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
+                using (SqlCommand cmd = new SqlCommand("sp_AltaMedico", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@dni", medico.Dni);
-                cmd.Parameters.AddWithValue("@nombre", medico.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", medico.Apellido);
-                cmd.Parameters.AddWithValue("@sexo", medico.Sexo);
-                cmd.Parameters.AddWithValue("@nacionalidad", medico.Nacionalidad);
-                cmd.Parameters.AddWithValue("@fecha_nacimiento", medico.Fecha_nacimiento);
-                cmd.Parameters.AddWithValue("@correo_electronico", medico.Correo_electronico);
-                cmd.Parameters.AddWithValue("@telefono", medico.Telefono);
-                cmd.Parameters.AddWithValue("@direccion", medico.Direccion);
-                cmd.Parameters.AddWithValue("@id_localidad", medico.Id_localidad);
-                cmd.Parameters.AddWithValue("@id_especialidad", medico.Id_especialidad);
-                cmd.Parameters.AddWithValue("@legajo", medico.Legajo);
+                    cmd.Parameters.AddWithValue("@dni", medico.Dni);
+                    cmd.Parameters.AddWithValue("@nombre", medico.Nombre);
+                    cmd.Parameters.AddWithValue("@apellido", medico.Apellido);
+                    cmd.Parameters.AddWithValue("@sexo", medico.Sexo);
+                    cmd.Parameters.AddWithValue("@nacionalidad", medico.Nacionalidad);
+                    cmd.Parameters.AddWithValue("@fecha_nacimiento", medico.Fecha_nacimiento);
+                    cmd.Parameters.AddWithValue("@correo_electronico", medico.Correo_electronico);
+                    cmd.Parameters.AddWithValue("@telefono", medico.Telefono);
+                    cmd.Parameters.AddWithValue("@direccion", medico.Direccion);
+                    cmd.Parameters.AddWithValue("@id_localidad", medico.Id_localidad);
+                    cmd.Parameters.AddWithValue("@id_especialidad", medico.Id_especialidad);
+                    cmd.Parameters.AddWithValue("@legajo", medico.Legajo);
 
-                return Convert.ToInt32(cmd.ExecuteScalar());
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
             }
         }
 
@@ -76,27 +79,11 @@ namespace Datos
             }
         }
 
-        public void AltaHorarioMedico(int idMedico, string diaSemana, TimeSpan horaDesde, TimeSpan horaHasta)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand("sp_AltaHorarioMedico", conexion))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@id_medico", idMedico);
-                cmd.Parameters.AddWithValue("@dia_semana", diaSemana);
-                cmd.Parameters.AddWithValue("@hora_desde", horaDesde);
-                cmd.Parameters.AddWithValue("@hora_hasta", horaHasta);
-
-                cmd.ExecuteNonQuery();
-            }
-        }
-
         public DataTable ObtenerTodosLosMedicosActivos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad] 
+                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad], 
                                     esp.nombre_especialidad as Especialidad, m.legajo as Legajo  FROM Medicos m                                    
                                     JOIN Persona per ON m.id_persona = per.id_persona
                                     JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
@@ -130,6 +117,44 @@ namespace Datos
                 }
             }
         }
+
+        public DataTable ListarTodosLosMedicosPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                                            per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
+                                            per.direccion AS [Dirección], p.estado AS Estado 
+                                            FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona
+                                            WHERE per.apellido LIKE @apellido";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
+        public void AltaHorarioMedico(int idMedico, string diaSemana, TimeSpan horaDesde, TimeSpan horaHasta)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand("sp_AltaHorarioMedico", conexion))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_medico", idMedico);
+                cmd.Parameters.AddWithValue("@dia_semana", diaSemana);
+                cmd.Parameters.AddWithValue("@hora_desde", horaDesde);
+                cmd.Parameters.AddWithValue("@hora_hasta", horaHasta);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+ 
 
         public DataTable ObtenerMedicosSinUsuario()
         {

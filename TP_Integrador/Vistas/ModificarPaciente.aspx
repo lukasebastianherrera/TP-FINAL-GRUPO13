@@ -94,7 +94,7 @@
                         ID="rfvApellido" 
                         runat="server" 
                         ControlToValidate="txtApellido" 
-                        ErrorMessage="El Apellido es obligatorio" 
+                        ErrorMessage="Debe ingresar al menos una letra." 
                         ForeColor="Red" 
                         Display="Dynamic" 
                         SetFocusOnError="True" Font-Bold="False" ValidationGroup="grupo1" />
@@ -130,30 +130,30 @@
                  <Columns>
                      <asp:TemplateField HeaderText="Nombre">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_Nombre" runat="server" Text='<%# Bind("nombre") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_Nombre" runat="server" Text='<%# Bind("nombre") %>'></asp:Label>
+                             <asp:Label ID="lbl_Nombre" runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Apellido">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_Apellido" runat="server" Text='<%# Bind("apellido") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_Apellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_Apellido" runat="server" Text='<%# Bind("apellido") %>'></asp:Label>
+                             <asp:Label ID="lbl_Apellido" runat="server" Text='<%# Eval("Apellido") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="DNI">
                        <EditItemTemplate>
-                           <asp:TextBox ID="txt_eit_DNI" runat="server" Text='<%# Bind("dni") %>'></asp:TextBox>
+                           <asp:TextBox ID="txt_eit_DNI" runat="server" Text='<%# Bind("DNI") %>'></asp:TextBox>
                            <asp:RegularExpressionValidator ID="revDni" runat="server"
                                ControlToValidate="txt_eit_DNI" ErrorMessage="Solo números (7 u 8 dígitos)"
                                ValidationExpression="^\d{7,8}$" Display="Dynamic"
                                ForeColor="Red" ValidationGroup="grupoEdicion" />
                        </EditItemTemplate>
                        <ItemTemplate>
-                           <asp:Label ID="lbl_DNI" runat="server" Text='<%# Bind("dni") %>'></asp:Label>
+                           <asp:Label ID="lbl_DNI" runat="server" Text='<%# Eval("DNI") %>'></asp:Label>
                        </ItemTemplate>
                    </asp:TemplateField>              
 
@@ -162,28 +162,28 @@
                              <asp:TextBox ID="txt_eit_Sexo" runat="server" Text='<%# Bind("Sexo") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_Sexo" runat="server" Text='<%# Bind("Sexo") %>'></asp:Label>
+                             <asp:Label ID="lbl_Sexo" runat="server" Text='<%# Eval("Sexo") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Nacionalidad">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_Nacionalidad" runat="server" Text='<%# Bind("nacionalidad") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_Nacionalidad" runat="server" Text='<%# Bind("Nacionalidad") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_Nacionalidad" runat="server" Text='<%# Bind("nacionalidad") %>'></asp:Label>
+                             <asp:Label ID="lbl_Nacionalidad" runat="server" Text='<%# Eval("Nacionalidad") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Fecha Nacimiento">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_FechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento", "{0:dd/MM/yyyy}") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_FechaNacimiento" runat="server" Text='<%# Bind("[Fecha de Nacimiento]", "{0:dd/MM/yyyy}") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_FechaNacimiento" runat="server" Text='<%# Bind("fecha_nacimiento", "{0:dd/MM/yyyy}") %>'></asp:Label>
+                             <asp:Label ID="lbl_FechaNacimiento" runat="server" Text='<%# Eval("Fecha de Nacimiento", "{0:dd/MM/yyyy}") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Correo Electronico">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_CorreoElectronico" runat="server" Text='<%# Bind("correo_electronico") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_CorreoElectronico" runat="server" Text='<%# Bind("[Correo Electrónico]") %>'></asp:TextBox>
                              <asp:RegularExpressionValidator ID="revEmail" runat="server"
                                  ControlToValidate="txt_eit_CorreoElectronico"
                                  ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
@@ -191,36 +191,36 @@
                                  ForeColor="Red" />
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_CorreoElectronico" runat="server" Text='<%# Bind("correo_electronico") %>'></asp:Label>
+                             <asp:Label ID="lbl_CorreoElectronico" runat="server" Text='<%# Eval("Correo Electrónico") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Telefono ">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_Telefono" runat="server" Text='<%# Bind("telefono") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_Telefono" runat="server" Text='<%# Bind("[Teléfono]") %>'></asp:TextBox>
                              <asp:RegularExpressionValidator ID="revTelefono" runat="server"
                                 ControlToValidate="txt_eit_Telefono"
-                                ValidationExpression="^\d{8}$"
-                                ErrorMessage="El teléfono debe tener exactamente 8 dígitos numéricos." Display="Dynamic"
+                                ValidationExpression="^\d{10}$"
+                                ErrorMessage="El teléfono debe tener exactamente 10 dígitos numéricos." Display="Dynamic"
                                 ForeColor="Red" />
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_Telefono" runat="server" Text='<%# Bind("telefono") %>'></asp:Label>
+                             <asp:Label ID="lbl_Telefono" runat="server" Text='<%# Eval("Teléfono") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Direccion">
                          <EditItemTemplate>
-                             <asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("direccion") %>'></asp:TextBox>
+                             <asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("[Dirección]") %>'></asp:TextBox>
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:Label ID="lbl_Direccion" runat="server" Text='<%# Bind("direccion") %>'></asp:Label>
+                             <asp:Label ID="lbl_Direccion" runat="server" Text='<%# Eval("Dirección") %>'></asp:Label>
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Estado">
                          <EditItemTemplate>
-                             <asp:CheckBox ID="cb_eit_estado" runat="server" Checked='<%# Bind("estado") %>' />
+                             <asp:CheckBox ID="cb_eit_estado" runat="server" Checked='<%# Bind("Estado") %>' />
                          </EditItemTemplate>
                          <ItemTemplate>
-                             <asp:CheckBox ID="cb_Estado" runat="server" Checked='<%# Bind("estado") %>' Enabled="False" />
+                             <asp:CheckBox ID="cb_Estado" runat="server" Checked='<%# Eval("Estado") %>' Enabled="False" />
                          </ItemTemplate>
                      </asp:TemplateField>
                  </Columns>

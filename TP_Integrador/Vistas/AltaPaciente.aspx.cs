@@ -96,6 +96,7 @@ namespace Vistas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            lblMensaje.Text = "";
             Paciente paciente = new Paciente
             {
                 Dni = txtDNI.Text.Trim(),

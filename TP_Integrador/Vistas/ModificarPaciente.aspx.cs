@@ -27,17 +27,17 @@ namespace Vistas
             {
                 Usuario usuario = (Usuario)Session["UsuarioLogueado"];
                 lblAdministrador.Text = usuario.Nombre_usuario;
-                cargarPacientes();
+                CargarPacientes();
                 LimpiarMensajes();
             }
         }
 
-        private void cargarPacientes()
+        private void CargarPacientes()
         {
             string apellido = txtApellido.Text.Trim();
             DataTable tabla = string.IsNullOrEmpty(apellido)
-                ? pacienteNegocio.obtenerTodosLosPacientesyDatos()
-                : pacienteNegocio.BuscarPacienteconApellido(apellido);
+                ? pacienteNegocio.ObtenerTodosLosPacientesyDatos()
+                : pacienteNegocio.ListarTodosLosPacientesPorApellido(apellido);
 
             gvPacientes0.DataSource = tabla;
             gvPacientes0.DataBind();
@@ -100,14 +100,14 @@ namespace Vistas
         {
             LimpiarMensajes();
             gvPacientes0.EditIndex = e.NewEditIndex;
-            cargarPacientes();
+            CargarPacientes();
         }
 
         protected void gvPacientes0_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             LimpiarMensajes();
             gvPacientes0.EditIndex = -1;
-            cargarPacientes();
+            CargarPacientes();
         }
 
         protected void gvPacientes0_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -145,13 +145,13 @@ namespace Vistas
 
             gvPacientes0.EditIndex = -1;
             txtApellido.Text = "";
-            cargarPacientes();
+            CargarPacientes();
         }
 
         protected void btnBuscarPaciente_Click(object sender, EventArgs e)
         {
             LimpiarMensajes();
-            cargarPacientes();
+            CargarPacientes();
 
             if (gvPacientes0.Rows.Count == 0)
             {
@@ -164,7 +164,7 @@ namespace Vistas
             txtApellido.Text = "";
             gvPacientes0.EditIndex = -1;
             LimpiarMensajes();
-            cargarPacientes();
+            CargarPacientes();
         }
 
         protected void gvPacientes0_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -178,7 +178,7 @@ namespace Vistas
 
             gvPacientes0.PageIndex = e.NewPageIndex;
             LimpiarMensajes();
-            cargarPacientes();
+            CargarPacientes();
         }
     }
 }

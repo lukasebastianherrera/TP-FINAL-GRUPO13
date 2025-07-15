@@ -18,31 +18,84 @@ namespace Datos
         {
             const string consulta = @"SELECT COUNT(*) FROM Pacientes paciente
                                        JOIN Persona persona ON paciente.id_persona = persona.id_persona
-                                       WHERE persona.dni = @dni AND paciente.Estado = 1";
+                                       WHERE persona.dni = @dni";
 
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion()) {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion()) 
+            {
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 {
                     cmd.Parameters.AddWithValue("@dni", dni);
                     int contador = Convert.ToInt32(cmd.ExecuteScalar());
                     return contador > 0;
+                }
+            }    
+        }
 
-                    }
+        public bool AltaPaciente(Persona persona)
+        {
+            if (ExistePaciente(persona.Dni))
+                return false;
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_AltaPaciente", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@dni", persona.Dni);
+                    cmd.Parameters.AddWithValue("@nombre", persona.Nombre);
+                    cmd.Parameters.AddWithValue("@apellido", persona.Apellido);
+                    cmd.Parameters.AddWithValue("@sexo", persona.Sexo);
+                    cmd.Parameters.AddWithValue("@nacionalidad", persona.Nacionalidad);
+                    cmd.Parameters.AddWithValue("@fecha_nacimiento", persona.Fecha_nacimiento);
+                    cmd.Parameters.AddWithValue("@correo_electronico", persona.Correo_electronico);
+                    cmd.Parameters.AddWithValue("@telefono", persona.Telefono);
+                    cmd.Parameters.AddWithValue("@direccion", persona.Direccion);
+                    cmd.Parameters.AddWithValue("@id_localidad", persona.Id_localidad);
+
+                    int filas = cmd.ExecuteNonQuery();
+                    return filas > 0;
+                }
             }
-           
+        }
+
+        public DataTable ObtenerTodosLosPacientesyDatos()
+        {
+            using (SqlConnection sqlConnection = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT  per.id_persona, per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                                     per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono], 
+                                     per.direccion AS [Dirección], p.estado AS Estado
+                                     FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona";
+
+                SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlcommand);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }              
+        }
+
+        public DataTable ObtenerTodosLosPacientesActivos()
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI                                    
+                                    FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona WHERE p.Estado = 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
         }
 
         public DataTable BuscarPacientePorApellido(string apellido)
         {
             using(SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                
-
-                string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
-                                     per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono], 
-                                     per.direccion AS [Dirección]
+            {              
+                string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI  
                                      FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona where per.apellido LIKE @apellido AND p.estado = 1";
-
 
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 {
@@ -55,76 +108,11 @@ namespace Datos
             }
         }
 
-        public bool AltaPaciente(Persona persona)
-        {
-            if (ExistePaciente(persona.Dni))
-                return false;
-
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand("sp_AltaPaciente", conexion))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@dni", persona.Dni);
-                cmd.Parameters.AddWithValue("@nombre", persona.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", persona.Apellido);
-                cmd.Parameters.AddWithValue("@sexo", persona.Sexo);
-                cmd.Parameters.AddWithValue("@nacionalidad", persona.Nacionalidad);
-                cmd.Parameters.AddWithValue("@fecha_nacimiento", persona.Fecha_nacimiento);
-                cmd.Parameters.AddWithValue("@correo_electronico", persona.Correo_electronico);
-                cmd.Parameters.AddWithValue("@telefono", persona.Telefono);
-                cmd.Parameters.AddWithValue("@direccion", persona.Direccion);
-                cmd.Parameters.AddWithValue("@id_localidad", persona.Id_localidad);
-
-                int filas = cmd.ExecuteNonQuery();
-                return filas > 0;
-            }
-        }
-
-        public DataTable ObtenerTodosLosPacientes()
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-
-                string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
-                                     per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono], 
-                                     per.direccion AS [Dirección]
-                                     FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona WHERE p.Estado = 1";
-
-
-
-                SqlCommand cmd = new SqlCommand(consulta, conexion);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                adapter.Fill(tabla);
-                return tabla;
-            }
-        }
-
-
-        public DataTable obtenerTodosLosPacientesyDatos()
-        {
-            SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
-            string consulta = @"SELECT per.id_persona,dni, nombre, apellido, sexo, nacionalidad, 
-                                    fecha_nacimiento, correo_electronico, telefono, direccion, estado
-                                    FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona";
-
-            SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlcommand);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            return tabla;
-        }
-
-
-
-
-
-
         public DataTable ListarTodosLosPacientesPorApellido(string apellido)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                const string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                const string consulta = @"SELECT per.id_persona, per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
                                             per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
                                             per.direccion AS [Dirección], p.estado AS Estado 
                                             FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona
@@ -138,6 +126,22 @@ namespace Datos
                     adapter.Fill(tabla);
                     return tabla;
                 }
+            }
+        }
+
+        public bool BajaLogicaPacientePorDni(string dni)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"UPDATE Pacientes
+                                     SET Estado = 0
+                                     WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE DNI = @dni)";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas > 0;
             }
         }
 
@@ -182,25 +186,6 @@ namespace Datos
             }
         }
 
-        public bool BajaLogicaPaciente(string dni)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                string consulta = @"UPDATE Pacientes
-                                     SET Estado = 0
-                                     WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE DNI = @dni)";
-
-                SqlCommand cmd = new SqlCommand(consulta, conexion);
-                cmd.Parameters.AddWithValue("@dni", dni);
-
-                int filasAfectadas = cmd.ExecuteNonQuery();
-                return filasAfectadas > 0;
-            }
-        }
-
-
-
-
         public DataTable BuscarPacienteconApellido(string apellido)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
@@ -233,17 +218,6 @@ namespace Datos
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
         public bool modificarPaciente(int idPersona, string nombre, string apellido, string dni, string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado)
@@ -339,18 +313,6 @@ namespace Datos
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
 

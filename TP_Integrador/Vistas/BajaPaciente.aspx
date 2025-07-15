@@ -171,7 +171,7 @@
                 <tr>
                     <td class="auto-style27">&nbsp;</td>
                     <td class="auto-style26">
-                       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="6" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                       <asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvPacientes_SelectedIndexChanged" DataKeyNames="dni">
                            <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
 

@@ -13,22 +13,25 @@ namespace Negocio
     {
         private DatosPaciente datosPaciente = new DatosPaciente();
 
+        public PacienteNegocio() { }
+
         public bool AltaPaciente(Paciente paciente)
         {
             return datosPaciente.AltaPaciente(paciente);
         }
 
-        public DataTable ObtenerTodosLosPacientes()
+        public DataTable ObtenerTodosLosPacientesyDatos()
         {
-     
-            return datosPaciente.ObtenerTodosLosPacientes();
-
+            return datosPaciente.ObtenerTodosLosPacientesyDatos();
         }
 
-        public DataTable BuscarPacienteConDNI(string dni)
+        public DataTable ObtenerTodosLosPacientesActivos()
         {
-            return datosPaciente.BuscarPacienteConDNI(dni);
-
+            return datosPaciente.ObtenerTodosLosPacientesActivos();
+        }
+        public DataTable BuscarPacientePorApellido(string apellido)
+        {
+            return datosPaciente.BuscarPacientePorApellido(apellido);
         }
 
         public DataTable ListarTodosLosPacientesPorApellido(string apellido)
@@ -36,41 +39,24 @@ namespace Negocio
             return datosPaciente.ListarTodosLosPacientesPorApellido(apellido);
         }
 
-        public DataTable BuscarPacientePorApellido(string apellido)
+        public bool BajaLogicaPacientePorDni(string dni)
         {
-            return datosPaciente.BuscarPacientePorApellido(apellido);
+            return datosPaciente.BajaLogicaPacientePorDni(dni);
         }
+
+        public DataTable BuscarPacienteConDNI(string dni)
+        {
+            return datosPaciente.BuscarPacienteConDNI(dni);
+        }
+
         public DataTable BuscarPacientePorDNI(string dni)
         {
             return datosPaciente.BuscarPacientePorDNI(dni);
         }
 
-        public bool BajaLogicaPacientePorDni(string dni)
-        {
-            return datosPaciente.BajaLogicaPaciente(dni);
-        }
-        /*  public DataTable obtenerTodosLosPacientesyDatos()
-          {
-              return datosPaciente.obtenerTodosLosPacientesyDatos();
-          }*/
-
-        /* public bool modificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
-         {
-             return datosPaciente.modificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
-         }*/
-
-        /*-----------------------------------------------------*/
-
         public DataTable BuscarPacienteconApellido(string apellido)
         {
             return datosPaciente.BuscarPacienteconApellido(apellido);
-        }
-
-
-
-        public DataTable obtenerTodosLosPacientesyDatos()
-        {
-            return datosPaciente.obtenerTodosLosPacientesyDatos();
         }
 
         public bool modificarPaciente(
@@ -94,11 +80,6 @@ namespace Negocio
                 fechaNacimiento, correoElectronico, telefono, direccion, estado);
         }
 
-
-
-
-
-
         public bool EsDniDuplicado(string dni, int idPersona)
         {
             return datosPaciente.ExisteDni(dni, idPersona);
@@ -113,14 +94,7 @@ namespace Negocio
         {
             return datosPaciente.ExisteTelefono(telefono, idPersona);
         }
-
-
-
     }
-
-
-
-
 }
 
 

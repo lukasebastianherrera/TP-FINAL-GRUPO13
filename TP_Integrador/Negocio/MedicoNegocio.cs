@@ -25,7 +25,6 @@ namespace Negocio
             {
                 datosMedico.AltaHorarioMedico(idMed, dia, desde, hasta);
             }
-
             return true;
         }
 
@@ -37,6 +36,16 @@ namespace Negocio
         public DataTable ObtenerTodosLosMedicosActivos()
         {
             return datosMedico.ObtenerTodosLosMedicosActivos();
+        }
+
+        public DataTable BuscarMedicoPorApellido(string apellido)
+        {
+            return datosMedico.BuscarMedicoPorApellido(apellido);
+        }
+
+        public DataTable ListarTodosLosMedicosPorApellido(string apellido)
+        {
+            return datosMedico.ListarTodosLosMedicosPorApellido(apellido);
         }
 
         public DataTable ListarMedicosSinUsuario()
@@ -59,10 +68,7 @@ namespace Negocio
             return datosMedico.BuscarMedicoConDNI(dni);
         }
 
-        public DataTable BuscarMedicoPorApellido(string apellido)
-        {
-            return datosMedico.BuscarMedicoPorApellido(apellido);
-        }
+  
 
         public bool BajaLogicaMedico(string dni)
         {

@@ -14,7 +14,6 @@ namespace Vistas
     public partial class BajaPaciente : System.Web.UI.Page
     {
         private PacienteNegocio pacienteNegocio = new PacienteNegocio();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioLogueado"] == null)
@@ -36,8 +35,8 @@ namespace Vistas
 
         private void CargarTodosLosPacientes()
         {
-            GridView1.DataSource = pacienteNegocio.ObtenerTodosLosPacientes();
-            GridView1.DataBind();
+            gvPacientes.DataSource = pacienteNegocio.ObtenerTodosLosPacientesActivos();
+            gvPacientes.DataBind();
         }
 
         protected void btnBuscarApellido_Click(object sender, EventArgs e)
@@ -57,24 +56,24 @@ namespace Vistas
             
             if (dt.Rows.Count > 0)
             {
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                gvPacientes.DataSource = dt;
+                gvPacientes.DataBind();
             }
             else
             {
-                GridView1.DataSource= null;
-                GridView1.DataBind();
+                gvPacientes.DataSource= null;
+                gvPacientes.DataBind();
                 lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'";
             }
 
             Session["SelectedDni"] = null;
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtApellido.Text = "";
 
-            GridViewRow row = GridView1.SelectedRow;
+            GridViewRow row = gvPacientes.SelectedRow;
 
             string nombre = row.Cells[1].Text;
             string apellido = row.Cells[2].Text;
@@ -97,6 +96,15 @@ namespace Vistas
                 return;
             }
 
+            if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dniSeleccionado)
+            {
+                Session["DniConfirmado"] = dniSeleccionado;
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensaje.Text = $"¿Está seguro de eliminar al paciente con DNI {dniSeleccionado}? " +
+                                    "Hacé clic nuevamente en 'Eliminar' para confirmar.";
+                return;
+            }
+
             bool eliminado = pacienteNegocio.BajaLogicaPacientePorDni(dniSeleccionado);
 
             if (eliminado)
@@ -112,7 +120,7 @@ namespace Vistas
             }
 
             Session.Remove("SelectedDni");
-            GridView1.SelectedIndex = -1;
+            gvPacientes.SelectedIndex = -1;
             CargarTodosLosPacientes();
         }
 
@@ -121,17 +129,16 @@ namespace Vistas
             txtApellido.Text = "";
             lblMensaje.Text = "";
             lblMensajeApellido.Text = "";
-            GridView1.DataSource = null;
+            gvPacientes.DataSource = null;
 
             CargarTodosLosPacientes();
         }
 
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void gvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GridView1.PageIndex = e.NewPageIndex;
+            gvPacientes.PageIndex = e.NewPageIndex;
             CargarTodosLosPacientes();
         }
-
     }
 }
 

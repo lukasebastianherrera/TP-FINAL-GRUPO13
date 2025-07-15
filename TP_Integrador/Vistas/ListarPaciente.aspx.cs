@@ -33,7 +33,7 @@ namespace Vistas
 
         private void CargarTodosLosPacientes()
         {
-            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientes();
+            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientesActivos();
             gvPacientes.DataSource = dt;
             gvPacientes.DataBind();
         }
