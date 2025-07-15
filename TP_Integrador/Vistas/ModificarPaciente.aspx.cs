@@ -27,6 +27,7 @@ namespace Vistas
             {
                 Usuario usuario = (Usuario)Session["UsuarioLogueado"];
                 lblAdministrador.Text = usuario.Nombre_usuario;
+                
                 CargarPacientes();
                 LimpiarMensajes();
             }
@@ -34,12 +35,7 @@ namespace Vistas
 
         private void CargarPacientes()
         {
-            string apellido = txtApellido.Text.Trim();
-            DataTable tabla = string.IsNullOrEmpty(apellido)
-                ? pacienteNegocio.ObtenerTodosLosPacientesyDatos()
-                : pacienteNegocio.ListarTodosLosPacientesPorApellido(apellido);
-
-            gvPacientes0.DataSource = tabla;
+            gvPacientes0.DataSource = pacienteNegocio.ObtenerTodosLosPacientesyDatos();
             gvPacientes0.DataBind();
         }
 
@@ -151,11 +147,27 @@ namespace Vistas
         protected void btnBuscarPaciente_Click(object sender, EventArgs e)
         {
             LimpiarMensajes();
-            CargarPacientes();
 
-            if (gvPacientes0.Rows.Count == 0)
+            string apellido = txtApellido.Text.Trim();
+
+            if(string.IsNullOrEmpty(apellido))
             {
-                MostrarMensaje(lblMensaje, "No se encontró un/a paciente con ese apellido.", false);
+                lblMensaje.Text = "Debe ingresar al menos una letra.";
+                return;
+            }
+
+            DataTable dt = pacienteNegocio.ListarTodosLosPacientesPorApellido(apellido);
+
+            if(dt.Rows.Count > 0)
+            {
+                gvPacientes0.DataSource = dt;
+                gvPacientes0.DataBind();
+            }
+            else
+            {
+                gvPacientes0.DataSource = null;
+                gvPacientes0.DataBind();
+                lblMensaje.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'";
             }
         }
 

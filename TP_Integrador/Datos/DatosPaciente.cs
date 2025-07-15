@@ -75,6 +75,27 @@ namespace Datos
             }              
         }
 
+        public DataTable ListarTodosLosPacientesPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT per.id_persona, per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                                            per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
+                                            per.direccion AS [Dirección], p.estado AS Estado 
+                                            FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona
+                                            WHERE per.apellido LIKE @apellido";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
         public DataTable ObtenerTodosLosPacientesActivos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
@@ -96,27 +117,6 @@ namespace Datos
             {              
                 string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI  
                                      FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona where per.apellido LIKE @apellido AND p.estado = 1";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable tabla = new DataTable();
-                    adapter.Fill(tabla);
-                    return tabla;
-                }
-            }
-        }
-
-        public DataTable ListarTodosLosPacientesPorApellido(string apellido)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                const string consulta = @"SELECT per.id_persona, per.nombre AS Nombre, per.apellido AS Apellido, per.dni AS DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
-                                            per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
-                                            per.direccion AS [Dirección], p.estado AS Estado 
-                                            FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona
-                                            WHERE per.apellido LIKE @apellido";
 
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 {

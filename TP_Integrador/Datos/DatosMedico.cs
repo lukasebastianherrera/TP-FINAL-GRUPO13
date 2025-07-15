@@ -83,7 +83,7 @@ namespace Datos
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad], 
+                const string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad], 
                                     esp.nombre_especialidad as Especialidad, m.legajo as Legajo  FROM Medicos m                                    
                                     JOIN Persona per ON m.id_persona = per.id_persona
                                     JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
@@ -154,13 +154,31 @@ namespace Datos
                 cmd.ExecuteNonQuery();
             }
         }
- 
+
+        public bool CrearUsuarioMedico(int idPersona, string nombreUsuario, string contrasenia)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_AltaUsuarioMedico", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_persona", idPersona);
+                    cmd.Parameters.AddWithValue("@nombre_usuario", nombreUsuario);
+                    cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
+                    cmd.Parameters.AddWithValue("@tipo_usuario", "1");
+
+                    var resultado = cmd.ExecuteScalar();
+                    int valor = Convert.ToInt32(resultado);
+                    return valor > 0;
+                }
+            }
+        }
 
         public DataTable ObtenerMedicosSinUsuario()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.id_persona, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
+                const string consulta = @"SELECT per.id_persona, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
                                       FROM Medicos m
                                       JOIN Persona per ON m.id_persona = per.id_persona
                                       LEFT JOIN Usuarios u ON u.id_persona = per.id_persona
@@ -174,20 +192,23 @@ namespace Datos
             }
         }
 
-        public bool AltaUsuarioMedico(int idPersona, string nombreUsuario, string contrasenia)
+        public DataTable ObtenerMedicosSinUsuarioPorApellido(string apellido)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                using (SqlCommand cmd = new SqlCommand("sp_AltaUsuarioMedico", conexion))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_persona", idPersona);
-                    cmd.Parameters.AddWithValue("@nombre_usuario", nombreUsuario);
-                    cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
-                    cmd.Parameters.AddWithValue("@tipo_usuario", "1");
+                const string consulta = @"SELECT per.id_persona, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
+                                      FROM Medicos m
+                                      JOIN Persona per ON m.id_persona = per.id_persona
+                                      LEFT JOIN Usuarios u ON u.id_persona = per.id_persona
+                                      WHERE u.id_persona IS NULL AND m.Estado = 1 AND per.apellido LIKE @apellido";
 
-                    int filas = cmd.ExecuteNonQuery();
-                    return filas > 0;
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
                 }
             }
         }

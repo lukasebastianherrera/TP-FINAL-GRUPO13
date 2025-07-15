@@ -48,15 +48,22 @@ namespace Negocio
             return datosMedico.ListarTodosLosMedicosPorApellido(apellido);
         }
 
-        public DataTable ListarMedicosSinUsuario()
+        public bool CrearUsuarioMedico(int idPersona, string usuario, string contrasenia)
+        {
+            return datosMedico.CrearUsuarioMedico(idPersona, usuario, contrasenia);
+        }
+
+        public DataTable ObtenerMedicosSinUsuario()
         {
             return datosMedico.ObtenerMedicosSinUsuario();
         }
 
-        public bool CrearUsuarioMedico(int idPersona, string usuario, string contrasenia)
+        public DataTable ObtenerMedicosSinUsuarioPorApellido(string apellido)
         {
-            return datosMedico.AltaUsuarioMedico(idPersona, usuario, contrasenia);
+            return datosMedico.ObtenerMedicosSinUsuarioPorApellido(apellido);
         }
+
+
 
         public DataTable BuscarMedicoPorDNI(string dni)
         {
@@ -67,8 +74,6 @@ namespace Negocio
         {
             return datosMedico.BuscarMedicoConDNI(dni);
         }
-
-  
 
         public bool BajaLogicaMedico(string dni)
         {
