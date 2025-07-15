@@ -33,7 +33,7 @@ namespace Vistas
 
         private void CargarTodosLosPacientes()
         {
-            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientes();
+            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientesActivos();
             gvPacientes.DataSource = dt;
             gvPacientes.DataBind();
         }
@@ -50,7 +50,7 @@ namespace Vistas
                 return;
             }
 
-            DataTable dt = pacienteNegocio.BuscarPacientePorApellido(apellido);
+            DataTable dt = pacienteNegocio.BuscarPacientePorApellidoActivos(apellido);
 
             if(dt.Rows.Count > 0 )
             {

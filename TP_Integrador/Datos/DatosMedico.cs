@@ -58,63 +58,11 @@ namespace Datos
             }
         }
 
-        public DataTable ObtenerTodosLosMedicos()
+        public DataTable BuscarMedicoPorApellidoActivos(string apellido)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT m.ID_Medico, per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, 
-                                    m.estado as Estado, m.id_especialidad as [Id Especialidad], esp.nombre_especialidad as Especialidad,
-                                    m.legajo as Legajo  FROM Medicos m
-                                    JOIN Persona per ON m.id_persona = per.id_persona
-                                    JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad";
-
-                SqlCommand cmd = new SqlCommand(consulta, conexion);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                adapter.Fill(tabla);
-                return tabla;
-            }
-        }
-
-        public void AltaHorarioMedico(int idMedico, string diaSemana, TimeSpan horaDesde, TimeSpan horaHasta)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand("sp_AltaHorarioMedico", conexion))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@id_medico", idMedico);
-                cmd.Parameters.AddWithValue("@dia_semana", diaSemana);
-                cmd.Parameters.AddWithValue("@hora_desde", horaDesde);
-                cmd.Parameters.AddWithValue("@hora_hasta", horaHasta);
-
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        public DataTable ObtenerTodosLosMedicosActivos()
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad] 
-                                    esp.nombre_especialidad as Especialidad, m.legajo as Legajo  FROM Medicos m                                    
-                                    JOIN Persona per ON m.id_persona = per.id_persona
-                                    JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
-                                    where m.Estado= 1";
-
-                SqlCommand cmd = new SqlCommand(consulta, conexion);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                adapter.Fill(tabla);
-                return tabla;
-            }
-        }
-
-        public DataTable BuscarMedicoPorApellido(string apellido)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                const string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni as DNI, esp.id_especialidad AS [Id Especialidad] 
+                const string consulta = @"SELECT per.nombre AS Nombre, per.apellido AS Apellido, per.dni as DNI,
                                             esp.nombre_especialidad as Especialidad, m.legajo as Legajo FROM Medicos m
                                             JOIN Persona per ON m.id_persona = per.id_persona
                                             JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
@@ -131,21 +79,102 @@ namespace Datos
             }
         }
 
-        public DataTable ObtenerMedicosSinUsuario()
+        public DataTable ObtenerTodosLosMedicosActivos()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
-                string consulta = @"SELECT per.id_persona, per.Nombre as Nombre, per.Apellido as Apellido, per.DNI as DNI
-                                      FROM Medicos m
-                                      JOIN Persona per ON m.id_persona = per.id_persona
-                                      LEFT JOIN Usuarios u ON u.id_persona = per.id_persona
-                                      WHERE u.id_persona IS NULL AND m.Estado = 1";
+                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI,                                       
+                                        esp.nombre_especialidad as Especialidad, m.legajo as Legajo FROM Medicos m                                       
+                                        JOIN Persona per ON m.id_persona = per.id_persona
+                                        JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
+                                        WHERE m.estado = 1";
 
                 SqlCommand cmd = new SqlCommand(consulta, conexion);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
                 return tabla;
+            }
+        }
+
+        public DataTable ListarTodosLosMedicosPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad,
+                                            per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
+                                            per.direccion AS [Dirección], esp.nombre_especialidad as Especialidad, m.legajo as Legajo, m.estado as Estado FROM Medicos m                                       
+                                            JOIN Persona per ON m.id_persona = per.id_persona
+                                            JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
+                                            WHERE per.apellido LIKE @apellido";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
+        public DataTable ObtenerTodosLosMedicos()
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad,
+                                        per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono],  
+                                        per.direccion AS [Dirección], esp.nombre_especialidad as Especialidad, m.legajo as Legajo, m.estado as Estado FROM Medicos m                                       
+                                        JOIN Persona per ON m.id_persona = per.id_persona
+                                        JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+        public DataTable ListarMedicosSinUsuario()
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT per.id_persona, per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI,                                       
+                                        esp.nombre_especialidad as Especialidad, m.legajo as Legajo FROM Medicos m                                       
+                                        JOIN Persona per ON m.id_persona = per.id_persona
+                                        JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
+                                        LEFT JOIN Usuarios u ON u.id_persona = per.id_persona
+                                        WHERE u.id_persona IS NULL AND m.Estado = 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+        public DataTable BuscarMedicoSinUsuarioPorApellido(string apellido)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                string consulta = @"SELECT per.id_persona, per.nombre as Nombre, per.apellido as Apellido, per.dni as DNI,                                       
+                                        esp.nombre_especialidad as Especialidad, m.legajo as Legajo FROM Medicos m                                       
+                                        JOIN Persona per ON m.id_persona = per.id_persona
+                                        JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
+                                        LEFT JOIN Usuarios u ON u.id_persona = per.id_persona
+                                        WHERE u.id_persona IS NULL AND m.Estado = 1 AND per.apellido LIKE @apellido";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
+                }
             }
         }
 
@@ -167,41 +196,19 @@ namespace Datos
             }
         }
 
-        public DataTable BuscarMedicoConDNI(string dni)
+        public void AltaHorarioMedico(int idMedico, string diaSemana, TimeSpan horaDesde, TimeSpan horaHasta)
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand("sp_AltaHorarioMedico", conexion))
             {
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                string consulta = @"SELECT per.Nombre, per.Apellido, per.DNI
-                                     FROM Medicos m
-                                     JOIN Persona per ON m.ID_Persona = per.ID_Persona
-                                     WHERE per.DNI = @dni AND m.Estado = 1";
+                cmd.Parameters.AddWithValue("@id_medico", idMedico);
+                cmd.Parameters.AddWithValue("@dia_semana", diaSemana);
+                cmd.Parameters.AddWithValue("@hora_desde", horaDesde);
+                cmd.Parameters.AddWithValue("@hora_hasta", horaHasta);
 
-                SqlCommand cmd = new SqlCommand(consulta, conexion);
-                cmd.Parameters.AddWithValue("@dni", dni);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                adapter.Fill(tabla);
-                return tabla;
-            }
-        }
-
-        public DataTable BuscarMedicoPorDNI(string dni)
-        {
-            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                string consulta = @"SELECT m.ID_Medico, per.Nombre, per.Apellido, per.DNI, m.Estado FROM Medicos m
-                                    JOIN Persona per ON m.ID_Persona = per.ID_Persona WHERE per.DNI = @dni";
-
-                SqlCommand cmd = new SqlCommand(consulta, conexion);
-                cmd.Parameters.AddWithValue("@dni", dni);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                adapter.Fill(tabla);
-
-                return tabla;
+                cmd.ExecuteNonQuery();
             }
         }
 
@@ -220,28 +227,36 @@ namespace Datos
                 return filasAfectadas > 0;
             }
         }
-        public bool ModificarMedico(string nombre, string apellido, string dni, string legajo, string IdEspecialidad, bool estado)
+        public bool ModificarMedico(string nombre, string apellido, string dni, string legajo, string especialidad, string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion , bool estado)
         {
             SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
             string consulta = @"UPDATE Persona 
-                                SET nombre = @nombre, apellido = @apellido 
+                                SET nombre = @nombre, apellido = @apellido, sexo = @sexo, nacionalidad = @nacionalidad, fecha_nacimiento = @fechaNacimiento, correo_electronico = @correoElectronico, telefono = @telefono, direccion = @direccion
                                 WHERE dni = @dni";
-            SqlCommand sqlCommandPersona = new SqlCommand(consulta, sqlConnection);
-            sqlCommandPersona.Parameters.AddWithValue("@nombre", nombre);
-            sqlCommandPersona.Parameters.AddWithValue("@apellido", apellido);
-            sqlCommandPersona.Parameters.AddWithValue("@dni", dni);
+            SqlCommand sqlCommand = new SqlCommand(consulta, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@nombre", nombre);
+            sqlCommand.Parameters.AddWithValue("@apellido", apellido);
+            sqlCommand.Parameters.AddWithValue("@dni", dni);
+            sqlCommand.Parameters.AddWithValue("@sexo", sexo);
+            sqlCommand.Parameters.AddWithValue("@nacionalidad", nacionalidad);
+            sqlCommand.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+            sqlCommand.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+            sqlCommand.Parameters.AddWithValue("@telefono", telefono);
+            sqlCommand.Parameters.AddWithValue("@direccion", direccion);
 
-            int filasafectadasPersona = sqlCommandPersona.ExecuteNonQuery();
+            int filasafectadasPersona = sqlCommand.ExecuteNonQuery();
 
             string consultaMedico = @"UPDATE Medicos 
-                                      SET legajo = @legajo, ID_Especialidad = @idEspecialidad, estado = @estado 
-                                      WHERE ID_Persona = (SELECT ID_Persona FROM Persona WHERE dni = @dni)";
+                                        SET legajo = @legajo, 
+                                        id_especialidad = (SELECT id_especialidad FROM Especialidades WHERE nombre_especialidad = @especialidad), 
+                                        estado = @estado WHERE id_persona = (SELECT id_persona FROM Persona WHERE dni = @dni)";
+                                        
 
             SqlCommand sqlCommandMedicos = new SqlCommand(consultaMedico, sqlConnection);
 
 
             sqlCommandMedicos.Parameters.AddWithValue("@legajo", legajo);
-            sqlCommandMedicos.Parameters.AddWithValue("@idEspecialidad", IdEspecialidad);
+            sqlCommandMedicos.Parameters.AddWithValue("@especialidad", especialidad);
             sqlCommandMedicos.Parameters.AddWithValue("@estado", estado);
             sqlCommandMedicos.Parameters.AddWithValue("@dni", dni);
 

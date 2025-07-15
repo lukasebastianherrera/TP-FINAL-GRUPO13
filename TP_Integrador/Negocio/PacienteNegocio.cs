@@ -18,17 +18,19 @@ namespace Negocio
             return datosPaciente.AltaPaciente(paciente);
         }
 
-        public DataTable ObtenerTodosLosPacientes()
+        public DataTable ObtenerTodosLosPacientesActivos()
         {
-     
-            return datosPaciente.ObtenerTodosLosPacientes();
-
+            return datosPaciente.ObtenerTodosLosPacientesActivos();
         }
 
-        public DataTable BuscarPacienteConDNI(string dni)
+        public DataTable BuscarPacientePorApellidoActivos(string apellido)
         {
-            return datosPaciente.BuscarPacienteConDNI(dni);
+            return datosPaciente.BuscarPacientePorApellidoActivos(apellido);
+        }
 
+        public DataTable ObtenerTodosLosPacientesyDatos()
+        {
+            return datosPaciente.ObtenerTodosLosPacientesyDatos();
         }
 
         public DataTable ListarTodosLosPacientesPorApellido(string apellido)
@@ -36,27 +38,14 @@ namespace Negocio
             return datosPaciente.ListarTodosLosPacientesPorApellido(apellido);
         }
 
-        public DataTable BuscarPacientePorApellido(string apellido)
-        {
-            return datosPaciente.BuscarPacientePorApellido(apellido);
-        }
-        public DataTable BuscarPacientePorDNI(string dni)
-        {
-            return datosPaciente.BuscarPacientePorDNI(dni);
-        }
-
         public bool BajaLogicaPacientePorDni(string dni)
         {
             return datosPaciente.BajaLogicaPaciente(dni);
         }
-        public DataTable obtenerTodosLosPacientesyDatos()
-        {
-            return datosPaciente.obtenerTodosLosPacientesyDatos();
-        }
 
-        public bool modificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
+        public bool ModificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
         {
-            return datosPaciente.modificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
+            return datosPaciente.ModificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
         }
 
     }

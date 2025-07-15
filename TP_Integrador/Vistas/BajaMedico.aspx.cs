@@ -16,7 +16,6 @@ namespace Vistas
         private MedicoNegocio medicoNegocio = new MedicoNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Session["UsuarioLogueado"] == null)
             {
                 Response.Redirect("Inicio.aspx");
@@ -29,7 +28,6 @@ namespace Vistas
                 lblMensajeApellido.Text = "";
                 lblMensaje.Text = "";
             }
-
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
         }
@@ -37,8 +35,7 @@ namespace Vistas
         private void CargarTodosLosMedicos()
         {
             Grv_medicos.DataSource = medicoNegocio.ObtenerTodosLosMedicosActivos();
-            Grv_medicos.DataBind();
-            
+            Grv_medicos.DataBind();    
         }
 
         protected void btn_BuscarApellido_Click(object sender, EventArgs e)
@@ -48,13 +45,13 @@ namespace Vistas
 
             string apellido = txtApellido.Text.Trim();
 
-            if (string.IsNullOrEmpty(apellido))
+            if(string.IsNullOrEmpty(apellido))
             {
                 lblMensajeApellido.Text = "Debe ingresar al menos una letra.";
                 return;
             }
 
-            DataTable dt = medicoNegocio.BuscarMedicoPorApellido(apellido);
+            DataTable dt = medicoNegocio.BuscarMedicoPorApellidoActivos(apellido);
 
             if (dt.Rows.Count > 0)
             {
@@ -82,20 +79,28 @@ namespace Vistas
 
             Session["SelectedDni"] = dni;
 
-            lblMensaje.Text = $"Medico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} DNI {dni}";
+            lblMensaje.Text = $"Médico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} DNI {dni}";
         } 
 
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             txtApellido.Text = "";
-
             string dniSeleccionado = Session["SelectedDni"] as string;
 
             if (string.IsNullOrEmpty(dniSeleccionado))
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Primero seleccioná un médico (hacé clic en 'Seleccionar').";
+                return;
+            }
+
+            if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dniSeleccionado)
+            {
+                Session["DniConfirmado"] = dniSeleccionado;
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensaje.Text = $"¿Está seguro de eliminar al médico con DNI {dniSeleccionado}? " +
+                         "Hacé clic nuevamente en 'Eliminar' para confirmar.";
                 return;
             }
 
@@ -113,6 +118,7 @@ namespace Vistas
                 lblMensaje.Text = "No se encontró un médico con ese DNI.";
             }
 
+            Session.Remove("DniConfirmado");
             Session.Remove("SelectedDni");
             Grv_medicos.SelectedIndex = -1;
             CargarTodosLosMedicos();
@@ -122,6 +128,7 @@ namespace Vistas
         {
             txtApellido.Text = "";
             lblMensaje.Text = "";
+            lblMensaje.ForeColor = System.Drawing.Color.Black;
             lblMensajeApellido.Text = "";
             Grv_medicos.DataSource = null;
 

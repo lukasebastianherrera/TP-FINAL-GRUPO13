@@ -36,7 +36,7 @@ namespace Vistas
 
         private void CargarTodosLosPacientes()
         {
-            GridView1.DataSource = pacienteNegocio.ObtenerTodosLosPacientes();
+            GridView1.DataSource = pacienteNegocio.ObtenerTodosLosPacientesActivos();
             GridView1.DataBind();
         }
 
@@ -53,7 +53,7 @@ namespace Vistas
                 return;
             }
 
-            DataTable dt = pacienteNegocio.BuscarPacientePorApellido(apellido);
+            DataTable dt = pacienteNegocio.BuscarPacientePorApellidoActivos(apellido);
             
             if (dt.Rows.Count > 0)
             {
@@ -97,6 +97,15 @@ namespace Vistas
                 return;
             }
 
+            if (Session["DniConfirmado"] == null || Session["DniConfirmado"].ToString() != dniSeleccionado)
+            {
+                Session["DniConfirmado"] = dniSeleccionado;
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensaje.Text = $"¿Está seguro de eliminar al paciente con DNI {dniSeleccionado}? " +
+                         "Hacé clic nuevamente en 'Eliminar' para confirmar.";
+                return;
+            }
+
             bool eliminado = pacienteNegocio.BajaLogicaPacientePorDni(dniSeleccionado);
 
             if (eliminado)
@@ -111,6 +120,7 @@ namespace Vistas
                 lblMensaje.Text = "No se encontró un paciente con ese DNI.";
             }
 
+            Session.Remove("DniConfirmado");
             Session.Remove("SelectedDni");
             GridView1.SelectedIndex = -1;
             CargarTodosLosPacientes();
@@ -120,6 +130,7 @@ namespace Vistas
         {
             txtApellido.Text = "";
             lblMensaje.Text = "";
+            lblMensaje.ForeColor = System.Drawing.Color.Black;
             lblMensajeApellido.Text = "";
             GridView1.DataSource = null;
 

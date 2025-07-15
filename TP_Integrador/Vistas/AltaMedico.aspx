@@ -88,26 +88,26 @@
         }
         .auto-style53 {
             width: 75px;
-            height: 127px;
+            height: 70px;
         }
         .auto-style55 {
             width: 240px;
-            height: 127px;
+            height: 70px;
         }
         .auto-style56 {
             width: 50px;
-            height: 127px;
+            height: 70px;
         }
         .auto-style57 {
             width: 121px;
-            height: 127px;
+            height: 70px;
         }
         .auto-style58 {
             width: 174px;
-            height: 127px;
+            height: 70px;
         }
         .auto-style59 {
-            height: 127px;
+            height: 70px;
         }
         .auto-style60 {
             width: 75px;
@@ -121,7 +121,7 @@
         }
         .auto-style63 {
             width: 120px;
-            height: 127px;
+            height: 70px;
         }
         .auto-style64 {
             width: 120px;
@@ -153,6 +153,33 @@
         }
         .auto-style72 {
             width: 351px;
+        }
+        .auto-style73 {
+            width: 75px;
+            height: 38px;
+        }
+        .auto-style74 {
+            width: 120px;
+            height: 38px;
+        }
+        .auto-style75 {
+            width: 240px;
+            height: 38px;
+        }
+        .auto-style76 {
+            width: 50px;
+            height: 38px;
+        }
+        .auto-style77 {
+            width: 121px;
+            height: 38px;
+        }
+        .auto-style78 {
+            width: 174px;
+            height: 38px;
+        }
+        .auto-style79 {
+            height: 38px;
         }
     </style>
 </head>
@@ -195,29 +222,29 @@
                         </table>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style60">&nbsp;</td>
-                                <td class="auto-style61">
+                                <td class="auto-style53"></td>
+                                <td class="auto-style63">
                                     <asp:Label ID="lblLegajo" runat="server" Font-Size="Medium" Text="Legajo:"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style55">
                         <asp:TextBox ID="TxtLegajo" runat="server" placeholder="Ingresar Legajo"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvLegajo" runat="server" ControlToValidate="TxtLegajo" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese Legajo</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revDni0" runat="server" ControlToValidate="TxtLegajo" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[A-Za-z0-9]{5}$" ValidationGroup="grupo1">Debe tener 5 caracteres</asp:RegularExpressionValidator>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style19">
+                                <td class="auto-style56"></td>
+                                <td class="auto-style57">
                                     <asp:Label ID="lblNombre" runat="server" Font-Size="Medium" Text="Nombre:"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style55">
                         <asp:TextBox ID="TxtNombre" runat="server" placeholder="Ingresar nombre"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TxtNombre" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un nombre</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="TxtNombre" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
                                 </td>
-                                <td class="auto-style28">&nbsp;</td>
-                                <td class="auto-style65">
+                                <td class="auto-style56"></td>
+                                <td class="auto-style58">
                                     <asp:Label ID="lblApellido" runat="server" Font-Size="Medium" Text="Apellido:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style59">
                         <asp:TextBox ID="TxtApellido" runat="server" placeholder="Ingresar apellido"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TxtApellido" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un apellido</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="TxtApellido" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo1">Error, solo letras</asp:RegularExpressionValidator>
@@ -289,11 +316,11 @@
                                 <td class="auto-style52"></td>
                             </tr>
                             <tr>
-                                <td class="auto-style60"></td>
-                                <td class="auto-style61">
+                                <td class="auto-style73"></td>
+                                <td class="auto-style74">
                                     <asp:Label ID="lblNacionalidad" runat="server" Font-Size="Medium" Text="Nacionalidad:"></asp:Label>
                                 </td>
-                                <td class="auto-style12">
+                                <td class="auto-style75">
                         <asp:DropDownList ID="DdlNacionalidad" runat="server">
                             <asp:ListItem Value="0">Seleccionar Nacionalidad</asp:ListItem>
                             <asp:ListItem Value="Argentina">Argentina</asp:ListItem>
@@ -310,19 +337,19 @@
                         </asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="DdlNacionalidad" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija una Nacionalidad</asp:RequiredFieldValidator>
                                 </td>
-                                <td class="auto-style28"></td>
-                                    <td class="auto-style19">
+                                <td class="auto-style76"></td>
+                                    <td class="auto-style77">
                                         <asp:Label ID="lblDireccion" runat="server" Text="Dirección:" Font-Size="Medium"></asp:Label>
                                                                 </td>
-                                                                <td class="auto-style12">
+                                                                <td class="auto-style75">
                                         <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" placeholder="Ingresar Direccion" TextMode="MultiLine"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfv" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una dirección</asp:RequiredFieldValidator>
                                                                 </td>
-                                                                <td class="auto-style28"></td>
-                                                                <td class="auto-style65">
+                                                                <td class="auto-style76"></td>
+                                                                <td class="auto-style78">
                                         <asp:Label ID="lblEmail" runat="server" Text="E-mail:" Font-Bold="False" Font-Size="Medium"></asp:Label>
                                                                 </td>
-                                                                <td>
+                                                                <td class="auto-style79">
                                         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Ingresar Correo"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese un email</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" ValidationGroup="grupo1">Error, ingrese un email valido</asp:RegularExpressionValidator>

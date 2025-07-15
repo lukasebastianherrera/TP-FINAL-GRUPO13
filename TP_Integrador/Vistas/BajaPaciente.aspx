@@ -19,27 +19,8 @@
         .auto-style4 {
             width: 333px;
         }
-        .auto-style6 {
-            width: 400px;
-            height: 40px;
-        }
-        .auto-style7 {
-            height: 40px;
-        }
-        .auto-style8 {
-            width: 152px;
-            height: 40px;
-        }
-        .auto-style9 {
-            width: 333px;
-            height: 40px;
-        }
         .auto-style13 {
             width: 348px;
-        }
-        .auto-style14 {
-            width: 348px;
-            height: 40px;
         }
         .auto-style20 {
             width: 400px;
@@ -72,9 +53,6 @@
         .auto-style29 {
             width: 358px;
         }
-        .auto-style30 {
-            width: 406px;
-        }
         .auto-style31 {
             width: 400px;
             height: 23px;
@@ -93,6 +71,9 @@
         }
         .auto-style35 {
             height: 23px;
+        }
+        .auto-style36 {
+            width: 728px;
         }
     </style>
 </head>
@@ -183,7 +164,7 @@
                 <tr>
                     <td class="auto-style29">&nbsp;</td>
                     <td class="auto-style28">&nbsp;</td>
-                    <td class="auto-style30">&nbsp;<asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    <td class="auto-style36">&nbsp;<asp:Label ID="lblMensaje" runat="server"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp; </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -191,7 +172,7 @@
                 <tr>
                     <td class="auto-style29">&nbsp;</td>
                     <td class="auto-style28">&nbsp;</td>
-                    <td class="auto-style30">
+                    <td class="auto-style36">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" CausesValidation="False" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" Width="72px" OnClick="btnCancelar_Click" CausesValidation="False" />
@@ -203,7 +184,7 @@
                 <tr>
                     <td class="auto-style29">&nbsp;</td>
                     <td class="auto-style28">&nbsp;</td>
-                    <td class="auto-style30">&nbsp;</td>
+                    <td class="auto-style36">&nbsp;</td>
                     <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>

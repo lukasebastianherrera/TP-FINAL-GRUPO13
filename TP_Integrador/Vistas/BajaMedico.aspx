@@ -28,11 +28,11 @@
         .auto-style14 {
             width: 496px;
         }
-        .auto-style15 {
-            width: 154px;
-        }
         .auto-style16 {
             width: 361px;
+        }
+        .auto-style17 {
+            width: 108px;
         }
     </style>
 </head>
@@ -114,6 +114,7 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style14">
                         <asp:GridView ID="Grv_medicos" runat="server" AllowPaging="True" AutoGenerateSelectButton="True" PageSize="6" OnSelectedIndexChanged="Grv_medicos_SelectedIndexChanged" OnPageIndexChanging="Grv_medicos_PageIndexChanging" DataKeyNames="dni" >
+                            <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
                     </td>
                     <td>&nbsp;</td>
@@ -122,7 +123,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium"></asp:Label>
                     </td>
@@ -131,7 +132,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" CausesValidation="false" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -143,7 +144,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style16">&nbsp;</td>
                     <td>&nbsp;</td>

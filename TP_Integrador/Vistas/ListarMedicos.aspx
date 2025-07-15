@@ -94,7 +94,8 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style14">
-                        <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" OnPageIndexChanging="gvMedicos_PageIndexChanging" PageSize="3">
+                        <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" OnPageIndexChanging="gvMedicos_PageIndexChanging" PageSize="5">
+                            <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
                     </td>
                     <td>&nbsp;</td>
