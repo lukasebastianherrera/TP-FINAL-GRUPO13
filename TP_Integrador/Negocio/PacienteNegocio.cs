@@ -18,19 +18,17 @@ namespace Negocio
             return datosPaciente.AltaPaciente(paciente);
         }
 
-        public DataTable ObtenerTodosLosPacientesActivos()
+        public DataTable ObtenerTodosLosPacientes()
         {
-            return datosPaciente.ObtenerTodosLosPacientesActivos();
+     
+            return datosPaciente.ObtenerTodosLosPacientes();
+
         }
 
-        public DataTable BuscarPacientePorApellidoActivos(string apellido)
+        public DataTable BuscarPacienteConDNI(string dni)
         {
-            return datosPaciente.BuscarPacientePorApellidoActivos(apellido);
-        }
+            return datosPaciente.BuscarPacienteConDNI(dni);
 
-        public DataTable ObtenerTodosLosPacientesyDatos()
-        {
-            return datosPaciente.ObtenerTodosLosPacientesyDatos();
         }
 
         public DataTable ListarTodosLosPacientesPorApellido(string apellido)
@@ -38,14 +36,27 @@ namespace Negocio
             return datosPaciente.ListarTodosLosPacientesPorApellido(apellido);
         }
 
+        public DataTable BuscarPacientePorApellido(string apellido)
+        {
+            return datosPaciente.BuscarPacientePorApellido(apellido);
+        }
+        public DataTable BuscarPacientePorDNI(string dni)
+        {
+            return datosPaciente.BuscarPacientePorDNI(dni);
+        }
+
         public bool BajaLogicaPacientePorDni(string dni)
         {
             return datosPaciente.BajaLogicaPaciente(dni);
         }
-
-        public bool ModificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
+        public DataTable obtenerTodosLosPacientesyDatos()
         {
-            return datosPaciente.ModificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
+            return datosPaciente.obtenerTodosLosPacientesyDatos();
+        }
+
+        public bool modificarPaciente(string nombre, string apellido, string dni , string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado )
+        {
+            return datosPaciente.modificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
         }
 
     }

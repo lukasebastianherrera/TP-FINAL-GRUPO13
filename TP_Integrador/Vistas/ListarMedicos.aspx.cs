@@ -49,7 +49,7 @@ namespace Vistas
                 return;
             }
 
-            DataTable dt = medicoNegocio.BuscarMedicoPorApellidoActivos(apellido);
+            DataTable dt = medicoNegocio.BuscarMedicoPorApellido(apellido);
 
             if (dt.Rows.Count > 0)
             {

@@ -31,7 +31,7 @@ namespace Vistas
         }
         private void CargarPacientes()
         {
-            DataTable dt = pacienteNegocio.ObtenerTodosLosPacientesyDatos();
+            DataTable dt = pacienteNegocio.obtenerTodosLosPacientesyDatos();
             gvPacientes.DataSource = dt;
             gvPacientes.DataBind();
         }
@@ -58,7 +58,7 @@ namespace Vistas
             {
                 gvPacientes.DataSource = null;
                 gvPacientes.DataBind();
-                lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'."; ;
+                lblMensajeApellido.Text = lblMensajeApellido.Text = $"No se encontraron pacientes con apellido que contenga '{apellido}'."; ;
             }
 
             txtApellido.Text = "";
@@ -108,7 +108,7 @@ namespace Vistas
             string direccion = ((TextBox)gvPacientes.Rows[e.RowIndex].FindControl("txt_eit_direccion")).Text;
             bool estado = ((CheckBox)gvPacientes.Rows[e.RowIndex].FindControl("cb_eit_estado")).Checked;
 
-            bool succes = pacienteNegocio.ModificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
+            bool succes = pacienteNegocio.modificarPaciente(nombre, apellido, dni, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
             if (succes)
             {
                 lbl_Exito.ForeColor = System.Drawing.Color.Green;

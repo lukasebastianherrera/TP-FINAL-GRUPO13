@@ -25,17 +25,8 @@ namespace Negocio
             {
                 datosMedico.AltaHorarioMedico(idMed, dia, desde, hasta);
             }
+
             return true;
-        }
-
-        public DataTable ObtenerTodosLosMedicosActivos()
-        {
-            return datosMedico.ObtenerTodosLosMedicosActivos();
-        }
-
-        public DataTable BuscarMedicoPorApellidoActivos(string apellido)
-        {
-            return datosMedico.BuscarMedicoPorApellidoActivos(apellido);
         }
 
         public DataTable ObtenerTodosLosMedicos()
@@ -43,34 +34,43 @@ namespace Negocio
             return datosMedico.ObtenerTodosLosMedicos();
         }
 
-        public DataTable ListarTodosLosMedicosPorApellido(string apellido)
+        public DataTable ObtenerTodosLosMedicosActivos()
         {
-            return datosMedico.ListarTodosLosMedicosPorApellido(apellido);
+            return datosMedico.ObtenerTodosLosMedicosActivos();
+        }
+
+        public DataTable ListarMedicosSinUsuario()
+        {
+            return datosMedico.ObtenerMedicosSinUsuario();
+        }
+
+        public bool CrearUsuarioMedico(int idPersona, string usuario, string contrasenia)
+        {
+            return datosMedico.AltaUsuarioMedico(idPersona, usuario, contrasenia);
+        }
+
+        public DataTable BuscarMedicoPorDNI(string dni)
+        {
+            return datosMedico.BuscarMedicoPorDNI(dni);
+        }
+
+        public DataTable BuscarMedicoConDNI(string dni)
+        {
+            return datosMedico.BuscarMedicoConDNI(dni);
+        }
+
+        public DataTable BuscarMedicoPorApellido(string apellido)
+        {
+            return datosMedico.BuscarMedicoPorApellido(apellido);
         }
 
         public bool BajaLogicaMedico(string dni)
         {
             return datosMedico.BajaLogicaMedico(dni);
         }
-
-        public bool ModificarMedico(string nombre, string apellido, string dni, string legajo, string especialidad, string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado)
+        public bool ModificarMedico(string nombre, string apellido, string dni, string legajo, string IdEspecialidad, bool estado)
         {
-            return datosMedico.ModificarMedico(nombre, apellido, dni, legajo, especialidad, sexo, nacionalidad, fechaNacimiento, correoElectronico, telefono, direccion, estado);
-        }
-
-        public DataTable ListarMedicosSinUsuario()
-        {
-            return datosMedico.ListarMedicosSinUsuario();
-        }
-
-        public DataTable BuscarMedicoSinUsuarioPorApellido(string apellido)
-        {
-            return datosMedico.BuscarMedicoSinUsuarioPorApellido(apellido);
-        }
-
-        public bool AltaUsuarioMedico(int idPersona, string usuario, string contrasenia)
-        {
-            return datosMedico.AltaUsuarioMedico(idPersona, usuario, contrasenia);
+            return datosMedico.ModificarMedico(nombre, apellido, dni, legajo, IdEspecialidad, estado);
         }
 
         public DataTable TurnosMedico(int id_persona)

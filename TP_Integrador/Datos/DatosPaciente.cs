@@ -27,8 +27,28 @@ namespace Datos
                     int contador = Convert.ToInt32(cmd.ExecuteScalar());
                     return contador > 0;
 
+                    }
+            }
+           
+        }
+
+        public DataTable BuscarPacientePorApellido(string apellido)
+        {
+            using(SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT persona.nombre AS Nombre, persona.apellido AS Apellido, persona.dni as DNI FROM Pacientes paciente
+                                        JOIN Persona persona ON paciente.id_persona = persona.id_persona
+                                        WHERE persona.apellido LIKE @apellido AND paciente.estado = 1";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla;
                 }
-            }           
+            }
         }
 
         public bool AltaPaciente(Persona persona)
@@ -56,26 +76,7 @@ namespace Datos
             }
         }
 
-        public DataTable BuscarPacientePorApellidoActivos(string apellido)
-        {
-            using(SqlConnection conexion = accesoDatos.ObtenerConexion())
-            {
-                const string consulta = @"SELECT persona.nombre AS Nombre, persona.apellido AS Apellido, persona.dni as DNI FROM Pacientes paciente
-                                        JOIN Persona persona ON paciente.id_persona = persona.id_persona
-                                        WHERE persona.apellido LIKE @apellido AND paciente.estado = 1";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable tabla = new DataTable();
-                    adapter.Fill(tabla);
-                    return tabla;
-                }
-            }
-        }
-
-        public DataTable ObtenerTodosLosPacientesActivos()
+        public DataTable ObtenerTodosLosPacientes()
         {
             using (SqlConnection conexion = accesoDatos.ObtenerConexion())
             {
@@ -90,6 +91,22 @@ namespace Datos
                 adapter.Fill(tabla);
                 return tabla;
             }
+        }
+
+        
+        public DataTable obtenerTodosLosPacientesyDatos()
+        {
+            SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
+            string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
+                                    per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono], 
+                                    per.direccion AS [Dirección], p.estado AS Estado
+                                    FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona";
+
+            SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter (sqlcommand);
+            DataTable tabla = new DataTable();
+            adapter.Fill (tabla);
+            return tabla;
         }
 
         public DataTable ListarTodosLosPacientesPorApellido(string apellido)
@@ -112,20 +129,46 @@ namespace Datos
                 }
             }
         }
-        
-        public DataTable ObtenerTodosLosPacientesyDatos()
-        {
-            SqlConnection sqlConnection = accesoDatos.ObtenerConexion();
-            string consulta = @"SELECT per.dni AS DNI, per.nombre AS Nombre, per.apellido AS Apellido, per.sexo AS Sexo, per.nacionalidad AS Nacionalidad, 
-                                    per.fecha_nacimiento AS [Fecha de Nacimiento], per.correo_electronico AS [Correo Electrónico], per.telefono AS [Teléfono], 
-                                    per.direccion AS [Dirección], p.estado AS Estado
-                                    FROM Pacientes p INNER JOIN Persona per ON p.id_persona = per.id_persona";
 
-            SqlCommand sqlcommand = new SqlCommand(consulta, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter (sqlcommand);
-            DataTable tabla = new DataTable();
-            adapter.Fill (tabla);
-            return tabla;
+        public DataTable BuscarPacienteConDNI(string dni)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+
+                string consulta = @"SELECT per.DNI, per.Nombre, per.Apellido, per.sexo, per.nacionalidad, per.fecha_nacimiento, 
+                                     per.correo_electronico, per.telefono, per.direccion
+                                     FROM Pacientes p
+                                     JOIN Persona per ON p.ID_Persona = per.ID_Persona
+                                     WHERE per.DNI LIKE @dni AND p.Estado = 1";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", "%" + dni + "%");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
+        }
+
+        public DataTable BuscarPacientePorDNI(string dni)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+
+                string consulta = @"SELECT  dni, nombre, apellido, sexo, nacionalidad, 
+                                    fecha_nacimiento, correo_electronico, telefono, direccion, estado
+                                    FROM Pacientes as p INNER JOIN Persona per ON p.id_persona = per.id_persona
+                                    WHERE dni = @dni";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+                adapter.Fill(tabla);
+                return tabla;
+            }
         }
 
         public bool BajaLogicaPaciente(string dni)
@@ -144,7 +187,7 @@ namespace Datos
             }
         }
 
-        public bool ModificarPaciente(string nombre, string apellido, string dni, string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado)
+        public bool modificarPaciente(string nombre, string apellido, string dni, string sexo, string nacionalidad, DateTime fechaNacimiento, string correoElectronico, string telefono, string direccion, bool estado)
         {
             SqlConnection sqlConnection =  accesoDatos.ObtenerConexion();
 
@@ -181,7 +224,10 @@ namespace Datos
             } else { 
                 return false; 
             }
+
         }
+
+
     }
 }
 

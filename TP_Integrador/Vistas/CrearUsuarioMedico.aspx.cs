@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,10 +23,9 @@ namespace Vistas
             if (!IsPostBack)
             {
                 CargarMedicosSinUsuario();
-                Session["SelectedDni"] = null;
                 lblMensajeApellido.Text = "";
-                lblMensaje.Text = "";
             }
+
             Usuario usuario = (Usuario)Session["UsuarioLogueado"];
             lblAdministrador.Text = usuario.Nombre_usuario;
         }
@@ -40,55 +38,40 @@ namespace Vistas
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            lblMensaje.Text = "";
-            lblMensajeApellido.Text = "";
-
             string apellido = txtApellido.Text.Trim();
 
             if(string.IsNullOrEmpty(apellido))
             {
-                lblMensajeApellido.Text = "Debe ingresar al menos una letra.";
-                return;
-            }
-
-            DataTable dt = medicoNegocio.BuscarMedicoSinUsuarioPorApellido(apellido);
-
-            if(dt.Rows.Count > 0)
-            {
-                gvMedicos.DataSource = dt;
-                gvMedicos.DataBind();
+                CargarMedicosSinUsuario();
             }
             else
             {
-                gvMedicos.DataSource = null;
+                gvMedicos.DataSource = medicoNegocio.ListarMedicosSinUsuario();
                 gvMedicos.DataBind();
-                lblMensajeApellido.Text = $"No se encontraron médicos con apellido que contenga '{apellido}'";
             }
-            Session["SelectedDni"] = null;
         }
 
         protected void gvMedicos_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtApellido.Text = "";
+            lblMensajeApellido.Text = "";
+
+            int idPersona = Convert.ToInt32(gvMedicos.SelectedDataKey.Value);
+            Session["SelectedIdPersona"] = idPersona;
 
             GridViewRow row = gvMedicos.SelectedRow;
 
-            string nombre = row.Cells[2].Text;
-            string apellido = row.Cells[3].Text;
-            string dni = row.Cells[4].Text.Trim();
+            string nombre = row.Cells[1].Text;
+            string apellido = row.Cells[2].Text;
+            string dni = row.Cells[3].Text.Trim();
 
-            Session["SelectedDni"] = dni;
-
-            lblMensaje.Text = $"Médico seleccionado: {nombre} {apellido} DNI {dni}";
+            lblMensaje.Text = $"Médico seleccionado: {row.Cells[0].Text} {row.Cells[1].Text} {row.Cells[2].Text} (DNI {dni})";
         }
 
         protected void btnMostrar_Click(object sender, EventArgs e)
         {
             txtApellido.Text = "";
-            lblMensaje.Text = "";
-            lblMensaje.ForeColor = System.Drawing.Color.Black;
             lblMensajeApellido.Text = "";
-            gvMedicos.DataSource = null;
             CargarMedicosSinUsuario();
         }
 
@@ -96,7 +79,8 @@ namespace Vistas
         {
             if (!Page.IsValid) return;
 
-            int idPersona = Convert.ToInt32(gvMedicos.SelectedDataKey.Value);
+
+            int idPerona = Convert.ToInt32(gvMedicos.SelectedDataKey.Value);
             string usuario = txtUsuario.Text.Trim();
             string contrasenia = txtContrasena1.Text;
 
@@ -107,7 +91,7 @@ namespace Vistas
                 return;
             }
 
-            bool creado = medicoNegocio.AltaUsuarioMedico(idPersona, usuario, contrasenia);
+            bool creado = medicoNegocio.CrearUsuarioMedico(idPerona, usuario, contrasenia);
 
             if (creado)
             {
@@ -125,16 +109,6 @@ namespace Vistas
         protected void gvMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvMedicos.PageIndex = e.NewPageIndex;
-            CargarMedicosSinUsuario();
-        }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            txtApellido.Text = "";
-            lblMensaje.Text = "";
-            lblMensajeExito.Text = "";
-            lblMensajeApellido.Text = "";
-            gvMedicos.EditIndex = -1;
             CargarMedicosSinUsuario();
         }
     }

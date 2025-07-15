@@ -11,7 +11,7 @@
             width: 100%;
         }
         .auto-style5 {
-            width: 127px;
+            width: 182px;
         }
         .auto-style6 {
             width: 281px;
@@ -21,12 +21,6 @@
         }
         .auto-style8 {
             width: 409px;
-        }
-        .auto-style9 {
-            margin-left: 0px;
-        }
-        .auto-style10 {
-            width: 328px;
         }
     </style>
 </head>
@@ -79,7 +73,7 @@
                                              
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
-                    <td class="auto-style6"><asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" ValidationGroup="grupo1" />
+                    <td class="auto-style6"><asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnMostrar" runat="server" OnClick="btnMostrar_Click" Text="Mostrar Todos" />
                         </td>
@@ -92,21 +86,17 @@
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
-            </table>
-            <table class="auto-style1">
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">
                         &nbsp;</td>
                     <td class="auto-style8">
-                        <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvMedicos_SelectedIndexChanged" PageSize="6" AutoGenerateColumns="False" OnPageIndexChanging="gvMedicos_PageIndexChanging" CssClass="auto-style9" DataKeyNames="id_persona">
+                        <asp:GridView ID="gvMedicos" runat="server" AllowPaging="True" AutoGenerateSelectButton="True" DataKeyNames="id_persona" OnSelectedIndexChanged="gvMedicos_SelectedIndexChanged" PageSize="6" AutoGenerateColumns="False" OnPageIndexChanging="gvMedicos_PageIndexChanging">
                             <Columns>
                                 <asp:BoundField DataField="id_persona" HeaderText="IdPersona" Visible="False" />
                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                                 <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                                 <asp:BoundField DataField="DNI" HeaderText="DNI" />
-                                <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" />
-                                <asp:BoundField DataField="Legajo"       HeaderText="Legajo"       />
                             </Columns>
                             <PagerStyle HorizontalAlign="Center" />
                         </asp:GridView>
@@ -116,7 +106,7 @@
                         &nbsp;</td>
                 </tr>
                  <tr>
-                     <td class="auto-style10">&nbsp;</td>
+                     <td class="auto-style7">&nbsp;</td>
                      <td class="auto-style5">
                          &nbsp;</td>
                      <td class="auto-style8">
@@ -126,15 +116,13 @@
                      <td>&nbsp;</td>
                  </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">
                         &nbsp;</td>
                     <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
-            </table>
-            <table class="auto-style1">
                  <tr>
                      <td class="auto-style7">&nbsp;</td>
                      <td class="auto-style5">
@@ -142,7 +130,7 @@
                      </td>
                      <td class="auto-style8">
                         <asp:TextBox ID="txtUsuario" runat="server" placeholder="Ingresar usuario"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtUsuario" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo2">Ingrese un usuario</asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtUsuario" Display="Dynamic" ForeColor="Red" ValidationGroup="grupo1">Ingrese un usuario</asp:RequiredFieldValidator>
                      </td>
                      <td class="auto-style6">&nbsp;</td>
                      <td>&nbsp;</td>
@@ -162,7 +150,7 @@
                     </td>
                     <td class="auto-style8">
                         <asp:TextBox ID="txtContrasena1" runat="server" TextMode="Password" placeholder="Ingresar contraseña"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvContrasena1" runat="server" ControlToValidate="txtContrasena1" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo2">Ingrese una contraseña</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfvContrasena1" runat="server" ControlToValidate="txtContrasena1" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Ingrese una contraseña</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -182,8 +170,8 @@
                     </td>
                     <td class="auto-style8">
                         <asp:TextBox ID="txtContrasena2" runat="server" TextMode="Password" placeholder="Ingresar contraseña"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvContrasena" runat="server" ControlToValidate="txtContrasena2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo2">Reingrese la contraseña</asp:RequiredFieldValidator>
-                        <asp:CompareValidator ID="cvContrasena" runat="server" ControlToCompare="txtContrasena1" ControlToValidate="txtContrasena2" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red" ValidationGroup="grupo2"></asp:CompareValidator>
+                            <asp:RequiredFieldValidator ID="rfvContrasena" runat="server" ControlToValidate="txtContrasena2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="grupo1">Reingrese la contraseña</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvContrasena" runat="server" ControlToCompare="txtContrasena1" ControlToValidate="txtContrasena2" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red" ValidationGroup="grupo1"></asp:CompareValidator>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -201,9 +189,7 @@
                     <td class="auto-style5">
                         &nbsp;</td>
                     <td class="auto-style8">
-                        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" OnClick="btnCrearUsuario_Click" ValidationGroup="grupo2" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
+                        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" OnClick="btnCrearUsuario_Click" ValidationGroup="grupo1" />
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
