@@ -47,5 +47,221 @@ namespace Datos
                 }
             }
         }
+
+
+
+
+
+        public double? ObtenerPorcentajeAsistencia(int idEspecialidad, int tipoAsistencia)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+
+                const string consulta = @"SELECT
+                CAST(COUNT(CASE WHEN t.asistencia = @tipoAsistencia AND t.observacion != NULL THEN 1 END) * 100.0 /
+                     NULLIF(COUNT(*), 0) AS FLOAT) AS Porcentaje
+            FROM Turnos t
+            JOIN Medicos m ON t.id_medico = m.id_medico
+            WHERE t.estado = 1 AND m.id_especialidad = @idEspecialidad; ";
+
+
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@tipoAsistencia", tipoAsistencia);
+                    cmd.Parameters.AddWithValue("@idEspecialidad", idEspecialidad);
+
+
+
+                    object resultado = cmd.ExecuteScalar();
+                    if (resultado != DBNull.Value && resultado != null)
+                    {
+                        return Convert.ToDouble(resultado);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public double? ObtenerPorcentajePendientes(int idEspecialidad)
+        {
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"SELECT
+                CAST(COUNT(CASE WHEN t.asistencia = 0 AND t.observacion IS NULL THEN 1 END) * 100.0 /
+                     NULLIF(COUNT(*), 0) AS FLOAT) AS Porcentaje
+            FROM Turnos t
+            JOIN Medicos m ON t.id_medico = m.id_medico
+            WHERE t.estado = 1  AND m.id_especialidad = @idEspecialidad; ";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@idEspecialidad", idEspecialidad);
+
+
+
+
+                    object resultado = cmd.ExecuteScalar();
+                    if (resultado != DBNull.Value && resultado != null)
+                    {
+                        return Convert.ToDouble(resultado);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public List<string> ObtenerMedicosConTurnosPendientes(int idEspecialidad)
+        {
+            var legajos = new List<string>();
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"
+            SELECT DISTINCT m.legajo
+            FROM Turnos t
+            JOIN Medicos m ON t.id_medico = m.id_medico
+            WHERE 
+                t.estado = 1
+                AND t.asistencia = 0
+                AND t.observacion IS NULL
+                AND t.dia_turno < GETDATE()
+                AND m.id_especialidad = @idEspecialidad;";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@idEspecialidad", idEspecialidad);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            legajos.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+
+            return legajos;
+        }
+
+        public int ObtenerTurnosPorMes(int idespecialidad, int mes)
+        {
+            int total = 0;
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"
+        SELECT  
+            SUM(CASE 
+                    WHEN MONTH(t.dia_turno) = @mes 
+                     AND YEAR(t.dia_turno) = YEAR(GETDATE()) 
+                THEN 1 ELSE 0 END)
+        FROM Turnos t
+        JOIN Medicos m ON t.id_medico = m.id_medico
+        WHERE m.id_especialidad = @idespecialidad
+         ;";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@idespecialidad", idespecialidad);
+                    cmd.Parameters.AddWithValue("@mes", mes);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            total = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            return total;
+        }
+
+        public double ObtenerPorcentajeTurnosPorEstado(int idespecialidad, int mes, int estado)
+        {
+            double porcentaje = 0;
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"
+        SELECT  
+            CAST(SUM(CASE 
+                     WHEN MONTH(t.dia_turno) = @mes 
+                      AND YEAR(t.dia_turno) = YEAR(GETDATE()) 
+                     THEN 1 ELSE 0 END) * 100.0 / 
+                 NULLIF(COUNT(*), 0) AS FLOAT) AS Porcentaje
+        FROM Turnos t
+        JOIN Medicos m ON t.id_medico = m.id_medico
+        WHERE m.id_especialidad = @idespecialidad
+          AND t.estado = @estado;";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@idespecialidad", idespecialidad);
+                    cmd.Parameters.AddWithValue("@mes", mes);
+                    cmd.Parameters.AddWithValue("@estado", estado);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            porcentaje = reader.IsDBNull(0) ? 0 : Convert.ToDouble(reader.GetValue(0));
+                        }
+                    }
+                }
+            }
+            return porcentaje;
+        }
+
+        public List<string> ObtenerInformeAsistenciasPorEspecialidad(int mes)
+        {
+            var informe = new List<string>();
+
+            using (SqlConnection conexion = accesoDatos.ObtenerConexion())
+            {
+                const string consulta = @"
+                    SELECT 
+                    esp.nombre_especialidad AS Especialidad,
+                    SUM(CASE WHEN t.asistencia = 1 THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(*), 0) AS PorcentajeAsistencias,
+                    SUM(CASE WHEN t.asistencia = 0 AND t.observacion != NULL THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(*), 0) AS PorcentajeFaltas
+                    FROM Turnos t
+                    JOIN Medicos m ON t.id_medico = m.id_medico
+                    JOIN Especialidades esp ON m.id_especialidad = esp.id_especialidad
+                    WHERE 
+                    t.estado = 1
+                    AND MONTH(t.dia_turno) = @mes
+                    AND YEAR(t.dia_turno) = YEAR(GETDATE())
+                    GROUP BY esp.nombre_especialidad
+                    ORDER BY esp.nombre_especialidad;";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@mes", mes);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string especialidad = reader.GetString(0);
+                            decimal porcentajeAsistencias = reader.IsDBNull(1) ? 0 : Math.Round(reader.GetDecimal(1), 2);
+                            decimal porcentajeFaltas = reader.IsDBNull(2) ? 0 : Math.Round(reader.GetDecimal(2), 2);
+
+                            string linea = $"{especialidad} tuvo {porcentajeAsistencias}% de asistencias y {porcentajeFaltas}% de faltas. <br>";
+                            informe.Add(linea);
+                        }
+                    }
+                }
+            }
+
+
+            return informe;
+        }
+
     }
+
 }
