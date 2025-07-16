@@ -34,6 +34,21 @@
         .auto-style16 {
             height: 64px;
         }
+        .auto-style17 {
+            width: 400px;
+            height: 26px;
+        }
+        .auto-style18 {
+            width: 627px;
+            height: 26px;
+        }
+        .auto-style19 {
+            width: 248px;
+            height: 26px;
+        }
+        .auto-style20 {
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -94,10 +109,10 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style19"></td>
+                    <td class="auto-style20"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -107,6 +122,17 @@
                     <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+    <td class="auto-style2">&nbsp;</td>
+    <td class="auto-style9">
+     
+        <asp:GridView ID="gvInforme" runat="server">
+        </asp:GridView>
+     
+    </td>
+    <td class="auto-style10">&nbsp;</td>
+    <td>&nbsp;</td>
+</tr>
             </table>
         </div>
     </form>

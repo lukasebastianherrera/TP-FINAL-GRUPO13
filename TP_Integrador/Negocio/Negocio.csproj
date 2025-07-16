@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InformeNegocio.cs" />
+    <Compile Include="..\..\..\..\..\Desktop\bbdd\InformeNegocio.cs">
+      <Link>InformeNegocio.cs</Link>
+    </Compile>
     <Compile Include="EspecialidadNegocio.cs" />
     <Compile Include="NegocioUsuario.cs" />
     <Compile Include="MedicoNegocio.cs" />
