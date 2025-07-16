@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -23,9 +24,9 @@ namespace Vistas
 
             if (!IsPostBack)
             {
-                
+
                 CargarEspecialidades();
-          
+
             }
         }
 
@@ -43,10 +44,26 @@ namespace Vistas
 
         protected void btnGenerarInforme_Click(object sender, EventArgs e)
         {
-            if(ddlEspecialidad.SelectedIndex != 0) {
+            lblInforme.Text = string.Empty;
+            int idespecialidad = ddlEspecialidad.SelectedIndex;
+
+            if (idespecialidad != 0)
+            {
+
+
                 InformeNegocio informe = new InformeNegocio();
-                
-                informe.InformeEspecialidad(ddlEspecialidad.SelectedIndex);
+                string resultado = informe.TurnosTotalPorMesYAnterior(idespecialidad) + informe.PorcentajeTurnosCancelados(idespecialidad) + informe.PromedioPorEspecialidad(idespecialidad);
+
+                if (resultado.Length > 0)
+                {
+                    lblInforme.Text = resultado;
+
+                }
+
+
+                DataTable dt = informe.InformeEspecialidad(ddlEspecialidad.SelectedIndex);
+                gvInforme.DataSource = dt;
+                gvInforme.DataBind();
             }
         }
     }

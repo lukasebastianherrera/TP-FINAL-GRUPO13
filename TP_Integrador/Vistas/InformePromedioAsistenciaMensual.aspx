@@ -13,9 +13,6 @@
         .auto-style2 {
             width: 400px;
         }
-        .auto-style6 {
-            width: 68px;
-        }
         .auto-style7 {
             width: 540px;
         }
@@ -59,8 +56,23 @@
                         <asp:Label ID="lblMes" runat="server" Font-Size="Medium" Text="Mes:"></asp:Label>
                     &nbsp;&nbsp;
                                     <asp:DropDownList ID="ddlMes" runat="server">
+                                        <asp:ListItem Value="0">Seleccione un Mes</asp:ListItem>
+                                        <asp:ListItem Value="1">Enero</asp:ListItem>
+                                        <asp:ListItem Value="2">Febrero</asp:ListItem>
+                                        <asp:ListItem Value="3">Marzo</asp:ListItem>
+                                        <asp:ListItem Value="4">Abril</asp:ListItem>
+                                        <asp:ListItem Value="5">Mayo</asp:ListItem>
+                                        <asp:ListItem Value="6">Junio</asp:ListItem>
+                                        <asp:ListItem Value="7">Julio</asp:ListItem>
+                                        <asp:ListItem Value="8">Agosto</asp:ListItem>
+                                        <asp:ListItem Value="9">Septiembre</asp:ListItem>
+                                        <asp:ListItem Value="10">Octubre</asp:ListItem>
+                                        <asp:ListItem Value="11">Noviembre</asp:ListItem>
+                                        <asp:ListItem Value="12">Diciembre</asp:ListItem>
                                     </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="rfvMes" runat="server" ControlToValidate="ddlMes" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Elija un Mes</asp:RequiredFieldValidator>
+                                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:RequiredFieldValidator ID="rfvMes" runat="server" ControlToValidate="ddlMes" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1">Seleccione un Mes</asp:RequiredFieldValidator>
                                 </td>
                     <td class="auto-style8">
                                     &nbsp;</td>
@@ -76,7 +88,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" ValidationGroup="grupo1" />
+                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" ValidationGroup="grupo1" OnClick="btnGenerarInforme_Click" />
                     </td>
                     <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
