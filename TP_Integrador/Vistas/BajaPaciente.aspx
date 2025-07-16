@@ -171,8 +171,16 @@
                 <tr>
                     <td class="auto-style27">&nbsp;</td>
                     <td class="auto-style26">
-                       <asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvPacientes_SelectedIndexChanged" DataKeyNames="dni">
-                           <PagerStyle HorizontalAlign="Center" />
+                       <asp:GridView ID="gvPacientes" runat="server" AllowPaging="True" OnPageIndexChanging="gvPacientes_PageIndexChanging" PageSize="6" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvPacientes_SelectedIndexChanged" DataKeyNames="dni" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                           <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                           <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                           <PagerStyle HorizontalAlign="Left" BackColor="#99CCCC" ForeColor="#003399" />
+                           <RowStyle BackColor="White" ForeColor="#003399" />
+                           <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                           <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                           <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                           <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                           <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
 
                     &nbsp;&nbsp;&nbsp; </td>

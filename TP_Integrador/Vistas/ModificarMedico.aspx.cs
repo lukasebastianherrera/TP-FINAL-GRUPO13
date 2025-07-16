@@ -95,5 +95,17 @@ namespace Vistas
                 if (item != null) item.Selected = true;
             }
         }
+
+        protected void gvMedico_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            if(gvMedico.EditIndex != -1)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            gvMedico.PageIndex = e.NewPageIndex;
+            cargarMedicos();
+        }
     }
 }
