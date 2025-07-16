@@ -45,6 +45,7 @@ namespace Datos
                     adapter.Fill(tabla);
                     return tabla;
                 }
+                //aa
             }
         }
     }

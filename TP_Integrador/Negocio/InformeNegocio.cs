@@ -17,4 +17,5 @@ namespace Negocio
         public InformeNegocio() { }
         public DataTable InformeEspecialidad(int idespec) { return datosInforme.InformePorEspecialidad(idespec); }
     }
+    //aa
 }

@@ -25,6 +25,7 @@ namespace Vistas
             {
                 cargarGridview();
             }
+            //prueba
         }
         private void cargarGridview()
         {
